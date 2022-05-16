@@ -1,0 +1,20 @@
+a {
+    text-decoration: none;
+}
+h3{
+    font-weight:bold;
+}
+ul{
+   
+    float: left;
+}
+li {
+    list-style-type: none;
+    margin-top: 5px;
+}
+#vk-ling{
+    float:left;
+}
+#vk-link img{
+    width: 50px;
+}

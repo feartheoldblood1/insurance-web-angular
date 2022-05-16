@@ -1,0 +1,87 @@
+header{
+    width: 100%;
+    background: #5ebb2e;
+    height: 70px;
+}
+
+.title{
+	float: left;
+	font-size: 24px;
+	padding-top: 25px;
+	padding-left: 20px;
+    color: white;
+    font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.title a{
+	color: white;
+	font-size: 24px;
+	margin-right: 20px;
+	text-decoration: none;
+}
+
+#autorization{
+    margin-top: 10%;
+    border:1px solid gainsboro;
+    max-width: 40%;
+    min-width: 300px;
+    width: 500px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: white;
+    
+}
+#checkbox-label-input span{
+    margin-left: 5px;
+    height: 20px;
+}
+.card-content{
+    margin-top: 50px;
+}
+.enter-system{
+    font-size: 20px;
+}
+.input-field{
+    margin-top:20px;
+    font-size: 18px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+label{
+    margin-bottom: 5px;
+}
+.input-field .helper-text{
+    font-size: 14px;
+}
+input{
+    max-width: 60%;
+    min-width: 200px;
+    width: 250px;
+    height: 30px;
+    font-size: medium;
+}
+.helper-text{
+    color:red
+}
+.card-action{
+    margin-top:20px;
+    
+}
+.card-action button{
+    min-width: 100px;
+    width: 120px;
+    height: 45px;
+    max-width: 150px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size:19px;
+    background-color: white;
+    border:1px solid gray;
+    border-radius: 5px;
+}
+#registration{
+    border-bottom: 10px;
+}

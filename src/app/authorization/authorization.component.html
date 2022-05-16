@@ -1,0 +1,54 @@
+<div id="main-autorization">
+    <header>
+        <div class="title"><a routerLink="/">Страхование</a></div>
+    </header>
+    <form id="autorization" name="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class=card-content>
+            <span class="enter-system">Войти в систему</span>
+            <div class="input-field">
+                <label for="email">Логин</label>
+                <br>
+                <br>
+                <input type="email" id="email" formControlName="email" placeholder="Введите логин"
+                >
+                <br>
+                <span
+                class="helper-text"  *ngIf="_email.invalid && (_email.dirty || _email.touched )"
+                >
+                <span *ngIf="_email.errors['required']"
+                >
+                Требуется логин
+            </span>
+
+            </span>
+                
+            <div class="input-field">
+                <label for="password">Пароль</label>
+                <br>
+                <br>
+                <input type="password" id="password" name="password" formControlName="password" placeholder="Введите пароль"
+                >
+                <br>
+                <span
+                class="helper-text"  *ngIf="_password.invalid && (_password.dirty || _password.touched)"
+                >
+                <span *ngIf="_password.errors['required']"
+                >
+                Требуется пароль
+            </span>
+            </span>
+            </div>
+            </div>
+       
+        <div class=card-action>
+            <button type="submit" class="btn-enter">
+                Войти
+            </button>
+        </div>
+        </div>
+        <div id="registration">
+            <a routerLink="/registration">Зарегистрироваться</a>
+        </div>
+        
+    </form>
+</div>

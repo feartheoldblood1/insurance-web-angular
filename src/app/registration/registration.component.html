@@ -1,0 +1,79 @@
+
+<header>
+    <div class="title"><a routerLink="/">Страхование</a></div>
+</header>
+
+<main>
+    <h3 id="title-registration">
+        Регистрация
+    </h3>
+    <div id=registration>
+        <form>
+            <div id="info">
+                <div class="info-blocks">
+                    <div class="inputs" id="login-block">
+                        <label for="Email">Почта</label>
+                        <input type="text" name="Email" placeholder="p_lobachev@inbox.ru">
+                    </div>
+                    <div class="inputs">
+                        <label for="Phone">Телефон</label>
+                        <input type="tel" name="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required
+                            placeholder="+7(___)-___-__-__">
+                    </div>
+                </div>
+                <div class="info-blocks" id="password-block">
+                    <div class="inputs">
+                        <label for="Password">Пароль</label>
+                        <input type="text" name="Password">
+                    </div>
+                    <div class="inputs">
+                        <label for="Password-Validation">Подтверждение пароля</label>
+                        <input type="text" name="Password-Validation">
+                    </div>
+                </div>
+                <div id="personal-data" class="info-blocks">
+                    <div class="inputs">
+                        <label for="Surname">Фамилия</label>
+                        <input type="text" name="Surname">
+                    </div>
+                    <div class="inputs" id="name-block">
+                        <label for="Name">Имя</label>
+                        <input type="text" name="Name">
+                    </div>
+                    <div class="inputs" id="otchestvo-block">
+                        <label for="Otchestvo">Отчество</label>
+                        <input type="text" name="Otchestvo">
+                    </div>
+                </div>
+                <div class="info-blocks">
+                    <div id=datebirth class="inputs">
+                        <label for="Date-Birth">Дата рождения</label>
+                        <input type="date" name="DateBirth">
+                        
+                    </div>
+                    <div class="inputs" id="checkbox-foreign">
+                        <label>
+                            <input type="checkbox">
+                            <span>Иностранный гражданин</span>
+                        </label>
+                    </div>
+                </div>
+            <div class="info-blocks">
+                <div class="inputs">
+                    <label for="Type-Document">Тип документа</label>
+                    <input type="text" name="Type-Document">
+                </div>
+                <div class="inputs" id="numer">
+                    <label for="Numeration">Номер</label>
+                    <input type="text" name="Numeration">
+                </div>
+                <div class="inputs" id="serie">
+                    <label for="Serie">Серия</label>
+                    <input type="text" name="Serie">
+                </div>
+            </div>
+        </div>
+    
+    </form>
+</div>
+</main>
