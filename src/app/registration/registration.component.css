@@ -21,7 +21,7 @@ header {
 }
 
 main {
-	position: relative;
+	
 	margin-top: 5%;
 }
 
@@ -31,18 +31,28 @@ main {
 }
 
 #registration {
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%, 0%);
+	border: 1px solid gray;
+	background: #fff;
 }
 
 form {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0%);
 	
-	border: 1px solid gray;
-	background: #fff;
+	
 	min-width: 300px;
 }
-
+button{
+	position: absolute;
+	left: 50%;
+	top:90%;
+	height: 50px;
+	font-size: 1.5em;
+	background-color: #85838b;
+	color: white;
+	transform: translate(-50%, 0%);
+}
 #personal-data input {
 	width: 111px;
 }
