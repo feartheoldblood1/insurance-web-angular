@@ -1,10 +1,53 @@
 
 #info-policy{
     text-align: center;
-    width: 100%;
-    height: 100%;
+   
   }
 #title{
     margin-top: 10px;
     font-size: 24px;
   }
+#main-block{
+  display: block;
+  }
+.info-block{
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 200px;
+  max-height: 200px;
+  text-align: center;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  font-size: 20px;
+  height: 100px;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  
+}
+
+#cheating{
+  
+  
+}
+#cheating  {
+  background-image: url(../../assets/insurance-cheat/osago-cheat.jpg);
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  border-radius: 10px;
+  color: white;
+}
+.info-block:hover{
+  transition: 1.5s;
+  background-image: url();
+  color: white;
+  background-color: #009e79;
+}
+#cheating:hover {
+  transition: 1.5s;
+  background-image: url();
+  color: white;
+  background-color: #009e79;
+}

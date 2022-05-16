@@ -1,5 +1,6 @@
 a {
     text-decoration: none;
+    color:#85838b;
 }
 h3{
     font-weight:bold;
@@ -8,13 +9,12 @@ ul{
    
     float: left;
 }
+app-social-network{
+    float: left;
+
+    margin-top: 5px;
+}
 li {
     list-style-type: none;
     margin-top: 5px;
-}
-#vk-ling{
-    float:left;
-}
-#vk-link img{
-    width: 50px;
 }

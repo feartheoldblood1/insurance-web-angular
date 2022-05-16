@@ -1,0 +1,18 @@
+.social-link{
+    float:left;
+    display:inline-block; 
+}
+.social-link img{
+    width: 50px;
+    
+}
+#social-network{
+   
+ width: 100%;
+ float: left;
+    
+}
+#social-network p{
+    max-width: 200px;
+   
+}

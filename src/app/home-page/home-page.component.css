@@ -1,10 +1,14 @@
 
 #main-content{
     margin: 0 auto;
+    max-width: 1920px;
     width: 80%;
     background-color: white;
 }
 hr {
-    border: 1px solid gainsboro;
+    border: 1px solid #f6f8f9;
     
+}
+app-footer{
+    width: 100%;
 }

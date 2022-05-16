@@ -1,7 +1,7 @@
-header {
-	width: 100%;
-	background: #5ebb2e;
-	height: 70px;
+header{
+    width: 100%;
+    background: #009e79;
+    height: 70px;
 }
 
 .title {
@@ -21,7 +21,6 @@ header {
 }
 
 main {
-	
 	margin-top: 5%;
 }
 
@@ -31,16 +30,16 @@ main {
 }
 
 #registration {
-	border: 1px solid gray;
+	border: 1px solid #dcdcdc;
 	background: #fff;
+	
+	
 }
 
 form {
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%, 0%);
-	
-	
 	min-width: 300px;
 }
 button{
@@ -51,10 +50,11 @@ button{
 	font-size: 1.5em;
 	background-color: #85838b;
 	color: white;
+	border: 1px solid #dcdcdc;
 	transform: translate(-50%, 0%);
 }
 #personal-data input {
-	width: 111px;
+	width: 130px;
 }
 #checkbox-foreign{margin-top: 10px;}
 #checkbox-foreign input {
@@ -68,13 +68,13 @@ button{
 }
 input {
 	height: 30px;
-	border:1px solid
+	border:1px solid #dcdcdc;
 }
 #numer input {
-	width: 70px;
+	width: 85px;
 }
 #serie input {
-	width: 70px;
+	width: 85px;
 }
 label {
 	text-align: left;
@@ -87,14 +87,15 @@ label {
 	display: inline-block;
 	height: 75px;
 	margin-left: 30px;
-	margin-right: 30px;
 	margin-bottom: 15px;
 }
 
 .inputs input {
-	width: 200px;
+	width: 210px;
 }
 
 .info-blocks {
 	margin-top: 10px;
+	margin-left: 30px;
+	margin-right: 30px;
 }

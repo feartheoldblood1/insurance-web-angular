@@ -16,6 +16,9 @@ import { HeaderLinksComponent } from './header-links/header-links.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
 import { OsagoKaskoComponent } from './osago-kasko/osago-kasko.component';
+import { SocialNetworkComponent } from './social-network/social-network.component';
+import { InsuranceCaseComponent } from './insurance-case/insurance-case.component';
+import { FaqComponent } from './faq/faq.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
@@ -36,7 +39,10 @@ const appRoutes: Routes = [
     HomePageComponent,
     HeaderLinksComponent,
     RegistrationComponent,
-    OsagoKaskoComponent
+    OsagoKaskoComponent,
+    SocialNetworkComponent,
+    InsuranceCaseComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
