@@ -35,15 +35,15 @@
                 <div id="personal-data" class="info-blocks">
                     <div class="inputs">
                         <label for="Surname">Фамилия</label>
-                        <input type="text" name="Surname">
+                        <input type="text" name="Surname" placeholder="Лобачев">
                     </div>
                     <div class="inputs" id="name-block">
                         <label for="Name">Имя</label>
-                        <input type="text" name="Name">
+                        <input type="text" name="Name" placeholder="Петр">
                     </div>
-                    <div class="inputs" id="otchestvo-block">
+                    <div class="inputs" id="otchestvo-block" >
                         <label for="Otchestvo">Отчество</label>
-                        <input type="text" name="Otchestvo">
+                        <input type="text" name="Otchestvo" placeholder="Александрович">
                     </div>
                 </div>
                 <div class="info-blocks">
@@ -62,7 +62,16 @@
             <div class="info-blocks">
                 <div class="inputs">
                     <label for="Type-Document">Тип документа</label>
-                    <input type="text" name="Type-Document">
+                    <!-- <input type="text" name="Type-Document"> -->
+                    <select type="text" name="Type-Document" >
+                        <option disabled>Выберете</option>
+                        <option value="RussianPassport">Гражданский паспорт РФ</option>
+                        <option value="OfficerIDcard">Удостоверение личности офицера</option>
+                        <option value="SoldierIDcard">Военный билет солдата</option>
+                        <option value="ReserveOfficerIDcard">Военный билет офицера запаса</option>
+                        <option value="RussianTemporaryIdentityCard">Временное удостоверение личности гражданина РФ</option>
+                        <option value="OtherDocuments">Другие документы</option>
+                     </select>
                 </div>
                 <div class="inputs" id="numer">
                     <label for="Numeration">Номер</label>

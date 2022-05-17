@@ -52,7 +52,13 @@ button{
 	color: white;
 	border: 1px solid #dcdcdc;
 	transform: translate(-50%, 0%);
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 5px;
 }
+button:hover{
+	background-color: #a8a8a8;
+ }
 #personal-data input {
 	width: 130px;
 }
@@ -66,9 +72,12 @@ button{
 #checkbox-label span{
 	margin-left: 10px;
 }
-input {
+input, select {
 	height: 30px;
 	border:1px solid #dcdcdc;
+}
+select{
+	width: 225px;
 }
 #numer input {
 	width: 85px;
