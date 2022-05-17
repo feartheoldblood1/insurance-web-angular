@@ -1,7 +1,5 @@
-
 #info-policy{
-    text-align: center;
-   
+  text-align: center;
   }
 #title{
     margin-top: 10px;
@@ -17,37 +15,94 @@
   margin-right: 5px;
   width: 200px;
   max-height: 200px;
-  text-align: center;
   padding-top: 1.5%;
   padding-bottom: 1.5%;
-  font-size: 20px;
-  height: 100px;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+  
+  height: 200px;
   margin-bottom: 1%;
   margin-top: 1%;
+  font-weight:500;
   
 }
-
-#cheating{
-  
-  
+.info-block-title{
+  margin-top: 25%;
+  font-size: 22px;
+  text-shadow:1px 1px black;
+}
+.info-block-desc{
+  margin-top: 20%;
+  font-size: 20px;
+  text-shadow:1px 1px black;
 }
 #cheating  {
-  background-image: url(../../assets/insurance-cheat/osago-cheat.jpg);
+  background-image: url(../../assets/insurance-cheat/osago-cheating.jpg);
   background-position:center;
   background-repeat: no-repeat;
   background-size:cover;
   border-radius: 10px;
   color: white;
 }
-.info-block:hover{
-  transition: 1.5s;
-  background-image: url();
-  color: white;
-  background-color: #009e79;
-}
+
 #cheating:hover {
   transition: 1.5s;
   background-image: url();
   color: white;
   background-color: #009e79;
+}
+
+#insurance-service{
+  background-image: url(../../assets/insurance-cheat/insurance-services.jpg);
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  border-radius: 10px;
+  color: white;
+  
+}
+
+#insurance-service:hover{
+  transition: 1.5s;
+  background-image: url();
+  color: white;
+  background-color: #009e79;
+
+}
+
+#dmc{
+  background-image: url(../../assets/insurance-cheat/dmc.jpg);
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  border-radius: 10px;
+  color: white;
+  
+}
+
+#dmc:hover{
+  transition: 1.5s;
+  background-image: url();
+  color: white;
+  background-color: #009e79;
+ 
+}
+
+
+#insurance-pension{
+  background-image: url(../../assets/insurance-cheat/pension.jpg);
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  border-radius: 10px;
+  color: white; 
+}
+
+#insurance-pension:hover{
+  
+  transition: 1.5s;
+  background-image: url();
+  color: white;
+  background-color: #009e79;
+ 
 }
