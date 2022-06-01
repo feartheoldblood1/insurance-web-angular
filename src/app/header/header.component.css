@@ -1,31 +1,19 @@
-header{
+header {
 	width: 100%;
-	/* background: #5ebb2e; */
+	/*background: #5ebb2e;*/
 	background: #009e79;
 	height: 70px;
 }
+.auth-img {
+	width: 20px;
+	background-image: url(../../assets/logo/autorization-logo.png);
+}
 
-.title{
-	float: left;
-	font-size: 24px;
-	padding-top: 25px;
-	padding-left: 20px;
-    color: white;
-    font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-.main-info{
-	padding-top: 25px;
-	float: right;
-	padding-right: 25px;
-}
-a{
-	color: white;
-	font-size: 24px;
-	margin-right: 20px;
-}
-.title a{
-	color: white;
-	font-size: 24px;
-	margin-right: 20px;
+a {
+	font-size:24px;
+	color:white;
 	text-decoration: none;
+}
+.header-block{
+	display: inline-block;
 }

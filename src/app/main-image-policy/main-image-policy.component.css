@@ -2,36 +2,42 @@
     background-color: #000;
     height: 400px;
     text-align: center;
-    background:linear-gradient( rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.8) ), url(../../assets/PolicyPics/main-image-policy.jpg);
-
+    background:linear-gradient( rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.8) ),
+        url(../../assets/PolicyPics/main-image-policy.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
-
 #descrition-text{
-    margin-top: 50px;
+    margin-top: 40px;
 }
 a {
     text-decoration:  none;
     color: white;
     display: block;
+    
 }
 .text-info{
+    min-width: 350px;
+    margin: 0 auto;
     padding-top: 100px;
-    text-transform: uppercase;
     color: white;
-    width: 350px;
+    width: 450px;
+    min-width: 150px;
+
+  
+    font-size: 18px;
+    line-height: 1.5;
 }
 #link-button{
     border: 1px solid #009e79;
     background-color:  #009e79;
-    width: 10%;
+    width: 35%;
+    padding: 5px;
     margin: 0 auto;
     margin-top: 20px;
 }
 #header-text{
     font-size: 35px;
-    
 }
-#description-text{
-    font-size: 35px;
-    
-}
+
+

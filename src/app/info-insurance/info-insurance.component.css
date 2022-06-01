@@ -29,12 +29,12 @@
 .info-block-title{
   margin-top: 25%;
   font-size: 22px;
-  text-shadow:1px 1px black;
+  text-shadow:1px 1px #85838b;
 }
 .info-block-desc{
   margin-top: 20%;
   font-size: 20px;
-  text-shadow:1px 1px black;
+  text-shadow:1px 1px #85838b;
 }
 #cheating  {
   background-image: url(../../assets/insurance-cheat/osago-cheating.jpg);

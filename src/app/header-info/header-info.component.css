@@ -1,8 +1,9 @@
 #main-header-info{
-    background-color:  #009e79;
+    background-color: white;
+    display: block;
+    min-height: 100px;
+    text-align: center;
 }
-app-header-links{
-
-       margin-left: 50px;
-        
+.links{ 
+    padding-top: 40px;
 }
