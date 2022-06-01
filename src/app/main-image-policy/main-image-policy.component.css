@@ -1,0 +1,37 @@
+.main-image-policy-cls{
+    background-color: #000;
+    height: 400px;
+    text-align: center;
+    background:linear-gradient( rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.8) ), url(../../assets/PolicyPics/main-image-policy.jpg);
+
+}
+
+#descrition-text{
+    margin-top: 50px;
+}
+a {
+    text-decoration:  none;
+    color: white;
+    display: block;
+}
+.text-info{
+    padding-top: 100px;
+    text-transform: uppercase;
+    color: white;
+    width: 350px;
+}
+#link-button{
+    border: 1px solid #009e79;
+    background-color:  #009e79;
+    width: 10%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+#header-text{
+    font-size: 35px;
+    
+}
+#description-text{
+    font-size: 35px;
+    
+}
