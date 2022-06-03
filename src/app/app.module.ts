@@ -21,12 +21,16 @@ import { InsuranceCaseComponent } from './insurance-case/insurance-case.componen
 import { FaqComponent } from './faq/faq.component';
 import { MainImagePolicyComponent } from './main-image-policy/main-image-policy.component';
 import { HeaderInfoComponent } from './header-info/header-info.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactsPageComponent } from './contacts-page/contacts-page.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'autorization', component: AuthorizationComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'osago-kasko', component: OsagoKaskoComponent},
+  {path: 'about-us', component: AboutUsComponent},
+  {path: 'contacts-page', component: ContactsPageComponent},
   
 ];
 
@@ -46,7 +50,9 @@ const appRoutes: Routes = [
     InsuranceCaseComponent,
     FaqComponent,
     MainImagePolicyComponent,
-    HeaderInfoComponent
+    HeaderInfoComponent,
+    AboutUsComponent,
+    ContactsPageComponent
   ],
   imports: [
     BrowserModule,

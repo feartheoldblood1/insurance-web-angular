@@ -3,17 +3,42 @@ header {
 	/*background: #5ebb2e;*/
 	background: #009e79;
 	height: 70px;
+	
+	display: block;
 }
-.auth-img {
-	width: 20px;
-	background-image: url(../../assets/logo/autorization-logo.png);
+img {
+	width: 70px;
+}
+.header-link{
+	display: inline-block;
+	
 }
 
+.block {
+	margin-left: 20px;
+	margin-right: 75%;
+}
 a {
+	
 	font-size:24px;
 	color:white;
 	text-decoration: none;
+
 }
-.header-block{
-	display: inline-block;
+ul {
+	height: 20px;
+	width: 100px;
 }
+.auth-link{
+	
+}
+.auth-link ul  {
+	display: flex;
+	align-items: center;
+
+	justify-content: right;
+}
+.auth-link ul li {
+	display: inline;
+}
+

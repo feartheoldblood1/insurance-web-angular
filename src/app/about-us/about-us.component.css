@@ -1,0 +1,74 @@
+.about-us {
+    width: 100%;
+    margin-top: 5%;
+}
+hr {
+    width: 80%;
+}
+h1{
+    font-size: 50px;
+    margin-bottom: 70px;
+}
+h2 {
+    margin-top: 80px;
+    margin-bottom: 40px;
+    font-size: 25px;
+}
+h1, h2 {
+    text-align: center;
+}
+p, .company-benefits{
+    font-size: 20px;
+}
+.info-about{
+    width: 80%;
+    margin-left: 10%;
+    display: block;
+
+}
+.info-img{
+    width: 600px;
+    height: 20%;
+  
+}
+.info-text{
+    padding-top: 20px;
+    padding-bottom: 20px;
+min-width: 10px;
+   width: 50%;
+   
+}
+.info-text p {
+    text-align: justify;
+    padding-bottom: 60px;
+}
+.info-img img{
+    width: 80%;
+    margin-bottom: 50px;
+}
+
+.info{
+    display: inline-block;
+}
+
+.company-info{
+    text-align: center;
+}
+.company-benefits{
+    width: 400px;
+    min-width: 50px;
+   border-radius: 15px;
+    margin-bottom: 30px;
+    border: 1px solid ;
+    display: inline-block;
+    line-height: 1.5;
+    padding: 5px;
+}
+.company-benefits:hover {
+    box-shadow: 2px 2px 2px #009e79;
+    animation-duration: 5ms;
+}
+.second-benefit{
+    margin-left: 30px;
+    margin-right: 30px;
+}
