@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {User} from '../api/models/user';
+import {UserControllerService} from '../api/services/user-controller.service';
 
 @Component({
   selector: 'app-authorization',
@@ -8,10 +10,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 
 
-
 export class AuthorizationComponent implements OnInit {
   form: any;
-  constructor() {
+  users: User[] = [];
+  constructor(private userService: UserControllerService) {
       
   }
   
@@ -27,7 +29,14 @@ export class AuthorizationComponent implements OnInit {
   get _password() {
     return this.form.get('password')
   }
-  onSubmit() {
-
+  onSubmit(): void {
+    console.log(this.getUsers());
+  } 
+   getUsers() {
+    let isAuth: boolean; 
+    return this.userService
+      .findByNamePass$Response({email: this._email.value,password:this._password.value})
+    
   }
+
 }

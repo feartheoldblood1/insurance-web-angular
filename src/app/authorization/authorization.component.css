@@ -84,9 +84,11 @@ input{
     border:1px solid gray;
     border-radius: 5px;
 }
+
 #registration{
     border-bottom: 10px;
 }
+
 a{
     text-decoration: none;
 }
