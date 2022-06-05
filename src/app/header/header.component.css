@@ -17,6 +17,8 @@ img {
 .block {
 	margin-left: 20px;
 	margin-right: 75%;
+	height: 30px;
+	
 }
 a {
 	
@@ -39,6 +41,9 @@ ul {
 	justify-content: right;
 }
 .auth-link ul li {
-	display: inline;
+	display: inline-block;
+}
+span {
+	
 }
 

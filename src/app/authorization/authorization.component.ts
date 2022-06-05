@@ -1,7 +1,7 @@
 import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable, Subscription } from 'rxjs';
 import {User} from '../api/models/user';
 import { UserWithRelations } from '../api/models/user-with-relations';
 import {UserControllerService} from '../api/services/user-controller.service';
@@ -16,9 +16,10 @@ import { StrictHttpResponse } from '../api/strict-http-response';
 
 export class AuthorizationComponent implements OnInit {
   form: any;
-  users: User[] = [];
+  users: UserWithRelations[] = [];
   router: any;
   profilePage: string = '';
+  usr:string='';
   constructor(private userService: UserControllerService) {
       
   }
@@ -36,17 +37,26 @@ export class AuthorizationComponent implements OnInit {
   get _password() {
     return this.form.get('password')
   }
-  onSubmit(): void {
-    this.getUsers()
+   onSubmit(): void {
+    try {
+      this.userService.findByNamePass({email: this._email.value,
+        password:this._password.value}).subscribe((Users:UserWithRelations[])=>{
+         this.goToProfilePage('/',Users);
+        });
+    
+    }catch(err:any){
+      console.log(err)
+    }
+
   } 
-   getUsers(): void {
-     let userData=this.userService.findByNamePass({email: this._email.value,
-       password:this._password.value}).subscribe((users)=>(this.goToProfilePage('/registration', users)));
+    getUsers(): void {
+     
+   
  }
   goToProfilePage(pageName:string, userData:UserWithRelations[]):void {
     //this.router.navigate([`${pageName}`]);
-    let usr = userData[0].name;
-    this.profilePage="<span>Имя: </span> <p [innerHTML]=usr></p>"
+  
+    console.log()
 
   }
 }
