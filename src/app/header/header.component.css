@@ -31,9 +31,7 @@ ul {
 	height: 20px;
 	width: 100px;
 }
-.auth-link{
-	
-}
+
 .auth-link ul  {
 	display: flex;
 	align-items: center;
@@ -47,3 +45,43 @@ span {
 	
 }
 
+@media all and (max-width: 1700px){
+	.block {
+		margin-right: 74%;
+	}
+}
+@media all and (max-width: 1600px){
+	.block {
+		margin-right: 70%;
+	}
+}
+@media all and (max-width: 1500px){
+	.block {
+		margin-right: 65%;
+	}
+@media all and (max-width: 1400px){
+	.block {
+		margin-right: 60%;
+	}
+}
+@media all and (max-width: 1300px){
+	.block {
+		margin-right: 55%;
+	}
+}
+@media all and (max-width: 950px){
+	.links {
+		visibility: hidden;
+	}
+}
+@media screen and (max-width: 950px) {
+	app-hamburger{
+		visibility: visible;
+	}
+  }
+  @media screen and (min-width: 950px) {
+	app-hamburger{
+		visibility: hidden;
+	}
+  }
+}

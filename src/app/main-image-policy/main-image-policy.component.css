@@ -40,4 +40,16 @@ a {
     font-size: 35px;
 }
 
+@media all and (max-width:500px){
+    
+    #header-text{
+        display: none;
+    }
+    #descrition-text{
+        display: none;
+    }
+    #link-button{
+        text-align: center;
+    }
 
+}

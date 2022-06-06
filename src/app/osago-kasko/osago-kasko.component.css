@@ -24,13 +24,18 @@ header{
 	margin-right: 20px;
 	text-decoration: none;
 }
-
+.main-block{
+	border: 1px solid black;
+}
 .osago{
 	border: 1px solid black;
 	background-image: url(../../assets/PolicyPics/osago-policy.jpg);
-	width: 1000px;
-	height: 1000px;
+	
 	background-color: #009e79;
 	
 	
+}
+.osago img{
+	height: 20%;
+	width: auto;
 }

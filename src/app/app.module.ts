@@ -24,6 +24,7 @@ import { MainImagePolicyComponent } from './main-image-policy/main-image-policy.
 import { HeaderInfoComponent } from './header-info/header-info.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactsPageComponent } from './contacts-page/contacts-page.component';
+import { HamburgerComponent } from './hamburger/hamburger.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
@@ -53,7 +54,8 @@ const appRoutes: Routes = [
     MainImagePolicyComponent,
     HeaderInfoComponent,
     AboutUsComponent,
-    ContactsPageComponent
+    ContactsPageComponent,
+    HamburgerComponent
   ],
   imports: [
     BrowserModule,
