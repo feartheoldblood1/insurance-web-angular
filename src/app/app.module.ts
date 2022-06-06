@@ -25,6 +25,7 @@ import { HeaderInfoComponent } from './header-info/header-info.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactsPageComponent } from './contacts-page/contacts-page.component';
 import { HamburgerComponent } from './hamburger/hamburger.component';
+import { OsagoFormComponent } from './osago-form/osago-form.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
   {path: 'osago-kasko', component: OsagoKaskoComponent},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'contacts-page', component: ContactsPageComponent},
+  {path: 'osago-form', component: OsagoFormComponent},
   
 ];
 
@@ -55,7 +57,8 @@ const appRoutes: Routes = [
     HeaderInfoComponent,
     AboutUsComponent,
     ContactsPageComponent,
-    HamburgerComponent
+    HamburgerComponent,
+    OsagoFormComponent
   ],
   imports: [
     BrowserModule,

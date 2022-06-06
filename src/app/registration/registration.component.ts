@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { User } from '../api/models';
 import {UserControllerService} from '../api/services/user-controller.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -12,7 +13,7 @@ import {UserControllerService} from '../api/services/user-controller.service';
 export class RegistrationComponent implements OnInit {
   form: any;
 
-  constructor(private userService: UserControllerService) { }
+  constructor(private userService: UserControllerService,private router: Router) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -68,12 +69,19 @@ export class RegistrationComponent implements OnInit {
     return this.form.get('documentSerie')?.value;
   }
   onSubmit(): void{
+    try {
+      // console.log(this.userService.create({mail:this._email, phone_number: this._phone, password:this._password,
+      //   surname:this._surname, name:this._name, otchestvo:this._otchestvo, datebirth:this._datebirth,
+      //   foreigner:this._foreigner,document:this._document, document_number:this._documentNumber,
+      //   document_series:this._documentSerie}).subscribe()) 
+        alert("Вы успешно зарегистрировались");
+        this.router.navigate(['/autorization'])
+    } catch(err:any) {
+      alert("Возникла ошибка регистрации попробуйте позже");
+      console.log(err)
+    }
 
-    console.log(this.userService.create({mail:this._email, phone_number: this._phone, password:this._password,
-      surname:this._surname, name:this._name, otchestvo:this._otchestvo, datebirth:this._datebirth,
-      foreigner:this._foreigner,document:this._document, document_number:this._documentNumber,
-      document_series:this._documentSerie}).subscribe()) 
-    
+
   
     }
   // isAlreadyExist(): boolean {

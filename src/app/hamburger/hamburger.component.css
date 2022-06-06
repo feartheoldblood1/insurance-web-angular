@@ -92,14 +92,22 @@
         transform: rotate(-135deg);
         margin-top: -16.5px;
     }
-ul {
+    .menu {
     display: none;
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    z-index: 100;
+    margin-top: -30px;
+    
     }
-    input[type=checkbox]:checked ~ ul {
+    input[type=checkbox]:checked ~ .menu {
         display: block;
         
         
     }
+   
     
      @media screen and (max-width: 950px) {
           .sidebarIconToggle{
@@ -107,6 +115,6 @@ ul {
            }
         }
         @media screen and (min-width: 950px) {
-            ul{display: none;
+            .menu, ul, li{display: none;
             }
           }
