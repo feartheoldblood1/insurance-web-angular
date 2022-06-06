@@ -4,7 +4,7 @@
     </header>
     <form id="autorization" name="form" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class=card-content>
-            <span [innerHTML]="profilePage"></span>
+            <span [innerHTML]="usr">{{usr}}</span>
             <span class="enter-system">Войти в систему</span>
             <div class="input-field">
                 <label for="email">Логин</label>

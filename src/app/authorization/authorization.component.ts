@@ -13,16 +13,13 @@ import { StrictHttpResponse } from '../api/strict-http-response';
   styleUrls: ['./authorization.component.css']
 })
 
-
 export class AuthorizationComponent implements OnInit {
   form: any;
   users: UserWithRelations[] = [];
   router: any;
   profilePage: string = '';
   usr:string='';
-  constructor(private userService: UserControllerService) {
-      
-  }
+  constructor(private userService: UserControllerService) {}
   
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -55,8 +52,7 @@ export class AuthorizationComponent implements OnInit {
  }
   goToProfilePage(pageName:string, userData:UserWithRelations[]):void {
     //this.router.navigate([`${pageName}`]);
-  
-    console.log()
+      console.log(userData)
 
   }
 }

@@ -24,9 +24,13 @@ a{
     text-decoration: none;
     color: white;
     border: 1px solid #009e79;
+   
     padding: 10px;
     background-color:  #009e79;
     font-size: 16px;
+}
+.link{
+    padding-top: 10px;
 }
 hr {width: 80%;}
 .block {
@@ -37,10 +41,8 @@ hr {width: 80%;}
     margin-top: 50px;
     align-self: center;
     background-color: #f5f5f5;
+    padding:20px;
    
-}
-.block a {
-    
 }
 .contacs-blocks{
     display: flex;
