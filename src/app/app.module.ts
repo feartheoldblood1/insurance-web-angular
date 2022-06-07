@@ -27,6 +27,7 @@ import { ContactsPageComponent } from './contacts-page/contacts-page.component';
 import { HamburgerComponent } from './hamburger/hamburger.component';
 import { OsagoFormComponent } from './osago-form/osago-form.component';
 import { MortgageComponent } from './mortgage/mortgage.component';
+import { KaskoFormComponent } from './kasko-form/kasko-form.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
@@ -36,7 +37,10 @@ const appRoutes: Routes = [
   {path: 'about-us', component: AboutUsComponent},
   {path: 'contacts-page', component: ContactsPageComponent},
   {path: 'osago-form', component: OsagoFormComponent},
-  {path: 'journey', component: MortgageComponent},
+  {path: 'mortgage', component: MortgageComponent},
+  {path: 'kasko', component: KaskoFormComponent},
+  {path: '**', component: HomePageComponent},
+
   
 ];
 
@@ -61,7 +65,8 @@ const appRoutes: Routes = [
     ContactsPageComponent,
     HamburgerComponent,
     OsagoFormComponent,
-    MortgageComponent
+    MortgageComponent,
+    KaskoFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,17 @@
 app-header {
     width: 100%;
 }
+
+.mortgage-form{
+    margin-top: 5%;
+}
 .main{
     display: flex;
     flex-direction: column;
     align-items: center;
     
 }
-h3 {
+h1 {
     text-align: center;
 }
 fieldset{
@@ -17,10 +21,14 @@ fieldset{
     border: 1px solid #dcdcdc;
     padding: 20px;
 }
-input, select {
+input,  select {
     margin: 10px;
     height: 30px;
+    width: auto;
     border: 1px solid #dcdcdc;
+}
+select{
+    height: 50px;
 }
 .infoApartment{
     margin-bottom: 20px;
@@ -30,8 +38,53 @@ input, select {
     text-align: center;
 }
 .title-apartment-obj  {
-    font-size: 15px;
+    font-size: 19px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.radio-object {
+    padding: 2px;
+    margin-left: 10px;
+    
+    
 }
 .radio-object input {
     margin: 0;
+    height: 20px;
+    width: 20px;
+    font-size: 13px;
+    margin-right: 2px;
+}
+.radio-object span{
+
+    font-size: 16px;
+    margin-right: 5px;
+    padding-bottom: 10px;
+}
+.btn-policy {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+.btn-policy button{
+    background: #85838b;
+    color: #fff;
+    border: 1px solid #85838b;
+    padding: 10px;
+    font-size:20px;
+}
+.btn-policy button:hover{
+    background: #fff;
+    color: #85838b;
+}
+@media screen and (max-width:375px) {
+    .radio-object input {
+        display: block;
+    }
+}
+@media screen and (min-width:1500px) {
+    input, select{
+       font-size: 17px;
+       padding: 10px;
+    }
 }
