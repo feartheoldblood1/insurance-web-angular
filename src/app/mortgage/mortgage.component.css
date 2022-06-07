@@ -1,0 +1,37 @@
+app-header {
+    width: 100%;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+h3 {
+    text-align: center;
+}
+fieldset{
+    border: 0;
+}
+.infoUser, .infoApartment {
+    border: 1px solid #dcdcdc;
+    padding: 20px;
+}
+input, select {
+    margin: 10px;
+    height: 30px;
+    border: 1px solid #dcdcdc;
+}
+.infoApartment{
+    margin-bottom: 20px;
+}
+.btn-policy {
+    margin-top: 1%;
+    text-align: center;
+}
+.title-apartment-obj  {
+    font-size: 15px;
+}
+.radio-object input {
+    margin: 0;
+}
