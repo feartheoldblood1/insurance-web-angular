@@ -70,6 +70,120 @@
         "operationId": "UserController.count"
       }
     },
+    "/users/{mail}/{phone_number}/{password}/{surname}/{name}/{otchestvo}/{datebirth}/{foreigner}/{document}/{document_number}/{document_series}": {
+      "post": {
+        "x-controller-name": "UserController",
+        "x-operation-name": "create",
+        "tags": [
+          "UserController"
+        ],
+        "responses": {
+          "200": {
+            "description": "User model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "mail",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "phone_number",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "password",
+            "in": "path",
+            "schema": {
+              "type": "string",
+              "format": "password"
+            },
+            "required": true
+          },
+          {
+            "name": "surname",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "otchestvo",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "datebirth",
+            "in": "path",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "required": true
+          },
+          {
+            "name": "foreigner",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "document",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "document_number",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "document_series",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "UserController.create"
+      }
+    },
     "/users/{email}/{password}": {
       "get": {
         "x-controller-name": "UserController",
@@ -268,35 +382,6 @@
       }
     },
     "/users": {
-      "post": {
-        "x-controller-name": "UserController",
-        "x-operation-name": "create",
-        "tags": [
-          "UserController"
-        ],
-        "responses": {
-          "200": {
-            "description": "User model instance",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UserExcluding_id_"
-              }
-            }
-          }
-        },
-        "operationId": "UserController.create"
-      },
       "patch": {
         "x-controller-name": "UserController",
         "x-operation-name": "updateAll",
@@ -443,61 +528,7 @@
         ],
         "additionalProperties": true
       },
-      "UserExcluding_id_": {
-        "title": "UserExcluding_id_",
-        "type": "object",
-        "description": "(tsType: Omit<User, 'id'>, schemaOptions: { exclude: [ 'id' ] })",
-        "properties": {
-          "mail": {
-            "type": "string"
-          },
-          "phone_number": {
-            "type": "string"
-          },
-          "password": {
-            "type": "string"
-          },
-          "surname": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "otchestvo": {
-            "type": "string"
-          },
-          "datebirth": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "foreigner": {
-            "type": "string"
-          },
-          "document": {
-            "type": "string"
-          },
-          "document_number": {
-            "type": "string"
-          },
-          "document_series": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "mail",
-          "phone_number",
-          "password",
-          "surname",
-          "name",
-          "datebirth",
-          "foreigner",
-          "document",
-          "document_number",
-          "document_series"
-        ],
-        "additionalProperties": true,
-        "x-typescript-type": "Omit<User, 'id'>"
-      },
+      "DateType": {},
       "UserWithRelations": {
         "title": "UserWithRelations",
         "type": "object",

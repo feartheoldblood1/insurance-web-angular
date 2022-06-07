@@ -1,12 +1,11 @@
 import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { catchError, map, Observable, Subscription } from 'rxjs';
 import {User} from '../api/models/user';
 import { UserWithRelations } from '../api/models/user-with-relations';
 import {UserControllerService} from '../api/services/user-controller.service';
-import { StrictHttpResponse } from '../api/strict-http-response';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-authorization',
   templateUrl: './authorization.component.html',
@@ -16,10 +15,11 @@ import { StrictHttpResponse } from '../api/strict-http-response';
 export class AuthorizationComponent implements OnInit {
   form: any;
   users: UserWithRelations[] = [];
-  router: any;
+
   profilePage: string = '';
   usr:string='';
-  constructor(private userService: UserControllerService) {}
+
+  constructor(private userService: UserControllerService, private router:Router) {}
   
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -38,21 +38,19 @@ export class AuthorizationComponent implements OnInit {
     try {
       this.userService.findByNamePass({email: this._email.value,
         password:this._password.value}).subscribe((Users:UserWithRelations[])=>{
-         this.goToProfilePage('/',Users);
+          this.router.navigate(['/profile'])
+           
+          this.usr = Users.toString()
         });
-    
     }catch(err:any){
+      
       console.log(err)
     }
 
   } 
     getUsers(): void {
      
-   
+      
  }
-  goToProfilePage(pageName:string, userData:UserWithRelations[]):void {
-    //this.router.navigate([`${pageName}`]);
-      console.log(userData)
 
-  }
 }

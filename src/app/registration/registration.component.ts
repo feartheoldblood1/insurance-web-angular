@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { User } from '../api/models';
 import {UserControllerService} from '../api/services/user-controller.service';
 import { Router } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -13,7 +14,9 @@ import { Router } from '@angular/router';
 export class RegistrationComponent implements OnInit {
   form: any;
 
-  constructor(private userService: UserControllerService,private router: Router) { }
+  constructor(private userService: UserControllerService,
+    private router: Router,
+    private http:HttpClient) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -70,20 +73,31 @@ export class RegistrationComponent implements OnInit {
   }
   onSubmit(): void{
     try {
-      // console.log(this.userService.create({mail:this._email, phone_number: this._phone, password:this._password,
-      //   surname:this._surname, name:this._name, otchestvo:this._otchestvo, datebirth:this._datebirth,
-      //   foreigner:this._foreigner,document:this._document, document_number:this._documentNumber,
-      //   document_series:this._documentSerie}).subscribe()) 
-        alert("Вы успешно зарегистрировались");
-        this.router.navigate(['/autorization'])
+      
+      this.http.get("http://192.168.0.104:3000/users",{observe: 'response'})
+      .subscribe(response => {
+        if(response.status == 200){
+          this.userService.create({mail:this._email, phone_number: this._phone, password:this._password,
+            surname:this._surname, name:this._name, otchestvo:this._otchestvo, datebirth:this._datebirth,
+            foreigner:this._foreigner,document:this._document, document_number:this._documentNumber,
+            document_series:this._documentSerie}).subscribe()
+          alert("Вы успешно зарегистрировались");
+          this.router.navigate(['/autorization'])
+        }   
+      }, error=>{
+        alert("Ошибка сервера");
+        console.log(error);
+      });
+    } catch(err:any) {
+      alert("Возникла ошибка регистрации попробуйте позже");
+      console.log(err)
+    }
     } catch(err:any) {
       alert("Возникла ошибка регистрации попробуйте позже");
       console.log(err)
     }
 
 
-  
-    }
   // isAlreadyExist(): boolean {
   //       this.userService()
   // }
