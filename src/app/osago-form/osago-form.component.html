@@ -1,68 +1,85 @@
-
 <app-header></app-header>
 
 <div class="main">
     <form action="">
-        <div class="policy-info">
+        <div class="policy-info osago-info">
             <h1>Информация полиса</h1>
             <label for="">
                 Адрес регистрации собственника, как в паспорте
             </label>
             <input type="text">
             <label for="">
-                
+
             </label>
             Дата начала страхования
             <input type="date">
             <label for="">Период страхования
             </label>
-            <div>
-                <div ><input type="radio" value="" name="rb1">Год</div>
-                <input type="radio" value=""name="rb1">
-                <input type="radio" value=""name="rb1">
+            <div class="dateinterval">
+                <label for="">Год</label>
+                <input type="radio" value="" name="rb1">
+                <label for="">Транзит </label>
+                <input type="radio" value="" name="rb1">
+                <input type="radio" value="" name="rb1">
             </div>
-                
-            
+
+
         </div>
-        <div class="transport-info">
+        <div class="transport-info osago-info">
             <h1>Транспортное средство</h1>
             <label>
-            Марка автомобиля
+                Марка автомобиля
             </label>
+            <input type="text">
             <label>Модель автомобиля</label>
+            <input type="text">
             <label>
-                Год 
+                Год
             </label>
+            <input type="text">
             <label>
-            Объем двигателя
+                Объем двигателя
             </label>
+            <input type="text">
             <label>
                 Наличие прицепа
             </label>
+            <input type="checkbox">
             <label>
                 Для каких целей
             </label>
-            для каких целей
-            государственный Номер
-            Регистрация зарубежом
-            Идентификатор транспортного средства
-            Тип
+            <input type="text">
+            <label>
+                Государственный номер
+            </label>
+            <input type="text">
+            <label> Регистрация зарубежом
+
+            </label>
+       
+            <input type="checkbox">
+            <h3>
+                Идентификатор транспортного средства
+            </h3>
+            <label>
+                Тип
+            </label>
             <select name="" id="">
                 <option value="VIN">VIN</option>
                 <option value="chassis">Номер шасси</option>
                 <option value=""></option>
             </select>
         </div>
-        <div class="drivers">
+        <div class="drivers osago-info">
             <h1>Водители</h1>
             Количество
-            <div>
-                <input type="radio" value="" name="rb2">
-                <input type="radio" value=""name="rb2">
-                
+            <div class="drivers-count">
+                <input type="radio" value="" name="rb2"> Ограниченно
+                <input type="radio" value="" name="rb2"> Неограниченно
+
             </div>
         </div>
-
+        <button>Отправить заявку на оформление полиса</button>
     </form>
-  
+
 </div>
