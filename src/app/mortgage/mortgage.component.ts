@@ -1,7 +1,7 @@
 import { FocusMonitor } from '@angular/cdk/a11y';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserControllerService } from '../api/services/user-controller.service';
+import { IpotekaControllerService } from '../api/services';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-mortgage',
@@ -11,7 +11,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 export class MortgageComponent implements OnInit {
   form: any;
 
-  constructor(private userService: UserControllerService,
+  constructor(private ipotekaService: IpotekaControllerService,
      private http:HttpClient,
      private fb: FormBuilder ) { }
      items: any[] = [
@@ -40,10 +40,8 @@ export class MortgageComponent implements OnInit {
   get _remains():string {
     return this.form.get('remains')?.value;
   }
-  get _lifeAndHealth():string {
-    return this.form.get('lifeAndHealth')?.value;
-  }
-  get _propertyObject():string {
+
+  get _propertyHouse():string {
     return this.form.get('propertyObject')?.value;
   }
   
@@ -66,24 +64,29 @@ export class MortgageComponent implements OnInit {
    propertyObj: string[] = ['Квартира/Апартаменты','Жилой дом']
    prObj = '';
   onSubmit (): void {
-   
-    console.log(this._propertyObject, 
-      this._bank,
-      this._datebirth, 
-      this._email,
-       this._remains,
-      this._name,
-       this._phone,
-       this._objectInsurance,
-        this._remains);
-    alert("Вы успешно зарегистрировались");
-  }
-  //   this.http.get("http://192.168.0.104:3000/users",{observe: 'response'})
-  //   .subscribe(response => {
-  //     if(response.status == 200){
-      
+    // this.http.get("http://192.168.0.104:3000/",{observe: 'response'})
+    // .subscribe(response => {
+      // if(response.status == 200){
+        this.ipotekaService.sendMsgToMail({bank:this._bank,
+           remains: this._remains,
+            insuranceObject: this._objectInsurance,
+             propertyHouse:this._propertyHouse,
+            name: this._name,
+            dateBirth: this._datebirth,
+            phoneNumber:this._phone,
+             email:this._email}).subscribe()
+        console.log(this._propertyHouse, 
+          this._bank,
+          this._datebirth, 
+          this._email,
+           this._remains,
+          this._name,
+           this._phone,
+           this._objectInsurance,
+            this._remains);
+        alert("Ваша заявка отправлена");
 
-  //     }   
+      }   
   //   }, error=>{
   //     alert("Ошибка сервера");
   //     console.log(error);
@@ -93,5 +96,6 @@ export class MortgageComponent implements OnInit {
   //   console.log(err)
   // }
  
-  
+
+   
 }
