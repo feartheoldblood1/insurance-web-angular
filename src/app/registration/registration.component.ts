@@ -92,10 +92,7 @@ export class RegistrationComponent implements OnInit {
       alert("Возникла ошибка регистрации попробуйте позже");
       console.log(err)
     }
-    } catch(err:any) {
-      alert("Возникла ошибка регистрации попробуйте позже");
-      console.log(err)
-    }
+    } 
 
 
   // isAlreadyExist(): boolean {

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { EventEmitter } from 'stream';
+
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +10,7 @@ export class ProfileComponent implements OnInit {
   userData: string = 'A';
   constructor() { }
   @Input() user: string = '';
-  @Output() onSubmit = new EventEmitter();
+
   ngOnInit(): void {
 
   }
