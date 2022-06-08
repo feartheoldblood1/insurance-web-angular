@@ -13,7 +13,7 @@ app-footer{
     background-color: #f4f4f2;
 }
 
-@media all and (max-width: 950px){
+@media all and (max-width: 1500px){
    app-header-info{
         display: none;
     }

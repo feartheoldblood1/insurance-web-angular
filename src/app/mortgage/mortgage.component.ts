@@ -64,9 +64,9 @@ export class MortgageComponent implements OnInit {
    propertyObj: string[] = ['Квартира/Апартаменты','Жилой дом']
    prObj = '';
   onSubmit (): void {
-    // this.http.get("http://192.168.0.104:3000/",{observe: 'response'})
-    // .subscribe(response => {
-      // if(response.status == 200){
+    this.http.get("http://192.168.0.104:3000/ipoteka",{observe: 'response'})
+    .subscribe(response => {
+      if(response.status == 200){
         this.ipotekaService.sendMsgToMail({bank:this._bank,
            remains: this._remains,
             insuranceObject: this._objectInsurance,
@@ -87,14 +87,14 @@ export class MortgageComponent implements OnInit {
         alert("Ваша заявка отправлена");
 
       }   
-  //   }, error=>{
-  //     alert("Ошибка сервера");
-  //     console.log(error);
-  //   });
-  // } catch(err:any) {
-  //   alert("Возникла ошибка регистрации попробуйте позже");
-  //   console.log(err)
-  // }
+    }, error=>{
+      alert("Ошибка сервера");
+      console.log(error);
+    });
+  } catch(err:any) {
+    alert("Возникла ошибка регистрации попробуйте позже");
+    console.log(err)
+  }
  
 
    
