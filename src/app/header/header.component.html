@@ -1,22 +1,60 @@
 <header>
     <app-hamburger></app-hamburger>
     <div class="links">
-        <div class="header-link block">
-            <a routerLink="/" >
+        <div class="header-link block header-block">
+            <a routerLink="/">
                 <span>Страхование</span>
-         
+
             </a>
+
         </div>
-        <div class="header-link auth-link">
-                <a routerLink="/autorization" class="header-link block">
+        <div class="blocks-header">
+        <a routerLink="/osago-kasko">
+            <div class="header-link block insurance-block">
+
+                <span>Автострахование</span>
+            </div>
+        </a>
+    </div>
+        <div class="blocks-header">
+        <a routerLink="/mortgage">
+            <div class="header-link block insurance-block">
+
+                <span>Ипотека</span>
+
+            </div>
+        </a>
+        </div>
+        <div class="blocks-header">
+        <a href="/journey">
+            <div class="header-link block insurance-block">
+
+                <span>Путешествия</span>
+
+            </div>
+        </a>
+    </div>
+        <div class="blocks-header">
+        <a href="/">
+
+        <div class="header-link block insurance-block">
+
+            <span>Несчастные случаи</span>
+
+        </div>
+        </a>
+    </div>
+    <div class="blocks-header">
+            <a routerLink="/autorization" class="header-link block">
+                <div class="header-link auth-link">
                     <ul>
                         <li> <span>Войти</span></li>
                         <li><img src="../../assets/logo/autorization-logo.png" alt=""></li>
                     </ul>
-                   
-                    
-                </a>
-            </div>
+                </div>
+            </a>
+       </div>
+      
     </div>
-    
+
 </header>

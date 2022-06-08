@@ -14,6 +14,9 @@
     
     
 }
+h2 {
+    font-size: 25px;
+}
 .phone-support h2 {
     margin-top: 20px;
 }
@@ -32,7 +35,7 @@ a{
 .link{
     padding-top: 10px;
 }
-hr {width: 80%;}
+hr {width: 40%;}
 .block {
     width: 40%;
     
@@ -46,7 +49,9 @@ hr {width: 80%;}
 }
 p{
     margin-top: 20px;
+    font-size: 18px;
 }
+
 .contacs-blocks{
     display: flex;
     flex-direction: column

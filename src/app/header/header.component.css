@@ -13,10 +13,14 @@ img {
 	display: inline-block;
 	
 }
+.header-block{
+	margin-left: 40px;
+	margin-right: 40px;
 
+}
 .block {
-	margin-left: 20px;
-	margin-right: 75%;
+	
+	
 	height: 30px;
 	
 }
@@ -31,57 +35,60 @@ ul {
 	height: 20px;
 	width: 100px;
 }
-
-.auth-link ul  {
-	display: flex;
-	align-items: center;
-
-	justify-content: right;
+.auth-link {
+	margin-left:200%;
+	
+	float:none;
 }
+.blocks-header{
+	text-align: center;
+	display: inline;
+	}
+	.auth-link ul  {
+		display: flex;
+		align-items: center;
+	
+	
+	}
 .auth-link ul li {
 	display: inline-block;
 }
-span {
-	
+.insurance-block {
+	padding: 25px 15px 25px 15px;	
+}
+.insurance-block:hover{
+	background-color: #027157;
+	height: 100%;
 }
 
-@media all and (max-width: 1700px){
-	.block {
-		margin-right: 74%;
-	}
-}
-@media all and (max-width: 1600px){
-	.block {
-		margin-right: 70%;
-	}
-}
+
 @media all and (max-width: 1500px){
-	.block {
-		margin-right: 65%;
-	}
-@media all and (max-width: 1400px){
-	.block {
-		margin-right: 60%;
-	}
-}
-@media all and (max-width: 1300px){
-	.block {
-		margin-right: 55%;
-	}
-}
-@media all and (max-width: 950px){
 	.links {
 		visibility: hidden;
 	}
 }
-@media screen and (max-width: 950px) {
-	app-hamburger{
-		visibility: visible;
-	}
-  }
-  @media screen and (min-width: 950px) {
-	app-hamburger{
-		visibility: hidden;
-	}
-  }
+
+@media all and (max-width:1800px) {
+	.auth-link{
+		
+		margin-left:0;
+	
+ }	
+ @media all and (min-width:1920px) {
+	.auth-link{
+		margin-left: 0;
+	
+		
+	
+ }	}
+ @media all and (max-width:2300px) {
+	.auth-link{
+	
+		margin-left:0;
+	
+		
+	
+ }	}
+
+
 }

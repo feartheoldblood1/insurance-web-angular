@@ -29,6 +29,7 @@ import { OsagoFormComponent } from './osago-form/osago-form.component';
 import { MortgageComponent } from './mortgage/mortgage.component';
 import { KaskoFormComponent } from './kasko-form/kasko-form.component';
 import { ProfileComponent } from './profile/profile.component';
+import { InsuranceFraudComponent } from './insurance-fraud/insurance-fraud.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
   {path: 'mortgage', component: MortgageComponent},
   {path: 'kasko', component: KaskoFormComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'fraud', component: InsuranceFraudComponent},
 
 
   
@@ -69,7 +71,8 @@ const appRoutes: Routes = [
     OsagoFormComponent,
     MortgageComponent,
     KaskoFormComponent,
-    ProfileComponent
+    ProfileComponent,
+    InsuranceFraudComponent
   ],
   imports: [
     BrowserModule,

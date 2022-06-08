@@ -7,10 +7,12 @@ h3{
 }
 ul{
     float: left;
+    margin-right: 20px;
 }
 app-social-network{
-    float: left;
     margin-top: 5px;
+    float: right;
+   
 }
 li {
     list-style-type: none;
