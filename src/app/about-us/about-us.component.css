@@ -55,17 +55,29 @@ min-width: 10px;
 }
 
 .company-info{
-    text-align: center;
+    display: flex;
+   
+    flex-direction: row;
+    padding: 15px;
+
+    justify-content: center;
+   
 }
 .company-benefits{
-    width: 400px;
-    min-width: 50px;
+   
+    
+    max-height: 500px;
+    width: 20%;
+   
+    margin-bottom: 20px;
+ 
    border-radius: 15px;
-    margin-bottom: 30px;
-    border: 1px solid ;
-    display: inline-block;
+    padding: 15px;
     line-height: 1.5;
-    padding: 5px;
+    border: 1px solid ;
+    text-align: center;
+    
+
 }
 .company-benefits:hover {
     box-shadow: 2px 2px 2px #009e79;
