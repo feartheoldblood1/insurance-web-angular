@@ -3,7 +3,7 @@ header {
 	/*background: #5ebb2e;*/
 	background: #009e79;
 	height: 70px;
-	
+	text-align: center;
 	display: block;
 }
 img {
@@ -36,9 +36,10 @@ ul {
 	width: 100px;
 }
 .auth-link {
-	margin-left:200%;
+	
 	
 	float:none;
+	margin-left: 200px;
 }
 .blocks-header{
 	text-align: center;
