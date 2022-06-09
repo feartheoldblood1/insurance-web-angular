@@ -1,0 +1,43 @@
+.main {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+}
+form{
+    width: 20%;
+}
+.main-form {
+    
+    border: 1px solid #dcdcdc;
+    padding-left: 20px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+}
+.block{
+    display: inline;
+}
+label, input {
+    margin-bottom: 2px;
+    font-size: 16px;
+    display: block;
+}
+input {
+    border:1px solid #dcdcdc;
+    height: 25px;
+    width: 98%;
+}
+button {
+    border: 1px solid #909090;
+    background-color: #909090; 
+    color: white;
+    width: 200px;
+    font-size: 20px;
+    height: auto;
+}
+.btn {
+    margin-top: 5px;
+    text-align: center;
+}

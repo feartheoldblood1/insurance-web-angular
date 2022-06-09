@@ -26,7 +26,7 @@ h2 {
 .phone-support p {
     margin-top: 20px;
 }
-a{
+.main-block a{
     text-decoration: none;
     color: white;
     border: 1px solid #009e79;
@@ -59,3 +59,43 @@ p{
     display: flex;
     flex-direction: column
 }
+#main-header-info{
+    background-color: white;
+    display: block;
+    min-height: 100px;
+    text-align: center;
+}
+.links{ 
+    padding-top: 40px;
+}
+
+.links a{
+	color: black;
+	font-size: 24px;
+	margin-right: 20px;
+	text-decoration: none;
+	padding:10px;
+	display: inline-block;
+}
+.links a:hover{
+	color: white;
+	border-radius: 15px;
+	border: 1px solid #919097;
+	background-color: #919097;
+}
+.legalentity {
+    color: white;
+	border-radius: 15px;
+	border: 1px solid #919097;
+	background-color: #919097;
+}
+
+.links .legalentity {
+    color: white;
+}
+@media all and (max-width: 1500px){
+    #main-header-info{
+         display: none;
+     }
+     
+      }

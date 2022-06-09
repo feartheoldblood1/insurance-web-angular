@@ -30,6 +30,10 @@ import { MortgageComponent } from './mortgage/mortgage.component';
 import { KaskoFormComponent } from './kasko-form/kasko-form.component';
 import { ProfileComponent } from './profile/profile.component';
 import { InsuranceFraudComponent } from './insurance-fraud/insurance-fraud.component';
+import { JourneyComponent } from './journey/journey.component';
+import { LegalEntityComponent } from './legal-entity/legal-entity.component';
+import { AccidentComponent } from './accident/accident.component';
+import { LegalPropertyComponent } from './legal-property/legal-property.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
@@ -43,6 +47,9 @@ const appRoutes: Routes = [
   {path: 'kasko', component: KaskoFormComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'fraud', component: InsuranceFraudComponent},
+  {path: 'legal-entity', component: LegalEntityComponent},
+  {path: 'legal-property', component: LegalPropertyComponent},
+  {path: 'journey', component: JourneyComponent},
 
 
   
@@ -72,7 +79,11 @@ const appRoutes: Routes = [
     MortgageComponent,
     KaskoFormComponent,
     ProfileComponent,
-    InsuranceFraudComponent
+    InsuranceFraudComponent,
+    JourneyComponent,
+    LegalEntityComponent,
+    AccidentComponent,
+    LegalPropertyComponent
   ],
   imports: [
     BrowserModule,
