@@ -34,6 +34,7 @@ import { JourneyComponent } from './journey/journey.component';
 import { LegalEntityComponent } from './legal-entity/legal-entity.component';
 import { AccidentComponent } from './accident/accident.component';
 import { LegalPropertyComponent } from './legal-property/legal-property.component';
+import { AboutInsuranceComponent } from './about-insurance/about-insurance.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
   {path: 'legal-entity', component: LegalEntityComponent},
   {path: 'legal-property', component: LegalPropertyComponent},
   {path: 'journey', component: JourneyComponent},
+  {path: 'about-insurance', component: AboutInsuranceComponent},
 
 
   
@@ -83,7 +85,8 @@ const appRoutes: Routes = [
     JourneyComponent,
     LegalEntityComponent,
     AccidentComponent,
-    LegalPropertyComponent
+    LegalPropertyComponent,
+    AboutInsuranceComponent
   ],
   imports: [
     BrowserModule,

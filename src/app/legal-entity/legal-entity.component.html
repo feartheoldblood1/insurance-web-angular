@@ -1,18 +1,29 @@
 <div id="main-header-info">
     <div class="links">
-        <a routerLink="/" class="individuals">Частным лицам</a>  
-        <a routerLink="/legal-entity" class="legalentity">Юридическим лицам</a>    
-        <a routerLink="/about-us">О компании</a>     
-        <a routerLink="/contacts-page">Контакты</a>     
+        <a routerLink="/" class="individuals">Частным лицам</a>
+        <a routerLink="/legal-entity" class="legalentity">Юридическим лицам</a>
+        <a routerLink="/about-us">О компании</a>
+        <a routerLink="/contacts-page">Контакты</a>
     </div>
 </div>
-
+<!-- (mouseenter) = "!isShownText"
+(mouseleave) = "isShownText" -->
 <app-header></app-header>
-<div class="main">
-    <a href="/legal-property">
-        <div class="property-insurance">
-            <div>Страхование имущества юридических лиц</div>
-            </div>
+<div class="main" >
+    <h1>Купить страховку на имущество</h1>
+    <a href="/legal-property" 
+    >
+        <div class="property-insurance" >
+            <div class="head-text">Страхование имущества юридических лиц</div>
+         
+        </div>
     </a>
     
+        <div class="main-text" *ngIf="!isClicked">Страхование имущества обеспечивает финансовое возмещение владельцу или арендатору
+            строения и его содержимого в случае повреждения или кражи, а также лицу, не являющемуся владельцем или
+            арендатором, если это лицо травмировано на собственности. </div>
+            <div class="btn">
+                <button (click) = "onMouseHover()" >{{buttonText}}</button>
+            </div> 
+
 </div>

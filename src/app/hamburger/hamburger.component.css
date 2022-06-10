@@ -8,7 +8,7 @@
     transform: translateY(-171px);
     /*change here related your menu height*/
 }
-.body {height: 4000px}
+
 .main-content-wrapper a {
     width: 100%;
     height: 40px;
@@ -43,7 +43,7 @@ input[type=checkbox] {
     transition: all 0.3s;
     box-sizing: border-box;
     cursor: pointer;
-
+    width: 80%;
     z-index: 99;
     height: 100px;
     width: 40px;
@@ -107,7 +107,7 @@ input[type=checkbox]:checked~.sidebarIconToggle>.diagonal.part-2 {
 
 .menu {
     display: none;
-    width: 80%;
+    width: 100%;
     height: 100%;
     background-color: white;
     position: absolute;
@@ -118,18 +118,21 @@ input[type=checkbox]:checked~.sidebarIconToggle>.diagonal.part-2 {
 
 input[type=checkbox]:checked~.menu {
     display: block;
-
+    width: 80%;
 
 }
 
-a,li {
-    font-size: 30px;
-line-height: 1.5;
+li {
+    font-size: 19px;
+    line-height: 1.5;
     text-decoration: none;
     color:#4b4545;
     list-style-type: none;
     padding-left: 1%;
    
+}
+a {
+    text-decoration: none;
 }
 li{
     margin-left: 20%;
@@ -159,4 +162,12 @@ li{
        
     }
    
+}
+@media screen and (min-width: 500px) {
+    span {
+        font: 15px;
+    }
+    .main-content-wrapper a {
+        width: 100%;
+    }
 }

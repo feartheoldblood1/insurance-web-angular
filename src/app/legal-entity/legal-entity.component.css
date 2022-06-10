@@ -8,10 +8,13 @@
     text-align:center;
     width: 20%;
     text-decoration: none;
-    margin-top: 5%;
+    
+}
+h1 {
+    margin-top: 2%;
 }
 .property-insurance {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../../assets/legal-entity/insurance-property.png);
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../../assets/insurance-property.png);
     height: 250px;
     background-position: center;
     background-size: 100% 100%;
@@ -21,17 +24,18 @@
     color: white;
     font-size: 26px;
     line-height: 1.5;
+
 }
 .property-insurance div{
     margin-top: 35px;
 }
+.main-text{}
 .main a:hover {
   
-    background: #009e79;
     transition: 1.5s;
-    background-image: url();
-    color: white;
+    
     background-color: #009e79;
+   
 }
 #main-header-info{
     background-color: white;
@@ -50,6 +54,31 @@ color: black;
 	text-decoration: none;
 	padding:10px;
 	display: inline-block;
+}
+button{
+    margin-top:5px;
+    
+    font-size: 20px;
+    padding: 15px;
+    background-color: #85838b;
+    border: 1px solid #85838b;
+}
+.main-text {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+    line-height: 1.5;
+    border: 1px solid black;
+    color: black;
+    transition: 1.5 ease;
+    width: 19.35%;
+}
+.btn button{
+    margin-top: 5%;
+    padding:15px;
+   color: #fff;
 }
 .links a:hover{
 	color: white;
@@ -74,9 +103,23 @@ color: black;
  }
  @media all and (max-width: 1400px){
     .property-insurance{
-        
-        width: 300px;
+        width: 100%;
+        height: 150px;
         font-size: 16px;
         padding-top: 100px;
      }
+     .main-text {
+     
+     }
  }
+ @media all and (max-width: 1000px){
+    .property-insurance{
+        width: 100%;
+        height: 100px;
+        font-size: 16px;
+        padding-top: 100px;
+    font-size: 20px; 
+    }
+     
+ }
+

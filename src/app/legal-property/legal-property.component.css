@@ -1,5 +1,5 @@
 .main {
-    margin-top: 5%;
+    margin-top: 3%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,7 +7,7 @@
     
 }
 form{
-    width: 20%;
+    width: 30%;
 }
 .main-form {
     
@@ -33,11 +33,14 @@ button {
     border: 1px solid #909090;
     background-color: #909090; 
     color: white;
+ 
+    margin-bottom: 1%;
+    padding: 10px;
     width: 200px;
     font-size: 20px;
     height: auto;
 }
 .btn {
-    margin-top: 5px;
+    margin-top: 2%;
     text-align: center;
 }

@@ -8,8 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class LegalEntityComponent implements OnInit {
 
   constructor() { }
-
+  isClicked: boolean = true;
+  buttonText: string = 'Узнать больше'
   ngOnInit(): void {
+   
   }
-
+  onMouseHover():void{
+    this.isClicked = !this.isClicked;
+    if(!this.isClicked){
+      this.buttonText = 'Скрыть'
+    } else {
+      this.buttonText = 'Узнать больше'
+    }
+  
+  }
 }

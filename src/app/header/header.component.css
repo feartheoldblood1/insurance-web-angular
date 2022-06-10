@@ -61,6 +61,7 @@ ul {
 .insurance-block:hover{
 	background-color: #027157;
 	height: 100%;
+	transition: 1.5 ease;
 }
 
 
@@ -85,12 +86,9 @@ ul {
  }	}
  @media all and (max-width:2300px) {
 	.auth-link{
-	
 		margin-left:0;
-	
-		
-	
- }	}
+	}	
+}
  
 
 
