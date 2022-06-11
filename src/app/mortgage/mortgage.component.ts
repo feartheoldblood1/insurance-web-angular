@@ -64,36 +64,37 @@ export class MortgageComponent implements OnInit {
    propertyObj: string[] = ['Квартира/Апартаменты','Жилой дом']
    prObj = '';
   onSubmit (): void {
-    this.http.get("http://192.168.0.104:3000/ipoteka",{observe: 'response'})
-    .subscribe(response => {
-      if(response.status == 200){
-        this.ipotekaService.sendMsgToMail({bank:this._bank,
-           remains: this._remains,
-            insuranceObject: this._objectInsurance,
-             propertyHouse:this._propertyHouse,
-            name: this._name,
-            dateBirth: this._datebirth,
-            phoneNumber:this._phone,
-             email:this._email}).subscribe()
-        console.log(this._propertyHouse, 
-          this._bank,
-          this._datebirth, 
-          this._email,
-           this._remains,
-          this._name,
-           this._phone,
-           this._objectInsurance,
-            this._remains);
-        alert("Ваша заявка отправлена");
+    this.ipotekaService.sendMsgToMail({bank:this._bank,
+      remains: this._remains,
+       insuranceObject: this._objectInsurance,
+        propertyHouse:this._propertyHouse,
+       name: this._name,
+       dateBirth: this._datebirth,
+       phoneNumber:this._phone,
+        email:this._email}).subscribe()
+   console.log(this._propertyHouse, 
+     this._bank,
+     this._datebirth, 
+     this._email,
+      this._remains,
+     this._name,
+      this._phone,
+      this._objectInsurance,
+       this._remains);
+   alert("Ваша заявка отправлена");
+  //   this.http.get("https://insurance-web-college.herokuapp.com/ipoteka",{observe: 'response'})
+  //   .subscribe(response => {
+  //     if(response.status == 200){
+      
 
-      }   
-    }, error=>{
-      alert("Ошибка сервера");
-      console.log(error);
-    });
-  } catch(err:any) {
-    alert("Возникла ошибка регистрации попробуйте позже");
-    console.log(err)
+  //     }   
+  //   }, error=>{
+  //     alert("Ошибка сервера");
+  //     console.log(error);
+  //   });
+  // } catch(err:any) {
+  //   alert("Возникла ошибка регистрации попробуйте позже");
+  //   console.log(err)
   }
  
 

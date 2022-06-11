@@ -52,6 +52,7 @@ const appRoutes: Routes = [
   {path: 'legal-property', component: LegalPropertyComponent},
   {path: 'journey', component: JourneyComponent},
   {path: 'about-insurance', component: AboutInsuranceComponent},
+  {path: 'accident', component: AccidentComponent},
 
 
   
