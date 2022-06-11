@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { IpotekaControllerService } from './services/ipoteka-controller.service';
+import { JourneyControllerService } from './services/journey-controller.service';
 import { PingControllerService } from './services/ping-controller.service';
 import { UserControllerService } from './services/user-controller.service';
 
@@ -17,6 +18,7 @@ import { UserControllerService } from './services/user-controller.service';
   declarations: [],
   providers: [
     IpotekaControllerService,
+    JourneyControllerService,
     PingControllerService,
     UserControllerService,
     ApiConfiguration
