@@ -8,9 +8,10 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
   userData: string = 'A';
+  userName: string = 'Петр';
   constructor() { }
   @Input() user: string = '';
-
+  
   ngOnInit(): void {
 
   }

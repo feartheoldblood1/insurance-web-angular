@@ -59,6 +59,10 @@ button {
     padding: 5px;
 }
 
+.email {
+    width: 52%;
+align-items: center;
+    }
 .btn {
     margin-top: 5px;
     text-align: center;

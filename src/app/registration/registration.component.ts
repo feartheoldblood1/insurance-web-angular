@@ -74,7 +74,7 @@ export class RegistrationComponent implements OnInit {
   onSubmit(): void{
     try {
       
-      this.http.get("https://insurance-web-college.herokuapp.com/users",{observe: 'response'})
+      this.http.get("https://shielded-depths-97782.herokuapp.com/users",{observe: 'response'})
       .subscribe(response => {
         if(response.status == 200){
           this.userService.create({mail:this._email, phone_number: this._phone, password:this._password,

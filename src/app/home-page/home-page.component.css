@@ -1,4 +1,7 @@
 
+app-header{
+
+}
 #main-content{
     margin: 0 auto;
     max-width: 1920px;
@@ -11,6 +14,8 @@ hr {
 app-footer{
     width: 100%;
     background-color: #f4f4f2;
+    
+
 }
 
 @media all and (max-width: 1500px){

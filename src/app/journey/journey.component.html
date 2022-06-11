@@ -2,13 +2,13 @@
 
 </app-header>
 <div class="main">
-    <form>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <h1>Онлайн страхование путешественников</h1>
         <div class="main-form">
             
             <div class="block">
                 <label for="" class="header-name">Место путешествия</label>
-                <input type="text" placeholder="Введите страны которые хотите посетить">
+                <input type="text" placeholder="Введите страны которые хотите посетить"  formControlName="journeyPlace">
             </div>
            
             <div class="block"> 
@@ -20,9 +20,9 @@
                     <label >На одну поездку</label>
                  
                  
-                        <label for="" class="date-info">Начало:</label>
-                        <input type="date"> - 
-                        <label for="">Конец:</label>
+                        <label for="" class="date-info" >Начало:</label>
+                        <input type="date"  formControlName="startDate"> - 
+                        <label for=""  formControlName="endDate">Конец:</label>
                         <input type="date">
                
                     
@@ -37,21 +37,28 @@
                 <div class="tourist">
                     <label for="">Возраст:</label>
               
-                    <input type="radio" name="age" class="radio-inp"> 0 - 9
-                    <input type="radio" name="age" class="radio-inp"> 10 - 17
-                    <input type="radio" name="age" class="radio-inp"> 18 - 64
+                    <input type="radio" name="age" class="radio-inp"  formControlName="age"> 0 - 9
+                    <input type="radio" name="age" class="radio-inp"   formControlName="age"> 10 - 17
+                    <input type="radio" name="age" class="radio-inp"   formControlName="age"> 18 - 64
                 </div >
                 <div class=tourist>
                         <label for="">Гражданство:</label>
                    
-                        <input type="radio" name="citizenship" class="radio-inp"> РФ
-                        <input type="radio" name="citizenship" class="radio-inp"> не РФ
+                        <input type="radio" name="citizenship" class="radio-inp"   formControlName="citizenship"> РФ
+                        <input type="radio" name="citizenship" class="radio-inp" formControlName="citizenship"> не РФ
                     </div>
                
                 </div>
                
             </div>
-        
+            <div class="block">
+                <div class=tourist>
+                    <label for="">Ваша почта куда прислать полис</label>
+                    <input type="text" placeholder="Email" class="email" formControlName="email">
+                </div>
+                
+            
+            </div>
         </div>
         <div class="btn">
             <button>Оформить полис</button>
