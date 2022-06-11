@@ -12,18 +12,19 @@
             </div>
            
             <div class="block"> 
-                <div class="inner-block">
+                <div class="inner-block date-block" >
                     <div>
                         <label for="" class="header-name">Тип полиса </label>
                     </div>
            
-                    <label >На одну поездку</label>
-                 
-                 
-                        <label for="" class="date-info" >Начало:</label>
+                        <label >На одну поездку</label>
+                    <div class="date-inputs">
+                        <span><label for="" class="date-info" >Начало:</label></span>
                         <input type="date"  formControlName="startDate"> - 
-                        <label for=""  formControlName="endDate">Конец:</label>
-                        <input type="date">
+                        <label for="">Конец:</label>
+                        <input type="date"   formControlName="endDate">
+                    </div>
+                        
                
                     
                 </div>
@@ -37,15 +38,15 @@
                 <div class="tourist">
                     <label for="">Возраст:</label>
               
-                    <input type="radio" name="age" class="radio-inp"  formControlName="age"> 0 - 9
-                    <input type="radio" name="age" class="radio-inp"   formControlName="age"> 10 - 17
-                    <input type="radio" name="age" class="radio-inp"   formControlName="age"> 18 - 64
+                    <input type="radio" name="ageRange" class="radio-inp"  formControlName="ageRange" value="0 - 9"> 0 - 9
+                    <input type="radio" name="ageRange" class="radio-inp"   formControlName="ageRange" value="10 - 17"> 10 - 17
+                    <input type="radio" name="ageRange" class="radio-inp"   formControlName="ageRange" value="18 - 64"> 18 - 64
                 </div >
                 <div class=tourist>
                         <label for="">Гражданство:</label>
                    
-                        <input type="radio" name="citizenship" class="radio-inp"   formControlName="citizenship"> РФ
-                        <input type="radio" name="citizenship" class="radio-inp" formControlName="citizenship"> не РФ
+                        <input type="radio" name="citizenship" class="radio-inp"   formControlName="citizenship" value=" РФ"> РФ
+                        <input type="radio" name="citizenship" class="radio-inp" formControlName="citizenship" value="не РФ"> не РФ
                     </div>
                
                 </div>

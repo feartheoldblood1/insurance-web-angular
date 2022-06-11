@@ -3,7 +3,7 @@ import {UserControllerService} from '../api/services/user-controller.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-
+import { JourneyControllerService } from '../api/services';
 @Component({
   selector: 'app-journey',
   templateUrl: './journey.component.html',
@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class JourneyComponent implements OnInit {
   form: any;
-  constructor(private router: Router, private http:HttpClient, private journeyCon) { }
+  constructor(private router: Router, private http:HttpClient, private journeyService:JourneyControllerService) { }
   isClicked: boolean = true;
  
 
@@ -23,14 +23,13 @@ export class JourneyComponent implements OnInit {
       journeyPlace: new FormControl(null),
       startDate: new FormControl(null),
       endDate: new FormControl(null),
+      
       ageRange: new FormControl(null),
       citizenship: new FormControl(null),
       
    })
   }
-  changeDate():void{
-    this.isClicked = !this.isClicked;
-  }
+
 
   get _email():string {
     return this.form.get('email')?.value;
@@ -53,20 +52,26 @@ export class JourneyComponent implements OnInit {
     return this.form.get('citizenship')?.value;
   }
   onSubmit(): void{
-    try {
+    console.log(this.journeyService.sendMsgToMail({countries: this._journeyPlace,
+      dateStart: this._startDate, dateEnd: this._endDate,
+      ageRange: this._ageRange,citezenship: this._citizenship,
+      email: this._email
+         }).subscribe())
+    // try {
       
-      this.http.get("https://shielded-depths-97782.herokuapp.com/journey",{observe: 'response'})
-      .subscribe(response => {
-        if(response.status == 200){
+     
           
-        }   
-      }, error=>{
-        alert("Ошибка сервера");
-        console.log(error);
-      });
-    } catch(err:any) {
-      alert("Возникла ошибка регистрации попробуйте позже");
-      console.log(err)
-    }
+    //         this.http.get("https://shielded-depths-97782.herokuapp.com",{observe: 'response'})
+    //         .subscribe(response => {
+    //           if(response.status == 200){
+    //     }   
+    //   }, error=>{
+    //     alert("Ошибка сервера");
+    //     console.log(error);
+    //   });
+    // } catch(err:any) {
+    //   alert("Возникла ошибка регистрации попробуйте позже");
+    //   console.log(err)
+    // }
     } 
 }
