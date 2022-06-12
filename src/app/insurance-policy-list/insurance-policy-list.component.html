@@ -14,7 +14,7 @@
       (mouseenter) = "isShownIpoteka=false"
       (mouseleave) = "isShownIpoteka=true"
     >
-      <a href="/mortgage">
+      <a routerLink="/mortgage">
         <img src="../../assets/ipoteka.jpg" alt="">
         <p>Ипотека</p>
         <button [@showBtn] = "isShownIpoteka ? 'open' : 'closed'">Оформить</button>
@@ -24,7 +24,7 @@
     (mouseenter) = "isShownJourney=false"
     (mouseleave) = "isShownJourney=true"
     >
-      <a href="/journey">
+      <a routerLink="/journey">
         <img src="../../assets/journey.jpeg" alt="mountain">
         <p>Путешествия</p>
         <button [@showBtn] = "isShownJourney ? 'open' : 'closed'">Оформить</button>
@@ -35,7 +35,7 @@
     (mouseenter) = "isShownAccident=false"
       (mouseleave) = "isShownAccident=true"
     >
-      <a href="#">
+      <a routerLink="/accident">
         <img src="../../assets/accident.jpg" alt="">
         <p>Несчастный случай</p>
         <button [@showBtn] = "isShownAccident ? 'open' : 'closed'">Оформить</button>

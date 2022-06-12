@@ -23,20 +23,35 @@
 
 }
 .antivirus {
+    width: 100%;
+}
+.inner-antivirus{
+    background: linear-gradient( rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.8) ),
+    url(../../assets/bakteria.jpg);
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-color: #dcdcdc;
+  
     
 }
-
-.inner-antivirus{
-    background:linear-gradient( rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.8) ),
-    url(../../assets/bakteria.jpg);
-    background-size:auto;
-     background-repeat: no-repeat;
-     text-align: center;
-    background-color: #dcdcdc;
+.head-text{
+    padding-top: 30%;
+}
+.text h4 {
+    font-size: 25px;
+}
+.text {
+    font-size: 18px;
+}
+.main-text {
+    padding-bottom: 30%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 .text{
- padding-top: 50%;
-    
+    text-align: center;
 }
 
 .type-policy a{text-decoration: none;

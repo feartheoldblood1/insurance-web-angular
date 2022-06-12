@@ -10,7 +10,6 @@ import { HeaderComponent } from './header/header.component';
 import { InfoInsuranceComponent } from './info-insurance/info-insurance.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
-
 import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HeaderLinksComponent } from './header-links/header-links.component';
@@ -35,27 +34,26 @@ import { LegalEntityComponent } from './legal-entity/legal-entity.component';
 import { AccidentComponent } from './accident/accident.component';
 import { LegalPropertyComponent } from './legal-property/legal-property.component';
 import { AboutInsuranceComponent } from './about-insurance/about-insurance.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const appRoutes: Routes = [
+  
   {path: '', component: HomePageComponent},
-  {path: 'autorization', component: AuthorizationComponent},
-  {path: 'registration', component: RegistrationComponent},
+  {path: 'legal-entity', component: LegalEntityComponent},
   {path: 'osago-kasko', component: OsagoKaskoComponent},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'contacts-page', component: ContactsPageComponent},
-  {path: 'osago-form', component: OsagoFormComponent},
   {path: 'mortgage', component: MortgageComponent},
-  {path: 'kasko', component: KaskoFormComponent},
+  {path: 'journey', component: JourneyComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'fraud', component: InsuranceFraudComponent},
-  {path: 'legal-entity', component: LegalEntityComponent},
-  {path: 'legal-property', component: LegalPropertyComponent},
-  {path: 'journey', component: JourneyComponent},
   {path: 'about-insurance', component: AboutInsuranceComponent},
+  {path: 'kasko', component: KaskoFormComponent},
+  {path: 'osago-form', component: OsagoFormComponent},
+  {path: 'legal-property', component: LegalPropertyComponent},
+  {path: 'accident', component: AccidentComponent},
   {path: 'accident', component: AccidentComponent},
 
-
-  
 ];
 
 @NgModule({
