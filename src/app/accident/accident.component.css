@@ -6,7 +6,7 @@
     
 }
 .type-policy {
-    margin-top: 10%;
+    margin-top: 3%;
  
     background:url();
     display: flex;
@@ -16,17 +16,26 @@
 }
 .antivirus{
     
+    background-image: url(../../assets/bakteria.jpg);
 
-    align-items: center;
+       
     
 
 }
-.inner-antivirus{
-    text-align: center;
+.antivirus {
     
+}
+
+.inner-antivirus{
+    background:linear-gradient( rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.8) ),
+    url(../../assets/bakteria.jpg);
+    background-size:auto;
+     background-repeat: no-repeat;
+     text-align: center;
+    background-color: #dcdcdc;
 }
 .text{
-    width: 30%;
+ padding-top: 50%;
     
 }
 
