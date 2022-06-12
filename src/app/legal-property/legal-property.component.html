@@ -1,25 +1,25 @@
 <app-header></app-header>
 <div class="main">
-    <form action="">
+    <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="main-form">
         <div class="company-data">
             <h2>Запросить страховку на имущество предприятия</h2>
             
             <div class="block">
                 <label for="">Наименование</label>
-                <input type="text">
+                <input type="text" formControlName="companyName">
             </div>
             <div class="block">
                 <label for="">Адрес</label>
-                <input type="text">
+                <input type="text" formControlName="companyAddress">
             </div>
             <div class="block">
                 <label for="">ИНН</label>
-                <input type="text">
+                <input type="text" formControlName="INN>
             </div>
             <div class="block">
                 <label for="">Регион</label>
-                <input type="text">
+                <input type="text" formControlName="region>
             </div>
           
         </div>
@@ -31,28 +31,28 @@
                     <div class="block ">
     
                         <label for="">Фамилия</label>
-                        <input type="text">
+                        <input type="text" formControlName="surname>
                     </div>
                     <div class="block">
                         
                     <label for="">Имя</label>
-                    <input type="text">
+                    <input type="text" formControlName="name>
                     </div>
                     <div class="block">
                         <label for="">Отчество</label>
-                        <input type="text">
+                        <input type="text" formControlName="otchestvo>
                     </div>
                 </div>
                 <div class="contact-data">
                 <div class="block">
         
                     <label for="">Телефон</label>
-                    <input type="text">
+                    <input type="text" formControlName="phone">
                 </div>
              
                 <div class="block">
                     <label for="">E-mail</label>
-                    <input type="text">
+                    <input type="text" formControlName="email">
                 </div>
         
             </div>

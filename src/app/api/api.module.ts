@@ -6,6 +6,7 @@ import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { IpotekaControllerService } from './services/ipoteka-controller.service';
 import { JourneyControllerService } from './services/journey-controller.service';
+import { LegelentityControllerService } from './services/legelentity-controller.service';
 import { PingControllerService } from './services/ping-controller.service';
 import { UserControllerService } from './services/user-controller.service';
 
@@ -19,6 +20,7 @@ import { UserControllerService } from './services/user-controller.service';
   providers: [
     IpotekaControllerService,
     JourneyControllerService,
+    LegelentityControllerService,
     PingControllerService,
     UserControllerService,
     ApiConfiguration
