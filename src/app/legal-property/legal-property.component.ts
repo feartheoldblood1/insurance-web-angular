@@ -22,7 +22,7 @@ export class LegalPropertyComponent implements OnInit {
       name: new FormControl(null),
       otchestvo: new FormControl(null),
       phone: new FormControl(null),
-      email: new FormControl(null),
+    
   })
   
 }
@@ -63,4 +63,5 @@ onSubmit(): void{
     surname: this._surname,name: this._name,otchestvo: this._otchestvo,
     email: this._email, phone: this._phone
        }).subscribe())
+}
 }
