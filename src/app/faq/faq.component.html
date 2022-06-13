@@ -6,7 +6,7 @@
         </div>
 
         <div class="question" *ngIf="!isClicked" (click)="toggleQuestion()">Закрыть ответ
-             <div class="pointer">▲</div>
+            <div class="pointer">▲</div>
         </div>
 
         <div class=text *ngIf="!isClicked">
@@ -20,7 +20,7 @@
                     Зайти в личный кабинет страхователя на нашем сайте для потверждения личности;
                 </li>
                 <li>
-                    Нажать в главном меню сайта "Автострахование" и на появившейся странице выбрать на "оформить
+                    Нажать в главном меню сайта "Автострахование" и на появившейся странице выбрать "оформить
                     е-ОСАГО";
                 </li>
                 <li>
@@ -31,11 +31,11 @@
         </div>
 
         <div class="question" *ngIf="isClicked2Quest" (click)="toggleQuestion2()">Как заявить о страховом случае по
-            договору ОСАГО 
+            договору ОСАГО
             <div class="pointer">▼</div>
         </div>
 
-        <div class="question" *ngIf="!isClicked2Quest" (click)="toggleQuestion2()">Закрыть ответ 
+        <div class="question" *ngIf="!isClicked2Quest" (click)="toggleQuestion2()">Закрыть ответ
             <div class="pointer">▲
             </div>
         </div>
@@ -58,39 +58,63 @@
                     повреждение получено в результате ДТП).
                 </li>
             </ol>
-          
+
         </div>
 
-        <div class="question">Как проводиться экспертиза страхового случая
-             <div class="pointer">▼</div>
+        <div class="question" *ngIf="isClicked3Quest" (click)="toggleQuestion3()">Как проводиться экспертиза страхового
+            случая
+            <div class="pointer">▼</div>
+        </div>
+        <div class="question" *ngIf="!isClicked3Quest" (click)="toggleQuestion3()">Закрыть ответ
+            <div class="pointer">▲
+            </div>
+        </div>
+        <div class=text *ngIf="!isClicked3Quest">
+
+            Экспертиза страхового случая возникшего при автомобильной аварии проходит следующим образом:
+            <ol>
+                <li>Эксперт в присутствии вызовшего осматривает место происшествия, затем делает
+                    записи, фото и видео материалы, проводит измерения и забор материалов.</li>
+                <li> Определяется характер и причины наступления страхового случая. При этом используются специальные
+                    методики, материалы осмотра места происшествия и документы, выданные владельцу имущества
+                    уполномоченными службами (пожарными, полицией, аварийной службой и пр.); </li>
+                <li> Оценивается ущерб, то есть сумма затрат, необходимых для восстановления исходного (до наступления
+                    страхового случая) состояния имущества; </li>
+                <li>Составляется экспертное заключение.</li>
+            </ol>
+            <span> Экспертное заключение (отчёт) – результат исследований, в котором в установленной форме отражены все
+                этапы экспертизы и изложены выводы </span>
         </div>
 
-        <div class="question" *ngIf="isClicked4Quest" (click)="toggleQuestion4()">Какие документы требуются для страхования ипотеки
-             <div class="pointer">▼</div>
+
+        <div class="question" *ngIf="isClicked4Quest" (click)="toggleQuestion4()">Какие документы требуются для
+            страхования ипотеки
+            <div class="pointer">▼</div>
         </div>
 
-        <div class="question" *ngIf="!isClicked4Quest" (click)="toggleQuestion4()">Закрыть ответ 
+        <div class="question" *ngIf="!isClicked4Quest" (click)="toggleQuestion4()">Закрыть ответ
             <div class="pointer">▲
             </div>
         </div>
         <div class=text *ngIf="!isClicked4Quest">
-            
-            Для оформления страховки в страховую компанию предоставляются:  
+
+            Для оформления страховки в страховую компанию предоставляются:
             <ul>
-                <li>номер ипотечного договора;  </li>
-                <li> копия паспорта;  </li>
-                <li> заявление установленного образца;  </li>
-                <li> анкета.</li>
+                <li>Номер ипотечного договора; </li>
+                <li> Копия паспорта; </li>
+                <li> Заявление установленного образца; </li>
+                <li> Анкета.</li>
             </ul>
-            <span> В некоторых случаях страховщик может потребовать справку о состоянии здоровья, акт об оценке жилья, справки из БТИ и другие документы.  </span>
+            <span> В некоторых случаях страховщик может потребовать справку о состоянии здоровья, акт об оценке жилья,
+                справки из БТИ и другие документы. </span>
         </div>
-     
+
 
         <div class="question" *ngIf="isClicked5Quest" (click)="toggleQuestion5()">Что такое страхование ответственности
             <div class="pointer">▼</div>
 
         </div>
-        <div class="question" *ngIf="!isClicked5Quest" (click)="toggleQuestion5()">Закрыть ответ 
+        <div class="question" *ngIf="!isClicked5Quest" (click)="toggleQuestion5()">Закрыть ответ
             <div class="pointer">▲
             </div>
         </div>

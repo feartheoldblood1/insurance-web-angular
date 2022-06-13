@@ -10,6 +10,7 @@ export class FaqComponent implements OnInit {
   constructor() { }
   isClicked: boolean = true;
   isClicked2Quest: boolean = true;
+  isClicked3Quest: boolean = true;
   isClicked5Quest: boolean = true;
   isClicked4Quest: boolean = true;
   ngOnInit(): void {
@@ -23,6 +24,9 @@ export class FaqComponent implements OnInit {
   }
   toggleQuestion2():void{
     this.isClicked2Quest =!this.isClicked2Quest;
+  }
+  toggleQuestion3():void{
+    this.isClicked3Quest =!this.isClicked3Quest;
   }
   toggleQuestion4():void{
     this.isClicked4Quest =!this.isClicked4Quest;
