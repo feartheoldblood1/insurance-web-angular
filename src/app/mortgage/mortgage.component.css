@@ -77,10 +77,11 @@ select{
     background: #fff;
     color: #85838b;
 }
-@media screen and (max-width:375px) {
+@media screen and (max-width:471px) {
     .radio-object input {
         display: block;
     }
+   
 }
 @media screen and (min-width:1500px) {
     input, select{

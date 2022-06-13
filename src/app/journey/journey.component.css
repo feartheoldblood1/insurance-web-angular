@@ -90,11 +90,17 @@ align-items: center;
 .header-name {
     font-weight: 500;
 }
-@media all and (max-width:425px) {
+@media all and (max-width:560px) {
     .block input {
        
     }
-    .date-block input {
+    .tourist label {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media all and (max-width:484px) {
+    .date-block input{
         display: flex;
         flex-direction: column;
     }
