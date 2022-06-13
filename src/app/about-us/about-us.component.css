@@ -1,5 +1,6 @@
 app-header{
     text-align: center;
+    width: 100%;
 }
 .about-us {
     width: 100%;
@@ -8,6 +9,7 @@ app-header{
 hr {
     width: 80%;
 }
+
 h1{
     font-size: 30px;
 
@@ -126,4 +128,46 @@ min-width: 10px;
          display: none;
      }
      
+     .info-img{
+        width: 550px;
+      
+      
+    }
+      }
+      @media all and (max-width: 1320px) {
+        .info-img{
+            width: 450px;
+          
+          
+        }
+      }
+      @media all and (max-width: 1235px) {
+        .info-img{
+            width: 400px;
+          
+          
+        }
+      }
+      @media all and (max-width: 1000px) {
+        .main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .about-us{
+           
+           width: 50%;
+        }
+        .info-text{
+            width: 100%;
+        }
+        .info-img{
+            width: 460px;
+          
+          
+        }
+        .company-benefits {
+            font-size:14px;
+        }
       }
