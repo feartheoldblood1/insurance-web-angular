@@ -78,12 +78,18 @@ select{
     color: #85838b;
 }
 @media screen and (max-width:471px) {
-    .radio-object input {
-        display: block;
+    .radio-object {
+        display: flex;
+        flex-direction: row;
     }
+  
    
+    input{
+        width: 100%;
+    }
 }
 @media screen and (min-width:1500px) {
+    
     input, select{
        font-size: 17px;
        padding: 10px;
