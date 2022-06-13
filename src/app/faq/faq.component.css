@@ -60,3 +60,21 @@
         height: 50px;
     }
 }
+@media all and (max-width:1024px) {
+    .question {
+        width: 450px;
+
+    }
+}
+
+@media all and (max-width:324px) {
+    .question {
+        width: 225px;
+
+
+        height: 60px;
+    }
+    .text{
+        width:200px;
+    }
+}
