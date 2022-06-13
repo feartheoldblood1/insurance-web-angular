@@ -65,9 +65,21 @@
         width: 450px;
 
     }
+    .text{
+        width:400px;
+    }
+}
+@media all and (max-width:588px) {
+    .question {
+        width: 370px;
+
+    }
+    .text{
+        width:350px;
+    }
 }
 
-@media all and (max-width:324px) {
+@media all and (max-width:450px) {
     .question {
         width: 225px;
 
