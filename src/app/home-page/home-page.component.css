@@ -9,12 +9,13 @@ app-header{
     background-color: white;
 }
 hr {
+    margin-top: 100px;
     border: 1px solid #f6f8f9;
 }
 app-footer{
     width: 100%;
     background-color: #f4f4f2;
-    
+    padding-top: 300px;
 
 }
 
