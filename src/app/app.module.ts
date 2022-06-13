@@ -17,7 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
 import { OsagoKaskoComponent } from './osago-kasko/osago-kasko.component';
 import { SocialNetworkComponent } from './social-network/social-network.component';
-import { InsuranceCaseComponent } from './insurance-case/insurance-case.component';
+
 import { FaqComponent } from './faq/faq.component';
 import { MainImagePolicyComponent } from './main-image-policy/main-image-policy.component';
 import { HeaderInfoComponent } from './header-info/header-info.component';
@@ -72,7 +72,7 @@ const appRoutes: Routes = [
     RegistrationComponent,
     OsagoKaskoComponent,
     SocialNetworkComponent,
-    InsuranceCaseComponent,
+    
     FaqComponent,
     MainImagePolicyComponent,
     HeaderInfoComponent,
