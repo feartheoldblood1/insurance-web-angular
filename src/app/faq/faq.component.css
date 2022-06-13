@@ -74,7 +74,7 @@
 }
 @media all and (max-width:588px) {
     .question {
-        width: 370px;
+        width: 350px;
 
     }
     .text{
@@ -82,7 +82,7 @@
     }
 }
 
-@media all and (max-width:45px) {
+@media all and (max-width:450px) {
     .question {
         width: 225px;
 

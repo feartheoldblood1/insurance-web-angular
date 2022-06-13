@@ -52,19 +52,22 @@
   font-size: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #85838b;
+
+  
   margin-bottom: 5px;
   align-items: center;
   
 }
 .policy-block div {
-  border: 1px solid #85838b;
+  background-color: #9e9e9e;
+  border: 1px solid #9e9e9e;
   width: 50%;
+  color: #fff;
   padding: 15px;
 }
 .policy-block div:hover{
-  background-color: #85838b;
-  color: #fff;
+  background-color: #fff;
+  color: #85838b;
 }
 .policy-block {
 
@@ -104,6 +107,8 @@ a{
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-align: left;
+    
       
     }
     #insurance-policy  img {
