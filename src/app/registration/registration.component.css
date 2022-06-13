@@ -19,14 +19,18 @@ header{
 	margin-right: 20px;
 	text-decoration: none;
 }
-.btn button{
+.btn input[type=button]{
     background: #85838b;
     color: #fff;
     border: 1px solid #85838b;
-    padding: 10px;
+
     font-size:20px;
+	padding-bottom: 20px;
+	padding-bottom: 30px;
+	align-items: center;	
 }
-.btn :hover{
+
+.btn  input[type=button]:hover{
     background: #fff;
     color: #85838b;
 }

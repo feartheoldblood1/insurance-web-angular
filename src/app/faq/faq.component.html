@@ -1,44 +1,109 @@
-
 <div id="main-faq">
     <h3 id="title">Часто задаваемые вопросы</h3>
-<div id="quests">
-    <div class="question" *ngIf="isClicked" (click) = "toggleQuestion()">Как оформить Е-ОСАГО<div class="pointer">▼</div> </div>
-    <div class="question" *ngIf="!isClicked" (click) = "toggleQuestion()">Закрыть ответ <div class="pointer">▲</div></div>
-    <div class=text *ngIf="!isClicked">
-       <span>
-        Для заключения электронного договора ОСАГО владельцу транспортного средства необходимо осуществить следующие действия:
-       </span>
+    <div id="quests">
+        <div class="question" *ngIf="isClicked" (click)="toggleQuestion()">Как оформить Е-ОСАГО
+            <div class="pointer">▼</div>
+        </div>
 
-        <ul>
-            <li>
-                зайти в личный кабинет страхователя на сайте страховщика;
-        </li>
-        <li>
-            в личном кабинете страхователя заполнить заявление о заключении договора.
-        </li>
-    </ul>
-         
-</div>
-    <div class="question"  *ngIf="isClicked2Quest" (click) = "toggleQuestion2()">Как заявить о страховом случае <div class="pointer">▼</div> </div>
-    <div class="question" *ngIf="!isClicked2Quest" (click) = "toggleQuestion2()">Закрыть ответ <div class="pointer">▲</div></div>
-    <div class=text *ngIf="!isClicked2Quest">
-        <span>
-         Для заключения электронного договора ОСАГО владельцу транспортного средства необходимо осуществить следующие действия:
-        </span>
- 
-         <ul>
-             <li>
-                 зайти в личный кабинет страхователя на сайте страховщика;
-         </li>
-         <li>
-             в личном кабинете страхователя заполнить заявление о заключении договора.
-         </li>
-     </ul>
+        <div class="question" *ngIf="!isClicked" (click)="toggleQuestion()">Закрыть ответ
+             <div class="pointer">▲</div>
+        </div>
+
+        <div class=text *ngIf="!isClicked">
+            <span>
+                Для заключения электронного договора ОСАГО владельцу транспортного средства необходимо осуществить
+                следующие действия:
+            </span>
+
+            <ol>
+                <li>
+                    Зайти в личный кабинет страхователя на нашем сайте для потверждения личности;
+                </li>
+                <li>
+                    Нажать в главном меню сайта "Автострахование" и на появившейся странице выбрать на "оформить
+                    е-ОСАГО";
+                </li>
+                <li>
+                    Заполнить личные данные;
+                </li>
+            </ol>
+
+        </div>
+
+        <div class="question" *ngIf="isClicked2Quest" (click)="toggleQuestion2()">Как заявить о страховом случае по
+            договору ОСАГО 
+            <div class="pointer">▼</div>
+        </div>
+
+        <div class="question" *ngIf="!isClicked2Quest" (click)="toggleQuestion2()">Закрыть ответ 
+            <div class="pointer">▲
+            </div>
+        </div>
+
+        <div class=text *ngIf="!isClicked2Quest">
+            <span>
+
+                Чтобы заявить о страховом случае по договору ОСАГО необходимо:
+            </span>
+
+            <ol start="">
+                <li>
+                    Позвонить по номеру телефона нашей компании +7 903 806 43 47
+                </li>
+                <li>
+                    Сообщить необходимые данные - номер полиса и ФИО страхователя
+                </li>
+                <li>
+                    Сообщить дату происшествия, обстоятельства и характер повреждений, а также виновника ДТП (если
+                    повреждение получено в результате ДТП).
+                </li>
+            </ol>
           
- </div>
-    <div class="question">Как проводиться экспертиза страхового случая <div class="pointer">▼</div></div>
-    <div class="question">Какие документы требуются для страхования ипотеки <div class="pointer">▼</div></div>
-    <div class="question">Что такое страхование ответственности <div class="pointer">▼</div></div>
-</div>
+        </div>
+
+        <div class="question">Как проводиться экспертиза страхового случая
+             <div class="pointer">▼</div>
+        </div>
+
+        <div class="question" *ngIf="isClicked4Quest" (click)="toggleQuestion4()">Какие документы требуются для страхования ипотеки
+             <div class="pointer">▼</div>
+        </div>
+
+        <div class="question" *ngIf="!isClicked4Quest" (click)="toggleQuestion4()">Закрыть ответ 
+            <div class="pointer">▲
+            </div>
+        </div>
+        <div class=text *ngIf="!isClicked4Quest">
+            
+            Для оформления страховки в страховую компанию предоставляются:  
+            <ul>
+                <li>номер ипотечного договора;  </li>
+                <li> копия паспорта;  </li>
+                <li> заявление установленного образца;  </li>
+                <li> анкета.</li>
+            </ul>
+            <span> В некоторых случаях страховщик может потребовать справку о состоянии здоровья, акт об оценке жилья, справки из БТИ и другие документы.  </span>
+        </div>
+     
+
+        <div class="question" *ngIf="isClicked5Quest" (click)="toggleQuestion5()">Что такое страхование ответственности
+            <div class="pointer">▼</div>
+
+        </div>
+        <div class="question" *ngIf="!isClicked5Quest" (click)="toggleQuestion5()">Закрыть ответ 
+            <div class="pointer">▲
+            </div>
+        </div>
+        <div class=text *ngIf="!isClicked5Quest">
+            <span>
+                Страхование гражданской ответственности – это возможность застраховать вашу гражданскую ответственность
+                перед
+                лицами, которым может быть причинен вред по вашей вине при эксплуатации вашего имущества. Страхованием
+                покрывается гражданская ответственность, связанная с причинением вреда жизни, здоровью и/или имуществу
+                третьих лиц, в результате случаев, непреднамеренно возникших по вине лица, ответственность которого
+                застрахована.
+            </span>
+        </div>
+    </div>
 
 </div>

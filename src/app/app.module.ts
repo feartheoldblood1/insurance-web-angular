@@ -35,6 +35,7 @@ import { AccidentComponent } from './accident/accident.component';
 import { LegalPropertyComponent } from './legal-property/legal-property.component';
 import { AboutInsuranceComponent } from './about-insurance/about-insurance.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { VirusFormComponent } from './virus-form/virus-form.component';
 
 const appRoutes: Routes = [
   
@@ -52,7 +53,9 @@ const appRoutes: Routes = [
   {path: 'osago-form', component: OsagoFormComponent},
   {path: 'legal-property', component: LegalPropertyComponent},
   {path: 'accident', component: AccidentComponent},
-  {path: 'accident', component: AccidentComponent},
+  {path: 'autorization', component: AuthorizationComponent},
+  {path: 'registration', component: RegistrationComponent},
+  {path: 'virus', component: VirusFormComponent},
 
 ];
 
@@ -85,7 +88,8 @@ const appRoutes: Routes = [
     LegalEntityComponent,
     AccidentComponent,
     LegalPropertyComponent,
-    AboutInsuranceComponent
+    AboutInsuranceComponent,
+    VirusFormComponent
   ],
   imports: [
     BrowserModule,
