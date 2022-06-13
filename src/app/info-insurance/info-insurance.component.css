@@ -46,7 +46,7 @@
 }
 
 #cheating:hover {
-  transition: 1.5s;
+  transition: 1s;
   background-image: url();
   color: white;
   background-color: #009e79;
@@ -63,7 +63,7 @@
 }
 
 #insurance-service:hover{
-  transition: 1.5s;
+  transition: 1s;
   background-image: url();
   color: white;
   background-color: #009e79;
@@ -81,7 +81,7 @@
 }
 
 #dmc:hover{
-  transition: 1.5s;
+  transition: 1s;
   background-image: url();
   color: white;
   background-color: #009e79;
@@ -100,7 +100,7 @@
 
 #insurance-pension:hover{
   
-  transition: 1.5s;
+  transition: 1s;
   background-image: url();
   color: white;
   background-color: #009e79;

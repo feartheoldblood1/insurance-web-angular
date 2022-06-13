@@ -10,6 +10,12 @@
         <button [@showBtn] = "isShownCar ? 'open' : 'closed'" >Оформить</button>
       </a>
     </div>
+    <a routerLink="/osago-kasko" class="policy-block">
+      <div>
+        ОСАГО и КАСКО
+      </div>
+     
+    </a>
     <div class="policy"
       (mouseenter) = "isShownIpoteka=false"
       (mouseleave) = "isShownIpoteka=true"
@@ -19,7 +25,13 @@
         <p>Ипотека</p>
         <button [@showBtn] = "isShownIpoteka ? 'open' : 'closed'">Оформить</button>
       </a>
+
     </div>
+    <a routerLink="/mortgage" class="policy-block">
+      <div>
+        Ипотека
+      </div>
+    </a>
     <div class="policy"
     (mouseenter) = "isShownJourney=false"
     (mouseleave) = "isShownJourney=true"
@@ -30,7 +42,11 @@
         <button [@showBtn] = "isShownJourney ? 'open' : 'closed'">Оформить</button>
       </a>
     </div>
-
+    <a routerLink="/journey" class="policy-block">
+      <div>
+        Путешествия
+      </div>
+    </a>
     <div class="policy"
     (mouseenter) = "isShownAccident=false"
       (mouseleave) = "isShownAccident=true"
@@ -41,3 +57,8 @@
         <button [@showBtn] = "isShownAccident ? 'open' : 'closed'">Оформить</button>
       </a>
     </div>
+    <a routerLink="/accident" class="policy-block">
+      <div>
+        Несчастный случай
+      </div>
+    </a>
