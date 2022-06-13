@@ -48,7 +48,7 @@
 }
 .policy-block{
   display: none;
-
+  width: 100%;
   font-size: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -62,8 +62,9 @@
   width: 50%;
   padding: 15px;
 }
-.policy-block:hover{
+.policy-block div:hover{
   background-color: #85838b;
+  color: #fff;
 }
 .policy-block {
 
@@ -103,6 +104,7 @@ a{
       display: flex;
       flex-direction: column;
       align-items: center;
+      
     }
     #insurance-policy  img {
 
