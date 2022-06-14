@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="back"><a routerLink="/osago-kasko" >Вернуться </a></div>
 <div class="main">
-    <form action="">
+    <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="policy-info osago-info">
             <h1>Информация полиса</h1>
             <div class="policy-data">
@@ -9,7 +9,7 @@
                     <label for="">
                         Адрес регистрации собственника, как в паспорте
                     </label>
-                    <input type="text" >
+                    <input type="text" formControlName="addrRegistr">
                 </div>
               
               
@@ -28,22 +28,22 @@
                 <label>
                     Марка автомобиля
                 </label>
-                <input type="text">
+                <input type="text" formControlName="carMarka">
                 <label>
                     Год выпуска
                 </label>
-                <input type="text">
+                <input type="text" formControlName="dateCar">
             </div>
          
      
             <div class="car-info ">
                 <label>Модель и класс автомобиля</label>
-                <input type="text">
+                <input type="text" formControlName="classModelCar">
           
                 <label>
                     Объем двигателя
                 </label>
-                <input type="text">
+                <input type="text"formControlName="engine">
             </div>
         </div>
         <div>
@@ -53,12 +53,12 @@
         </div>
         <div class="bank-input"  *ngIf="!isClicked">
             <label for="">Банк, выдавший кредит </label>
-            <input type="text" value="Например, ВТБ">
+            <input type="text" value="Например, ВТБ" formControlName="bank">
         </div>
 
         <div class="bank-input">
             <label for="">Стоимость автомобиля (руб)</label>
-        <input type="text" >
+        <input type="text"formControlName="costCar" >
     </div>
          
         
@@ -70,12 +70,12 @@
                 <label for="">
                     Место использования автомобиля
                 </label>
-                <input type="text" >
+                <input type="text" formControlName="carPlace">
             </div>
             <label for="">Количество</label>  
             <div class="drivers-count">
                
-                <input type="radio" value="" name="rb2"><label for="">Неограниченно</label> 
+                <input type="radio" value="Неограниченно" name="rb2" formControlName="amountUsers"><label for="">Неограниченно</label> 
 
             </div>
         </div>
@@ -85,10 +85,10 @@
             <div class="contact-data">
                 <div>
                     <label for="">Имя</label>
-                    <input type="text" value="">
+                    <input type="text" value="" formControlName="name">
                 </div>
                 <div><label for="">Номер телефона</label>
-                    <input type="text" value=""></div>
+                    <input type="text" value="" formControlName="phone"></div>
             </div>
             </div>
           
