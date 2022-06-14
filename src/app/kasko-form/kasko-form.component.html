@@ -1,86 +1,101 @@
-
 <app-header></app-header>
-
+<div class="back"><a routerLink="/osago-kasko" >Вернуться </a></div>
 <div class="main">
     <form action="">
         <div class="policy-info osago-info">
             <h1>Информация полиса</h1>
             <div class="policy-data">
-                <label for="">
-                    Адрес регистрации собственника, как в паспорте
-                </label>
-                <input type="text">
+                <div class=input-address>
+                    <label for="">
+                        Адрес регистрации собственника, как в паспорте
+                    </label>
+                    <input type="text" >
+                </div>
+              
+              
+              
             </div>
+            
+        
 
 
         </div>
         <div class="transport-info osago-info">
+        <div class="main-car-info">
+             
             <h1>Транспортное средство</h1>
             <div class="car-info">
                 <label>
                     Марка автомобиля
                 </label>
                 <input type="text">
-                <label>Модель автомобиля</label>
-                <input type="text">
-            </div>
-            <div class="car-info">
                 <label>
-                    Год
+                    Год выпуска
                 </label>
                 <input type="text">
+            </div>
+         
+     
+            <div class="car-info ">
+                <label>Модель и класс автомобиля</label>
+                <input type="text">
+          
                 <label>
                     Объем двигателя
                 </label>
                 <input type="text">
             </div>
+        </div>
+        <div>
+            <label for="" class="auto-credit">Автомобиль в кредит</label>
+            <div class="btn-yes-no" (click)="onClick()" *ngIf="isClicked" >Да</div>
+            <div class="btn-yes-no" (click)="onClick()" *ngIf="!isClicked">Нет</div>
+        </div>
+        <div class="bank-input"  *ngIf="!isClicked">
+            <label for="">Банк, выдавший кредит </label>
+            <input type="text" value="Например, ВТБ">
+        </div>
+
+        <div class="bank-input">
+            <label for="">Стоимость автомобиля (руб)</label>
+        <input type="text" >
+    </div>
          
-            <div class="car-info">
-            
-            
-            <label>
-                Для каких целей
-            </label>
-            <input type="text">
-            <label>
-                Государственный номер
-            </label>
-            <input type="text">
-            </div> 
-            <div class="car-info">
-                <label> Регистрация зарубежом
-
-                </label>
-           
-                <input type="checkbox">
-                <label>
-                    Наличие прицепа
-                </label>
-                <input type="checkbox">
-            </div>
-            
-            <h3>
-                Идентификатор транспортного средства
-            </h3>
-            <label>
-                Тип
-            </label>
-            <select name="" id="">
-                <option value="VIN">VIN</option>
-                <option value="chassis">Номер шасси</option>
-                <option value=""></option>
-            </select>
+        
         </div>
+
         <div class="drivers osago-info">
-            <h1>Водители</h1>
-            Количество
+            <h1>Собственник и водители</h1>
+            <div class=input-address>
+                <label for="">
+                    Место использования автомобиля
+                </label>
+                <input type="text" >
+            </div>
+            <label for="">Количество</label>  
             <div class="drivers-count">
-                <input type="radio" value="" name="rb2"> Ограниченно
-                <input type="radio" value="" name="rb2"> Неограниченно
+               
+                <input type="radio" value="" name="rb2"><label for="">Неограниченно</label> 
 
             </div>
         </div>
-        <button>Отправить заявку на оформление полиса</button>
+        <div class="transport-info osago-info">
+            <h1>Контактные данные</h1>
+            <label>Для продолжения расчета укажите ваши контактные данные</label>
+            <div class="contact-data">
+                <div>
+                    <label for="">Имя</label>
+                    <input type="text" value="">
+                </div>
+                <div><label for="">Номер телефона</label>
+                    <input type="text" value=""></div>
+            </div>
+            </div>
+          
+        <div class="btn">
+            <button>Отправить заявку</button>
+        </div>
+       
     </form>
 
 </div>

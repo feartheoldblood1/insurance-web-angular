@@ -5,95 +5,138 @@
         <div class="policy-info osago-info">
             <h1>Информация полиса</h1>
             <div class="policy-data">
-                <label for="">
-                    Адрес регистрации собственника, как в паспорте
-                </label>
-                <input type="text">
-                <label for="">
-                    Дата начала страхования
-                </label>
-                <input type="date">
+                <div class=input-address>
+                    <label for="">
+                        Адрес регистрации собственника, как в паспорте
+                    </label>
+                    <input type="text" >
+                </div>
+                <div class=start-date>
+                    <label for="">
+                        Дата начала страхования
+                    </label>
+                    <input type="date">
+                </div>
+              
             </div>
             
             <label for="">Период страхования
             </label>
             <div class="dateinterval">
+              
+                <input type="radio" value="" name="rb1">
                 <label for="">Год</label>
+              
                 <input type="radio" value="" name="rb1">
                 <label for="">Транзит </label>
-                <input type="radio" value="" name="rb1">
-                <input type="radio" value="" name="rb1">
+                
             </div>
 
 
         </div>
         <div class="transport-info osago-info">
+        <div class="main-car-info">
+             
             <h1>Транспортное средство</h1>
             <div class="car-info">
                 <label>
                     Марка автомобиля
                 </label>
                 <input type="text">
-                <label>Модель автомобиля</label>
-                <input type="text">
-            </div>
-            <div class="car-info">
                 <label>
-                    Год
+                    Год выпуска
                 </label>
                 <input type="text">
+            </div>
+         
+     
+            <div class="car-info ">
+                <label>Модель и класс автомобиля</label>
+                <input type="text">
+          
                 <label>
                     Объем двигателя
                 </label>
                 <input type="text">
             </div>
+        </div>
+       
          
-            <div class="car-info">
-            
-            
-            <label>
-                Для каких целей
-            </label>
-            <input type="text">
-            <label>
-                Государственный номер
-            </label>
-            <input type="text">
-            </div> 
-            <div class="car-info">
-                <label> Регистрация зарубежом
-
-                </label>
-           
-                <input type="checkbox">
-                <label>
-                    Наличие прицепа
-                </label>
-                <input type="checkbox">
+         
+        
+            <div class="car-info car-info-checkboxes">
+                
+                
+               
             </div>
+            <div class="second-main-car-info">
+                
+         
+            <div class="gosnumber-purpose ">
+               
             
+                <label>
+                    Государственный номер
+                </label>
+                <input type="text">
+                
+                <label>
+                    Для каких целей
+                </label>
+                <input type="text">
+           
+              
+            </div>
+            <div class="gosnumber-purpose gos-purp-check car-info">
+                <div>
+                    <label>
+                        Наличие прицепа
+                    </label>
+                    <input type="checkbox">
+                    <label> Регистрация зарубежом
+                    
+                    </label>
+                    <input type="checkbox">
+            
+                </div>
+              
+                <div>
+              
+            </div>
+            </div>
+            </div> 
+          
             <h3>
                 Идентификатор транспортного средства
             </h3>
-            <label>
-                Тип
-            </label>
-            <select name="" id="">
-                <option value="VIN">VIN</option>
-                <option value="chassis">Номер шасси</option>
-                <option value=""></option>
-            </select>
+            <div class="VIN">
+                <!-- <label>
+                    Тип
+                </label> -->
+                <!-- <select name="" id="" placeholder="Выберите">
+                    <option value="" disabled>Выберете</option>
+                    <option value="VIN">VIN</option>
+                    <option value="chassis">Номер шасси</option>
+                    <option value="cusov">Номер кузова</option>
+                </select> -->
+              
+            </div>
+            <label for="">VIN номер</label>
+            <input type="text" value="" placeholder="">
         </div>
         <div class="drivers osago-info">
             <h1>Водители</h1>
-            Количество
+            <label for="">Количество</label>  
             <div class="drivers-count">
-                <input type="radio" value="" name="rb2"> Ограниченно
-                <input type="radio" value="" name="rb2"> Неограниченно
+               
+                <input type="radio" value="" name="rb2"><label for="">Неограниченно</label> 
 
             </div>
         </div>
-        <button>Отправить заявку на оформление полиса</button>
+        <div class="btn">
+            <button>Отправить заявку</button>
+        </div>
+       
     </form>
 
 </div>

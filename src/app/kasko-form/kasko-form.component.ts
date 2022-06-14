@@ -8,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class KaskoFormComponent implements OnInit {
 
   constructor() { }
-
+  isClicked: boolean = true;
   ngOnInit(): void {
+    
+  }
+  onClick():void{
+    this.isClicked=!this.isClicked;
   }
 
 }
