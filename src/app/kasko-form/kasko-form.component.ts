@@ -30,8 +30,8 @@ export class KaskoFormComponent implements OnInit {
        carPlace: new FormControl(null),
        amountUsers: new FormControl(null),
        name: new FormControl(null),
-       phoneNumber: new FormControl(null)
-     
+       phone: new FormControl(null)
+      
        
     })
   }
@@ -76,27 +76,32 @@ export class KaskoFormComponent implements OnInit {
   }
 
   onSubmit(): void{
-    try {
+    // try {
       
-      this.http.get("https://shielded-depths-97782.herokuapp.com/kaskoService",{observe: 'response'})
-      .subscribe(response => {
-        if(response.status == 200){
+    //   this.http.get("https://shielded-depths-97782.herokuapp.com/kasko",{observe: 'response'})
+    //   .subscribe(response => {
+    //     if(response.status == 200){
 
-          this.kaskoService.sendMsgToMail({registrAddress:this._addrRegistr, markaCar:this._carMarka,
-            markaModelClass:this._classModelCar, dateCar:this._dateCar,engineCapacity:this._engine,
-            bank:this._banke, carCost:this._costCar, carPlace:this._carPlace, userData:this._amountUsers,
+          this.kaskoService.sendMsgToMail({registrAddress:this._addrRegistr,
+             markaCar:this._carMarka,
+            markaModelClass:this._classModelCar,
+             dateCar:this._dateCar,
+             engineCapacity:this._engine,
+            bank:this._banke, carCost:this._costCar,
+             carPlace:this._carPlace,
+              userData:this._amountUsers,
             name:this._name, phone:this._phone
-          })
+          }).subscribe()
         }   
-      }, error=>{
-        alert("Ошибка сервера");
-        console.log(error);
-      });
-    } catch(err:any) {
-      alert("Возникла ошибка регистрации попробуйте позже");
-      console.log(err)
-    }
-  }
+    //   }, error=>{
+    //     alert("Ошибка сервера");
+    //     console.log(error);
+    //   });
+    // } catch(err:any) {
+    //   alert("Возникла ошибка регистрации попробуйте позже");
+    //   console.log(err)
+    // }
+  // }
 } 
 
 

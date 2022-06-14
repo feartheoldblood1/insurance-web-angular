@@ -72,26 +72,26 @@ export class RegistrationComponent implements OnInit {
     return this.form.get('documentSerie')?.value;
   }
   onSubmit(): void{
-    try {
+    // try {
       
-      this.http.get("https://shielded-depths-97782.herokuapp.com/users",{observe: 'response'})
-      .subscribe(response => {
-        if(response.status == 200){
+      // this.http.get("https://shielded-depths-97782.herokuapp.com/users",{observe: 'response'})
+      // .subscribe(response => {
+      //   if(response.status == 200){
           this.userService.create({mail:this._email, phone_number: this._phone, password:this._password,
             surname:this._surname, name:this._name, otchestvo:this._otchestvo, datebirth:this._datebirth,
             foreigner:this._foreigner,document:this._document, document_number:this._documentNumber,
             document_series:this._documentSerie}).subscribe()
-          alert("Вы успешно зарегистрировались");
-          this.router.navigate(['/autorization'])
-        }   
-      }, error=>{
-        alert("Ошибка сервера");
-        console.log(error);
-      });
-    } catch(err:any) {
-      alert("Возникла ошибка регистрации попробуйте позже");
-      console.log(err)
-    }
+        //   alert("Вы успешно зарегистрировались");
+        //   this.router.navigate(['/autorization'])
+        // }   
+    //   }, error=>{
+    //     alert("Ошибка сервера");
+    //     console.log(error);
+    //   });
+    // } catch(err:any) {
+    //   alert("Возникла ошибка регистрации попробуйте позже");
+    //   console.log(err)
+    // }
     } 
 
 
