@@ -64,7 +64,7 @@
             <label for="">Количество</label>  
             <div class="drivers-count">
                
-                <input type="checkbox" name="" id="" (click) = (toggleDrivers())><label for="">Без ограничений водителей</label>
+                <input type="checkbox" name="" id="" (click) = toggleDrivers()><label for="">Без ограничений водителей</label>
                
 
             </div>
@@ -108,9 +108,10 @@
         </div>
         <div *ngIf="{value: formulaAnswer} as formulaAnswer" >
             <div *ngIf="isClicked">
-               Место использования  * Категория ТС * Мощность * Период использования * Коэффициент безаварийной езды 
+               <div>Место использования  * Категория ТС * Мощность * </div> 
+               <div>* Период использования * Коэффициент безаварийной езды </div>
                
-               = {{(formulaAnswer.value).toString()}}
+              <div>Стоимость страховки: {{(formulaAnswer.value).toString()}} рублей</div>  
             </div>
         </div>
         <div class="btn" (click) = "toggleFormula(); onBuyBtn();" >

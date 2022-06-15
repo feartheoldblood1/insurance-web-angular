@@ -6,6 +6,11 @@ export type driver  = {
   experience: number,
   withoutAccident:number
 }
+export type policy  = {
+  id:number,
+  startDate: Date,
+  endDate: Date,
+}
 
 @Component({
   selector: 'app-osago-form',
@@ -26,6 +31,7 @@ export class OsagoFormComponent implements OnInit {
     { id: 1, age:18, experience: 1, withoutAccident:1}
     
   ];
+  osagoPolicy: policy = {id: 0, startDate: new Date('1970-01-01'), endDate: new Date('1970-01-08')};
   isBuyBtnClicked:boolean =false;
   formulaAnswer:number = 0;
   ngOnInit(): void {
@@ -84,19 +90,19 @@ get _withoutAccident():string {
     } else {
       this.formulaAnswer = mainPart;
     }
-    return this.formulaAnswer;
+    return Math.round(this.formulaAnswer);
   
   }
   onBuyBtn():void { 
-    this.isBuyBtnClicked = !this.isBuyBtnClicked;
+    this.isBuyBtnClicked = true;
    }
 
-  onSubmit():void {
+  onSubmit():number {
     let maxYearWithoutAccident = this.updateDrivers(this.drivers)
-    this.getSum(Number(this._transportType), Number(this._power), Number(this._period), Number(this._region), maxYearWithoutAccident)
+    return this.getSum(Number(this._transportType), Number(this._power), Number(this._period), Number(this._region), maxYearWithoutAccident)
   }
   toggleDrivers(): void {
-    this.isDriverClicked = !this.isDriverClicked;
+    this.isDriverClicked = !this.isBuyBtnClicked;
  
   }
   toggleFormula():void {
