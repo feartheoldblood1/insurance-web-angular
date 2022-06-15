@@ -68,11 +68,18 @@ export class MortgageComponent implements OnInit {
    propertyObj: string[] = ['Жизнь и здоровье','Недвижимость']
    prObj = '';
   onSubmit (): void {
-    if (this._liveHealth){
-        this.prObj = this.propertyObj[0]
+    if (this._liveHealth && this._liveHealth){
+      this.prObj = this.propertyObj[0]+' и ' + this.propertyObj[1]
+      
+    }
+    else if (  this._liveHealth) {
+      this.prObj = this.propertyObj[0]
     }
     else if(this._propertyHouse) {
       this.prObj = this.propertyObj[1]
+    }
+    else {
+      
     }
     this.ipotekaService.sendMsgToMail({bank:this._bank,
       remains: this._remains,

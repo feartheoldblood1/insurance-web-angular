@@ -10,11 +10,7 @@
     border: 1px solid #dcdcdc;
 }
 
-.gosnumber-purpose input {
-    width: 70%;
-    
 
-}
 label {
     margin-left: 5px;
 }
@@ -35,7 +31,7 @@ select {
     color: #111; 
     font-size: 15px; 
     padding: 10px; 
-    width: 190px; 
+   
 }
 label {
     font-size: 16px;
@@ -44,6 +40,11 @@ label {
     margin-top: 15px;
     width: 100%;
     text-align: center;
+}
+.carInfo select {
+    height: 40px;
+    width: 95%;
+    
 }
 .btn button{
     height: 35px;
@@ -55,11 +56,15 @@ label {
     font-size: 18px;
   
 }
+.carInfo {
+    display: block;
+  
+}
 h1{
     margin-top: 15px;
 }
 .btn button:hover{
-   background: #fff;
+    background: #fff;
     border: 1px solid #85838b;
     color: #85838b
 }
@@ -77,6 +82,7 @@ h1{
   
 
 }
+car
  input[type='radio'] {
    
  } 
@@ -92,7 +98,7 @@ h1{
 }
 .policy-data .input-address {
   
-    width: 66%;
+    width: 97%;
     display: flex;
     flex-direction: column;
 }
@@ -124,8 +130,8 @@ input {
  
     margin-top: 3%;
     display: flex;
-	flex-direction: row;
-	justify-content: center;
+	flex-direction: column;
+    align-items: center;
 	
 }
 @media all and (max-width:527px){

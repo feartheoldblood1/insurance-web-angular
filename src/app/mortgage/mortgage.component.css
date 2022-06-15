@@ -50,8 +50,17 @@ select{
     
     
 }
- span {
-        
+.infoObj select {
+    width: 48%;
+}
+.infoObj  input {
+    width: 35%;
+}
+.infoUser input {
+    width: 40%;
+}
+.selectInfo select {
+    width: 48%;
 }
 .radio-object input {
     margin: 0;

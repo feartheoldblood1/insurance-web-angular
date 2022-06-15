@@ -7,14 +7,14 @@
         <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="infoApartment infoObj">
                 <h2>Информация по ипотечному кредиту</h2>
-                <select placeholder="Банк-кредитор" formControlName="bank">
+                <select placeholder="Банк-кредитор" formControlName="bank" >
                     <option [ngValue]="null" value="" disabled selected>Банк-кредитор</option>
                     <option value="Сбербанк">Сбербанк</option>
                     <option value="Тинькофф">Тинькофф</option>
                     <option value="ВТБ">ВТБ</option>
                     <option value="АльфаБанк">АльфаБанк</option>
                 </select>
-                <input type="text" placeholder="Остаток долга, Р" formControlName="remains">
+                <input type="text" placeholder="Остаток долга, Р" formControlName="remains" class="dolg">
                 
                 <label for="">
                 <div class="title-apartment-obj">Что будет застраховано</div>
@@ -27,7 +27,7 @@
             </label>
                 <div class="selectInfo" >
                     <select name="" id="" formControlName="propertyObject">
-                    <option [ngValue]="null" disabled>Выберете недвижимость</option>
+                    <option [ngValue]="null" disabled>Выберите недвижимость</option>
                     <option  >Квартира/Апартаменты</option>
                     <option  >Жилой дом</option>
                     </select>
