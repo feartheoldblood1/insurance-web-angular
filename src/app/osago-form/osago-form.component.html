@@ -4,12 +4,18 @@
     <form action=""  [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="policy-info osago-info">
             <h1>Информация полиса</h1>
-            <div class="policy-data">
+            <div class="policy-data" class=carInfo>
                 <div class=input-address>
                     <label for="">
                         Место использования транспорта
                     </label>
-                    <input type="text" placeholder="Тверь">
+                    <select name="" id="" formControlName="region">
+                        <option value="1.40">Тверская область</option>
+                        <option value="1.56">Московская область</option>
+                        <option value="1.64">Санкт-Петербург</option>
+                        <option value="1.32">Кировская область</option>
+                        <option value="1.64">Новгородская область</option>
+                    </select>
                 </div>
               
 
@@ -73,21 +79,22 @@
                
 
             </div>
-            <div *ngIf="clickCount">
+            <div (click)="addUser()">
                 + Добавить водителя
             </div>
-            <div class="drivers-data">
+            <div class="drivers-data" *ngFor="let driver of drivers">
+                
                 <div class="driver-info">
                     <label for="">Возраст</label>
-                    <input type="text">
+                    <input type="text" value="{{driver.age}}">
                 </div>
                 <div class="driver-info">
                 <label for="">Стаж</label>
-                <input type="text">
+                <input type="text" value="{{driver.experience}}">
             </div>
             <div class="driver-info">
                 <label for=""> Сколько лет ездите без ДТП по своей вине?</label>
-                <input type="text">
+                <input type="text" value="{{driver.withoutAccident}}"> 
             </div>
               
                

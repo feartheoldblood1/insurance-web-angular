@@ -14,6 +14,7 @@ export class OsagoFormComponent implements OnInit {
   isClicked: boolean = false;
   drivers: {id:number, age:number, experience: number, withoutAccident:number}[] = [
     { id: 1, age: 18, experience: 5, withoutAccident:10},
+    
   ];
   formulaAnswer:number = 0;
   ngOnInit(): void {
@@ -21,11 +22,15 @@ export class OsagoFormComponent implements OnInit {
       transportType: new FormControl(null),
       power: new FormControl(null),
       period: new FormControl(null),
+      region: new FormControl(null),
   } )
   }
-  // addUser():void {
-  //   this.drivers.push({})
-  // }
+  addUser():void {
+    this.drivers.push({ id: 1, age: 18, experience: 5, withoutAccident:10})
+  }
+  get _region():string {
+    return this.form.get('region')?.value;
+  }
   get _transportType():string {
     return this.form.get('transportType')?.value;
   }
@@ -40,7 +45,8 @@ export class OsagoFormComponent implements OnInit {
     return this.formulaAnswer.toString();
   }
   onSubmit():void {
-    this.getSum(Number(this._period),Number(this._power),Number(this._transportType));
+    this.getSum(Number(this._period),Number(this._power),Number(this._transportType)*
+    Number(this._region));
   }
   toggleFormula():void {
     this.isClicked = true;
