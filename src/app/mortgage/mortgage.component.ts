@@ -41,7 +41,7 @@ export class MortgageComponent implements OnInit {
   get _remains():string {
     return this.form.get('remains')?.value;
   }
-  get _liveHealth():string {
+  get _liveHealth():boolean {
     return this.form.get('liveHealth')?.value;
   }
 
@@ -49,7 +49,7 @@ export class MortgageComponent implements OnInit {
     return this.form.get('propertyObject')?.value;
   }
   
-  get _objectInsurance():string {
+  get _objectInsurance():boolean {
     return this.form.get('objectInsurance')?.value;
   }
   get _email():string {
@@ -64,14 +64,20 @@ export class MortgageComponent implements OnInit {
   get _datebirth():string {
     return this.form.get('datebirth')?.value;
   }
-
-   propertyObj: string[] = ['Квартира/Апартаменты','Жилой дом']
+    
+   propertyObj: string[] = ['Жизнь и здоровье','Недвижимость']
    prObj = '';
   onSubmit (): void {
+    if (this._liveHealth){
+        this.prObj = this.propertyObj[0]
+    }
+    else if(this._propertyHouse) {
+      this.prObj = this.propertyObj[1]
+    }
     this.ipotekaService.sendMsgToMail({bank:this._bank,
       remains: this._remains,
-       insuranceObject: this._objectInsurance,
-        propertyHouse:this._propertyHouse,
+       insuranceObject: this.prObj,
+        propertyHouse: this._propertyHouse,
        name: this._name,
        dateBirth: this._datebirth,
        phoneNumber:this._phone,
@@ -83,7 +89,7 @@ export class MortgageComponent implements OnInit {
       this._remains,
      this._name,
       this._phone,
-      this._objectInsurance,
+      this.prObj,
        this._remains);
    alert("Ваша заявка отправлена");
   //   this.http.get("https://insurance-web-college.herokuapp.com/ipoteka",{observe: 'response'})
