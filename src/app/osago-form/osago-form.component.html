@@ -74,7 +74,12 @@
 
             </div>
         </div>
-        <div class="btn">
+        <div *ngIf="{value: formulaAnswer} as formulaAnswer">
+            <div *ngIf="isClicked">
+                {{formulaAnswer.value}}
+            </div>
+        </div>
+        <div class="btn" (click) = "toggleFormula()">
             <button>Отправить заявку</button>
         </div>
        
