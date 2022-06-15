@@ -92,9 +92,16 @@ car
  .main-car-info {
     width: 100%;
  }
+ .drivers-count
+ {
+    margin-bottom: 30px;
+ }
 .policy-data {
     display: flex;
     flex-direction: row;
+}
+.drivers-data  .driver-info{
+    display: inline-block;
 }
 .policy-data .input-address {
   

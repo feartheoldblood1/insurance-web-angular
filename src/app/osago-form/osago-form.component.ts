@@ -12,7 +12,9 @@ export class OsagoFormComponent implements OnInit {
   web3: any;
   accounts: Array<String> | undefined;
   isClicked: boolean = false;
- 
+  drivers: {id:number, age:number, experience: number, withoutAccident:number}[] = [
+    { id: 1, age: 18, experience: 5, withoutAccident:10},
+  ];
   formulaAnswer:number = 0;
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -21,6 +23,9 @@ export class OsagoFormComponent implements OnInit {
       period: new FormControl(null),
   } )
   }
+  // addUser():void {
+  //   this.drivers.push({})
+  // }
   get _transportType():string {
     return this.form.get('transportType')?.value;
   }
@@ -31,7 +36,7 @@ export class OsagoFormComponent implements OnInit {
     return this.form.get('period')?.value;
   }
   getSum(transportType: number, power: number, period: number):string {
-    this.formulaAnswer = transportType+power+period;
+    this.formulaAnswer = transportType*power*period;
     return this.formulaAnswer.toString();
   }
   onSubmit():void {

@@ -70,17 +70,36 @@
             <div class="drivers-count">
                
                 <input type="checkbox" name="" id=""><label for="">Без ограничений водителей</label>
-        
+               
 
+            </div>
+            <div *ngIf="clickCount">
+                + Добавить водителя
+            </div>
+            <div class="drivers-data">
+                <div class="driver-info">
+                    <label for="">Возраст</label>
+                    <input type="text">
+                </div>
+                <div class="driver-info">
+                <label for="">Стаж</label>
+                <input type="text">
+            </div>
+            <div class="driver-info">
+                <label for=""> Сколько лет ездите без ДТП по своей вине?</label>
+                <input type="text">
+            </div>
+              
+               
             </div>
         </div>
         <div *ngIf="{value: formulaAnswer} as formulaAnswer">
             <div *ngIf="isClicked">
-                {{formulaAnswer.value}}
+               Категория ТС * Мощность * Период использования = {{formulaAnswer.value}}
             </div>
         </div>
         <div class="btn" (click) = "toggleFormula()">
-            <button>Отправить заявку</button>
+            <button>Купить</button>
         </div>
        
     </form>
