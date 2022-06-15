@@ -7,8 +7,18 @@
         <div class="main-form">
             
             <div class="block">
-                <label for="" class="header-name">Место путешествия</label>
-                <input type="text" placeholder="Введите страны которые хотите посетить"  formControlName="journeyPlace">
+                <label for="" class="header-name">Место путешествия</label>  
+               
+                <select name="" id="" class="journeyPlace">
+                    <option [ngValue]="null" disabled selected value="">Выберете страну которую хотите посетить</option>
+                    <option  >Германия</option>
+                  
+                    <option  >Англия</option>
+                    <option  >Франция</option>
+                    <option  >Португалия</option>
+                    <option  >Япония</option>
+
+                </select>
             </div>
            
             <div class="block"> 
@@ -52,14 +62,7 @@
                 </div>
                
             </div>
-            <div class="block">
-                <div class=tourist>
-                    <label for="">Ваша почта куда прислать полис</label>
-                    <input type="text" placeholder="Email" class="email" formControlName="email">
-                </div>
-                
-            
-            </div>
+           
         </div>
         <div class="btn">
             <button>Оформить полис</button>

@@ -7,21 +7,27 @@
         <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="infoApartment infoObj">
                 <h2>Информация по ипотечному кредиту</h2>
-                <input type="text" placeholder="Банк-кредитор" formControlName="bank">
+                <select placeholder="Банк-кредитор" formControlName="bank">
+                    <option [ngValue]="null" value="" disabled selected>Банк-кредитор</option>
+                    <option value="">Сбербанк</option>
+                    <option value="">Тинькофф</option>
+                    <option value="">ВТБ</option>
+                    <option value="">АльфаБанк</option>
+                </select>
                 <input type="text" placeholder="Остаток долга, Р" formControlName="remains">
                 
                 <label for="">
                 <div class="title-apartment-obj">Что будет застраховано</div>
                 <div class="radio-object">
                    
-                        <input type="radio" name="objectInsurance" id="" formControlName="objectInsurance" value="Жизнь и здоровье"> <label>Жизнь и здоровье</label>
-                        <input type="radio" name="objectInsurance" id="" formControlName="objectInsurance" value="Недвижимость">  <label> Недвижимость</label>
+                        <input type="checkbox" name="liveHealth" id="" formControlName="liveHealth" value="Жизнь и здоровье"> <label>Жизнь и здоровье</label>
+                        <input type="checkbox" name="objectInsurance" id="" formControlName="objectInsurance" value="Недвижимость">  <label> Недвижимость</label>
                    
                 </div>
             </label>
                 <div class="selectInfo" >
                     <select name="" id="" formControlName="propertyObject">
-                        <option [ngValue]="null" disabled>Выберете недвижимость</option>
+                    <option [ngValue]="null" disabled>Выберете недвижимость</option>
                     <option  >Квартира/Апартаменты</option>
                     <option  >Жилой дом</option>
                     </select>

@@ -90,6 +90,12 @@ align-items: center;
 .header-name {
     font-weight: 500;
 }
+select{
+    height: 40px;
+    font-size: 18px;
+    color: #85838b;
+    padding-left: 5px;
+}
 @media all and (max-width:560px) {
     .block input {
        

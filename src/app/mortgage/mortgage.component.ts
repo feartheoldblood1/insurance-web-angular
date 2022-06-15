@@ -31,6 +31,7 @@ export class MortgageComponent implements OnInit {
       phoneNumber: new FormControl(null),
       name: new FormControl(null),
       datebirth: new FormControl(null),
+      liveHealth: new FormControl(null),
    })
   
   }
@@ -39,6 +40,9 @@ export class MortgageComponent implements OnInit {
   }
   get _remains():string {
     return this.form.get('remains')?.value;
+  }
+  get _liveHealth():string {
+    return this.form.get('liveHealth')?.value;
   }
 
   get _propertyHouse():string {

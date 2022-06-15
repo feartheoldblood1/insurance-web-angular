@@ -29,6 +29,7 @@ input,  select {
 }
 select{
     height: 50px;
+    width: 40%;
 }
 .infoApartment{
     margin-bottom: 20px;
