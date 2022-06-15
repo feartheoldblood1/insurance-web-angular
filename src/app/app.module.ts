@@ -36,6 +36,7 @@ import { LegalPropertyComponent } from './legal-property/legal-property.componen
 import { AboutInsuranceComponent } from './about-insurance/about-insurance.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { VirusFormComponent } from './virus-form/virus-form.component';
+import { PolicyOsagoComponent } from './policy-osago/policy-osago.component';
 
 const appRoutes: Routes = [
   
@@ -89,7 +90,8 @@ const appRoutes: Routes = [
     AccidentComponent,
     LegalPropertyComponent,
     AboutInsuranceComponent,
-    VirusFormComponent
+    VirusFormComponent,
+    PolicyOsagoComponent
   ],
   imports: [
     BrowserModule,
