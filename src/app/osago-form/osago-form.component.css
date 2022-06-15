@@ -46,6 +46,10 @@ label {
     width: 95%;
     
 }
+.driver-info select{
+    height: 40px;
+    width: 95%;
+}
 .btn button{
     height: 35px;
     padding: 5px;

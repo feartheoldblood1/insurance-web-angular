@@ -17,98 +17,108 @@
                         <option value="1.64">Новгородская область</option>
                     </select>
                 </div>
-              
-
-
         </div>
-      
-       
-         
         <div class=carInfo>
             <label for="">Категория ТС</label>
             <select name="" id=""formControlName="transportType">
-                <option value="0.5">Мотоциклы и мотороллеры</option>
-                <option value="0.75" selected>Легковые автомобили</option>
-                <option value="1">Легковые автомобили, используемые в качестве такси</option>
-                <option value="1.25">Грузовые автомобили (не более 16 т)</option>
-                <option value="1.50"> Грузовые автомобили (Более 16T) </option>
-                <option value="1.75"> Автобусы (Не более 16 пассажиромест) </option>
-                <option value="2">Троллейбусы </option>
-                <option value="2.25"> Трамваи</option>
-                <option value="2.5"> Трактора, самоходные дорожно-строительные машины</option>
+                <option value="438">Мотоциклы и мотороллеры</option>
+                <option value="1152" selected>Легковые автомобили</option>
+                <option value="2014">Легковые автомобили, используемые в качестве такси</option>
+                <option value="1572">Грузовые автомобили (не более 16 Т)</option>
+                <option value="1867"> Грузовые автомобили (Более 16 T) </option>
+                <option value="2367"> Автобусы (Не более 16 пассажиромест) </option>
+                <option value="2029">Троллейбусы </option>
+                <option value="1266"> Трамваи</option>
+                <option value="610"> Трактора, самоходные дорожно-строительные машины</option>
             </select>
         </div>
         <div class=carInfo>
             <label for=""> Мощность (л.с.)</label>
             <select name="" id="" formControlName="power">
-                <option value="0.7">до 50 включительно</option>
-                <option value="0.9">свыше 50 до 70 включительно</option>
+                <option value="0.6">до 50 включительно</option>
+                <option value="1.0">свыше 50 до 70 включительно</option>
                 <option value="1.1">свыше 70 до 100 включительно</option>
-                <option value="1.3">свыше 100 до 120 включительно</option>
-                <option value="1.5">свыше 120 до 150 включительно</option>
-                <option value="1.7">свыше 150</option>
+                <option value="1.2">свыше 100 до 120 включительно</option>
+                <option value="1.4">свыше 120 до 150 включительно</option>
+                <option value="1.6">свыше 150</option>
          
             </select>
         </div>
         <div class=carInfo>
             <label for="">Период использования</label>
             <select name="" id="" formControlName="period">
-                <option value="3">3 месяца</option>
-                <option value="4">4 месяца</option>
-                <option value="5">5 месяцев</option>
-                <option value="6">6 месяцев</option>
-                <option value="7">7 месяцев</option>
-                <option value="8">8 месяцев</option>
-                <option value="9">9 месяцев</option>
-                <option value="1.7">10 месяцев и более</option>
+                <option value="0.5">3 месяца</option>
+                <option value="0.6">4 месяца</option>
+                <option value="0.65">5 месяцев</option>
+                <option value="0.7">6 месяцев</option>
+                <option value="0,8">7 месяцев</option>
+                <option value="0.9">8 месяцев</option>
+                <option value="0.95">9 месяцев</option>
+                <option value="1">10 месяцев и более</option>
          
             </select>
         </div>
-      
-        
-          
-         
-       
         </div>
         <div class="drivers osago-info">
             <h1>Водители</h1>
             <label for="">Количество</label>  
             <div class="drivers-count">
                
-                <input type="checkbox" name="" id=""><label for="">Без ограничений водителей</label>
+                <input type="checkbox" name="" id="" (click) = (toggleDrivers())><label for="">Без ограничений водителей</label>
                
 
             </div>
+            <div *ngIf="isDriverClicked">
             <div (click)="addUser()">
                 + Добавить водителя
             </div>
+            
             <div class="drivers-data" *ngFor="let driver of drivers">
-                
-                <div class="driver-info">
+                <div>Водитель {{driver.id}} </div>
+                <div class="driver-info" >
                     <label for="">Возраст</label>
-                    <input type="text" value="{{driver.age}}">
+                    <input type="text" value="" formControlName="age">
                 </div>
                 <div class="driver-info">
                 <label for="">Стаж</label>
-                <input type="text" value="{{driver.experience}}">
+                <input type="text" value="" formControlName="experience">
             </div>
             <div class="driver-info">
                 <label for=""> Сколько лет ездите без ДТП по своей вине?</label>
-                <input type="text" value="{{driver.withoutAccident}}"> 
+                <select name="" id="" formControlName="withoutAccident">
+                    <option value="2.94">0</option>
+                    <option value="2.25">1</option>
+                    <option value="1.76">2</option>
+                    <option value="1.17">3</option>
+                    <option value="1.00">4</option>
+                    <option value="0.91">5</option>
+                    <option value="0.83">6</option>
+                    <option value="0.78">7</option>
+                    <option value="0.74">8</option>
+                    <option value="0.63">9</option>
+                    <option value="0.57">10</option>
+                    <option value="0.52">11</option>
+                    <option value="0.46">12</option>
+                </select>
+     
             </div>
               
-               
+        </div> 
             </div>
         </div>
-        <div *ngIf="{value: formulaAnswer} as formulaAnswer">
+        <div *ngIf="{value: formulaAnswer} as formulaAnswer" >
             <div *ngIf="isClicked">
-               Категория ТС * Мощность * Период использования = {{formulaAnswer.value}}
+               Место использования  * Категория ТС * Мощность * Период использования * Коэффициент безаварийной езды 
+               
+               = {{(formulaAnswer.value).toString()}}
             </div>
         </div>
-        <div class="btn" (click) = "toggleFormula()">
+        <div class="btn" (click) = "toggleFormula(); onBuyBtn();" >
+            <button>Рассчитать</button>
+        </div>
+        <div class="btn" *ngIf="isBuyBtnClicked">
             <button>Купить</button>
         </div>
-       
     </form>
 
 </div>
