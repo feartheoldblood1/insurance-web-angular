@@ -6,10 +6,15 @@ export type driver  = {
   experience: number,
   withoutAccident:number
 }
+export type Car = {
+    typeCar: string,
+    powerCar: number
+}
 export type policy  = {
-  id:number,
+  type: number,
   startDate: Date,
   endDate: Date,
+  object: Car,
 }
 
 @Component({
@@ -31,7 +36,7 @@ export class OsagoFormComponent implements OnInit {
     { id: 1, age:18, experience: 1, withoutAccident:1}
     
   ];
-  osagoPolicy: policy = {id: 0, startDate: new Date('1970-01-01'), endDate: new Date('1970-01-08')};
+ 
   isBuyBtnClicked:boolean =false;
   formulaAnswer:number = 0;
   ngOnInit(): void {
@@ -45,6 +50,7 @@ export class OsagoFormComponent implements OnInit {
       withoutAccident: new FormControl(null),
   } )
   }
+
 
   get _age():string {
       return this.form.get('age')?.value
@@ -82,6 +88,13 @@ get _withoutAccident():string {
   get _period():string {
     return this.form.get('period')?.value;
   }
+  osagoPolicy: policy = {
+    type: 1, startDate: new Date('1970-01-01'), endDate: new Date('1970-01-08'),
+    object: {
+      typeCar: 'Легковое',
+      powerCar: 0
+    }
+  };
 
   getSum(transportType: number, power: number, period: number, region:number, maxYearWithoutAccident:number):number {
     let mainPart:number = region*transportType*power*period;
