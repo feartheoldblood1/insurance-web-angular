@@ -102,7 +102,7 @@ get _withoutAccident():string {
     return this.getSum(Number(this._transportType), Number(this._power), Number(this._period), Number(this._region), maxYearWithoutAccident)
   }
   toggleDrivers(): void {
-    this.isDriverClicked = !this.isBuyBtnClicked;
+    this.isDriverClicked = !this.isDriverClicked;
  
   }
   toggleFormula():void {
