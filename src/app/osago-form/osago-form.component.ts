@@ -65,6 +65,19 @@ get _withoutAccident():string {
   addUser():void {
     this.drivers.push({ id: this.iterator++, age:18, experience: 1, withoutAccident:1})
   }
+  delUser(id: number): void {
+    this.drivers.splice(id, 1)
+    this.drivers.forEach((elem, indx) =>{
+      indx = id;
+      let difference = Number(this.drivers[this.drivers.length]) - Number(this.drivers[indx]);
+      if (difference > 2) {
+        this.drivers.splice(indx, difference)
+        elem.id -= difference
+      }
+    })
+       
+    
+  }
   findMax(drivers: driver []): number {
     return  drivers.reduce((acc, curr) => acc.withoutAccident > curr.withoutAccident ? acc : curr).withoutAccident;
   }

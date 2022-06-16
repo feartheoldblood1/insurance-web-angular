@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { InsurancePolicyListComponent } from './insurance-policy-list/insurance-policy-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { HeaderComponent } from './header/header.component';
 import { InfoInsuranceComponent } from './info-insurance/info-insurance.component';
 import { FooterComponent } from './footer/footer.component';
@@ -38,25 +38,29 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { VirusFormComponent } from './virus-form/virus-form.component';
 import { PolicyOsagoComponent } from './policy-osago/policy-osago.component';
 
+
 const appRoutes: Routes = [
+
+  { path: '', component: HomePageComponent },
+  { path: 'legal-entity', component: LegalEntityComponent },
+  { path: 'legal-property', component: LegalPropertyComponent },
+  { path: 'osago-kasko', component: OsagoKaskoComponent },
   
-  {path: '', component: HomePageComponent},
-  {path: 'legal-entity', component: LegalEntityComponent},
-  {path: 'osago-kasko', component: OsagoKaskoComponent},
-  {path: 'about-us', component: AboutUsComponent},
-  {path: 'contacts-page', component: ContactsPageComponent},
-  {path: 'mortgage', component: MortgageComponent},
-  {path: 'journey', component: JourneyComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'fraud', component: InsuranceFraudComponent},
-  {path: 'about-insurance', component: AboutInsuranceComponent},
-  {path: 'kasko', component: KaskoFormComponent},
-  {path: 'osago-form', component: OsagoFormComponent},
-  {path: 'legal-property', component: LegalPropertyComponent},
-  {path: 'accident', component: AccidentComponent},
-  {path: 'autorization', component: AuthorizationComponent},
-  {path: 'registration', component: RegistrationComponent},
-  {path: 'virus', component: VirusFormComponent},
+  { path: 'about', redirectTo:'/about-us', pathMatch:'full' },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'contacts-page', component: ContactsPageComponent },
+  { path: 'mortgage', component: MortgageComponent },
+  { path: 'journey', component: JourneyComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'fraud', component: InsuranceFraudComponent },
+  { path: 'about-insurance', component: AboutInsuranceComponent },
+  { path: 'kasko', component: KaskoFormComponent },
+  { path: 'osago-form', component: OsagoFormComponent },
+  { path: 'accident', component: AccidentComponent },
+  { path: 'autorization', component: AuthorizationComponent },
+  { path: 'registration', component: RegistrationComponent },
+  { path: 'virus', component: VirusFormComponent },
+  { path: '**', redirectTo:"/" },
 
 ];
 
@@ -73,7 +77,7 @@ const appRoutes: Routes = [
     RegistrationComponent,
     OsagoKaskoComponent,
     SocialNetworkComponent,
-    
+
     FaqComponent,
     MainImagePolicyComponent,
     HeaderInfoComponent,
@@ -102,6 +106,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
