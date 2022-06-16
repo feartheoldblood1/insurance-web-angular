@@ -41,7 +41,6 @@
                 <option value="1.2">свыше 100 до 120 включительно</option>
                 <option value="1.4">свыше 120 до 150 включительно</option>
                 <option value="1.6">свыше 150</option>
-         
             </select>
         </div>
         <div class=carInfo>
@@ -55,18 +54,14 @@
                 <option value="0.9">8 месяцев</option>
                 <option value="0.95">9 месяцев</option>
                 <option value="1">10 месяцев и более</option>
-         
             </select>
         </div>
         </div>
         <div class="drivers osago-info">
             <h1>Водители</h1>
             <label for="">Количество</label>  
-            <div class="drivers-count">
-               
-                <input type="checkbox" name="" id="" (click) = toggleDrivers()><label for="">Без ограничений водителей</label>
-               
-
+            <div class="drivers-count">   
+                <input type="checkbox" name="" id="" (click) = toggleDrivers()><label for="">С ограничением водителей</label>
             </div>
             <div *ngIf="isDriverClicked">
             <div (click)="addUser()">
@@ -100,9 +95,7 @@
                     <option value="0.52">11</option>
                     <option value="0.46">12</option>
                 </select>
-     
-            </div>
-              
+            </div>       
         </div> 
             </div>
         </div>
@@ -110,7 +103,6 @@
             <div *ngIf="isClicked">
                <div>Место использования  * Категория ТС * Мощность * </div> 
                <div>* Период использования * Коэффициент безаварийной езды </div>
-               
               <div>Стоимость страховки: {{(formulaAnswer.value).toString()}} рублей</div>  
             </div>
         </div>
