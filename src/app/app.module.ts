@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { InsurancePolicyListComponent } from './insurance-policy-list/insurance-policy-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { HeaderComponent } from './header/header.component';
 import { InfoInsuranceComponent } from './info-insurance/info-insurance.component';
 import { FooterComponent } from './footer/footer.component';
@@ -39,8 +39,10 @@ import { VirusFormComponent } from './virus-form/virus-form.component';
 import { PolicyOsagoComponent } from './policy-osago/policy-osago.component';
 import { DmcComponent } from './dmc/dmc.component';
 
+
 const appRoutes: Routes = [
-  
+
+
   {path: '', component: HomePageComponent},
   {path: 'legal-entity', component: LegalEntityComponent},
   {path: 'osago-kasko', component: OsagoKaskoComponent},
@@ -75,7 +77,7 @@ const appRoutes: Routes = [
     RegistrationComponent,
     OsagoKaskoComponent,
     SocialNetworkComponent,
-    
+
     FaqComponent,
     MainImagePolicyComponent,
     HeaderInfoComponent,
@@ -105,6 +107,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

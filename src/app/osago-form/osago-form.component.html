@@ -3,7 +3,7 @@
 <div class="main">
     <form action=""  [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="policy-info osago-info">
-            <h1>Информация полиса</h1>
+            <h1>Калькулятор ОСАГО</h1>
             <div class="policy-data" class=carInfo>
                 <div class=input-address>
                     <label for="">
@@ -64,11 +64,12 @@
                 <input type="checkbox" name="" id="" (click) = toggleDrivers()><label for="">С ограничением водителей</label>
             </div>
             <div *ngIf="isDriverClicked">
-            <div (click)="addUser()">
+            <div (click)="addUser()" style="cursor: pointer;">
                 + Добавить водителя
             </div>
             
             <div class="drivers-data" *ngFor="let driver of drivers">
+                <div style="cursor: pointer;" (click) =  "delUser(driver.id)">- Убрать водителя {{driver.id}} </div>
                 <div>Водитель {{driver.id}} </div>
                 <div class="driver-info" >
                     <label for="">Возраст</label>
