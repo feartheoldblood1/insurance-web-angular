@@ -89,11 +89,7 @@ a{
     width: 200px;
     
   }
-  .policy:hover{
-    width: 210px;
-    margin-bottom: 2.5px;
-    transition: 2s;
-  }
+
   @media all and (max-width:505px){
     .policy {
       width: 150px;
@@ -116,6 +112,22 @@ a{
     }
     
   }
+}
+@media all and (max-width:768px) {
+  .policy-block div:hover {
+    background-color: #fff;
+    color: #85838b;
+  }
+  .policy:hover{
+    width: 280px;
+    height: 335px;
+   
+ 
+  }
+  #insurance-policy  img {
+
+  }
+  
 }
  
 

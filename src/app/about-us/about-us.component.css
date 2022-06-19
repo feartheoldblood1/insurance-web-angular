@@ -134,7 +134,7 @@ min-width: 10px;
       
     }
       }
-      @media all and (max-width: 1320px) {
+      @media all and (max-width: 1370px) {
         .info-img{
             width: 450px;
           
@@ -173,6 +173,12 @@ min-width: 10px;
             text-align: left;
         }
       }
+      @media all and (max-width: 800px){
+        .info-img {
+            width: 120%;
+            
+        }
+       }
       @media all and (max-width: 425px){
         .info-img {
             width: 200px;

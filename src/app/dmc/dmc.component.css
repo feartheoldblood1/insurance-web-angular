@@ -47,7 +47,13 @@ app-footer{
 }
 .text-cheating-image{
     margin-top: 400px;
-    color: white;   
+    color: white;  
+
+            font-size: 10px;
+            padding:0;
+         
+   
+
 }
 .image .text-cheating-image{
     font-size: 50px;
@@ -67,14 +73,15 @@ p {
 @media all and (max-width:1400px){
     .info {
         width: 60%;
-        margin-left: 25%;
+
     }
 }
-@media all and (min-width:1400px){
-    .text-cheating-image {
-        font-size: 10px;
-        padding:0;
-     
+@media all and (max-width:1350px){
+    .info {
+        margin-top: 10%;
+    }
+    .image {
+        display: none;
     }
 }
 @media all and (max-width:900px){

@@ -34,3 +34,7 @@ app-footer{
     #main-content {
         width: 100%;
      } }
+     
+     @media all and (max-width: 768px){
+
+     }
