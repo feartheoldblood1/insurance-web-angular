@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, MaxLengthValidator, Validators } from '@angular/forms';
 import { elementAt } from 'rxjs';
+import {OsagoControllerService} from '../api/services/osago-controller.service';
 export type driver = {
   id: number,
   age: number
@@ -29,12 +30,13 @@ export class OsagoFormComponent implements OnInit {
   form: any;
   formBuy: any;
   isFormBuyClicked = false;
-  constructor() { }
+  constructor(private osagoService: OsagoControllerService) { }
   web3: any;
   accounts: Array<String> | undefined;
   isClicked: boolean = false;
   isDriverClicked: boolean = false;
   iterator: number = 2;
+  isChangable: boolean = false;
   places: any[] = [
     { nameRegion: "Тверская область", koef: 1.40 },
     { nameRegion: "Московская область", koef: 1.56 },
@@ -79,7 +81,7 @@ export class OsagoFormComponent implements OnInit {
       carMarka: new FormControl(null),
       classModelCar: new FormControl(null),
       dateCar: new FormControl(null),
-      engine: new FormControl(null),
+
  
       carPlace: new FormControl(null),
      
@@ -112,9 +114,8 @@ export class OsagoFormComponent implements OnInit {
     });
     return this.powerName;
   }
-  get _age(): string {
-    return this.form.get('age')?.value
-  }
+
+
 
   get _experience(): string {
     return this.form.get('experience')?.value
@@ -134,6 +135,33 @@ export class OsagoFormComponent implements OnInit {
   get _period(): string {
     return this.form.get('period')?.value;
   }
+
+
+
+  get _name():string {
+    return this.formBuy.get('name')?.value;
+  }
+  get _phone():string {
+    return this.formBuy.get('phone')?.value;
+  }
+  get _addrRegistr():string {
+    return this.formBuy.get('addrRegistr')?.value;
+  }
+  get _carMarka():string {
+    return this.formBuy.get('carMarka')?.value;
+  }
+  get _classModelCar():string {
+    return this.formBuy.get('classModelCar')?.value;
+  }
+  get _dateCar():string {
+    return this.formBuy.get('dateCar')?.value;
+  }
+ 
+ 
+  get _carPlace():string {
+    return this.formBuy.get('carPlace')?.value;
+  }
+  
   addUser(): void {
     this.drivers.push({ id: this.iterator++, age: 18, experience: 1, withoutAccident: 1 })
   }
@@ -196,6 +224,17 @@ export class OsagoFormComponent implements OnInit {
     this.isFormBuyClicked = !this.isFormBuyClicked;
   }
   onSubmitFormBuy(): void {
-
-  }
+    this.osagoService.sendMsgToMail({
+      registrAddress:this._addrRegistr,
+      markaCar:this._carMarka,
+     markaModelClass:this._classModelCar,
+      dateCar:this._dateCar,
+      engineCapacity:this.powerName.toString(),
+      carPlace:this.regionName.toString(),
+     
+     name:this._name,
+      phone:this._phone
+   }).subscribe()
+ }   
+  
 }

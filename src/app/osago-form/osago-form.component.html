@@ -132,7 +132,7 @@
     <div *ngIf="isFormBuyClicked" class="policy-price-data" style="width:29%; margin-bottom:5px; margin-left:15px;">
         Стоимость полиса: {{((this.formulaAnswer)).toFixed(2)}} рублей
     </div>
-    <form action="" [formGroup]="formBuy" *ngIf="isFormBuyClicked">
+    <form action="" [formGroup]="formBuy" *ngIf="isFormBuyClicked" (ngSubmit)="onSubmitFormBuy()">
 
         <div class="buy-osago">
 
@@ -172,7 +172,7 @@
                         <label>
                             Объем двигателя
                         </label>
-                        <div style="border: 1px solid #dcdcdc; margin-left:5px; width:75%; font-size:15px; margin-top:5px; padding: 5px;height: 25px;">
+                        <div  style="border: 1px solid #dcdcdc; margin-left:5px; width:75%; font-size:15px; margin-top:5px; padding: 5px;height: 25px;">
                             {{ this.powerName}}</div>
                     </div>
                 </div>
@@ -185,7 +185,7 @@
                     <label for="">
                         Место использования автомобиля
                     </label>
-                    <div style="border: 1px solid #dcdcdc; margin-left:5px; width:55%; font-size:15px; margin-top:5px; padding: 5px;">
+                    <div  style="border: 1px solid #dcdcdc; margin-left:5px; width:55%; font-size:15px; margin-top:5px; padding: 5px;">
                         {{ this.regionName}}</div>
                 </div>
 
