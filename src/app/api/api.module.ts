@@ -8,6 +8,7 @@ import { IpotekaControllerService } from './services/ipoteka-controller.service'
 import { JourneyControllerService } from './services/journey-controller.service';
 import { KaskoControllerService } from './services/kasko-controller.service';
 import { LegelentityControllerService } from './services/legelentity-controller.service';
+import { OsagoControllerService } from './services/osago-controller.service';
 import { PingControllerService } from './services/ping-controller.service';
 import { UserControllerService } from './services/user-controller.service';
 
@@ -23,6 +24,7 @@ import { UserControllerService } from './services/user-controller.service';
     JourneyControllerService,
     KaskoControllerService,
     LegelentityControllerService,
+    OsagoControllerService,
     PingControllerService,
     UserControllerService,
     ApiConfiguration
