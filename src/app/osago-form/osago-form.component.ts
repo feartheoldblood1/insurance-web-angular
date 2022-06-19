@@ -26,6 +26,8 @@ export type policy  = {
 
 export class OsagoFormComponent implements OnInit {
   form:any;
+  formBuy: any;
+  isFormBuyClicked = false;
   constructor() { }
   web3: any;
   accounts: Array<String> | undefined;
@@ -65,16 +67,23 @@ get _withoutAccident():string {
   addUser():void {
     this.drivers.push({ id: this.iterator++, age:18, experience: 1, withoutAccident:1})
   }
-  delUser(id: number): void {
-    this.drivers.splice(id, 1)
-    this.drivers.forEach((elem, indx) =>{
-      indx = id;
-      let difference = Number(this.drivers[this.drivers.length]) - Number(this.drivers[indx]);
-      if (difference > 2) {
-        this.drivers.splice(indx, difference)
-        elem.id -= difference
-      }
-    })
+  delUser(): void {
+    if (this.iterator >= 2) {
+      this.drivers.pop()
+ 
+    } 
+    this.iterator = 2;
+   
+
+    // this.drivers.splice(id, 1)
+    // this.drivers.forEach((elem, indx) =>{
+    //   indx = id;
+    //   let difference = Number(this.drivers[this.drivers.length]) - Number(this.drivers[indx]);
+    //   if (difference > 2) {
+    //     this.drivers.splice(indx, difference)
+    //     elem.id -= difference
+    //   }
+    // })
        
     
   }
@@ -116,7 +125,7 @@ get _withoutAccident():string {
     } else {
       this.formulaAnswer = mainPart;
     }
-    return Math.round(this.formulaAnswer);
+    return Math.ceil(this.formulaAnswer);
   
   }
   onBuyBtn():void { 
@@ -134,5 +143,10 @@ get _withoutAccident():string {
   toggleFormula():void {
     this.isClicked = true;
   }
-  
+  clickedForm():void{
+    this.isFormBuyClicked = !this.isFormBuyClicked;
+  }
+  onSubmitFormBuy():void {
+
+  }
 }

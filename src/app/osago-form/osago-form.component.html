@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="back"><a routerLink="/osago-kasko" >Вернуться </a></div>
 <div class="main">
-    <form action=""  [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form action=""  [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!isFormBuyClicked" >
         <div class="policy-info osago-info">
             <h1>Калькулятор ОСАГО</h1>
             <div class="policy-data" class=carInfo>
@@ -67,9 +67,9 @@
             <div (click)="addUser()" style="cursor: pointer;">
                 + Добавить водителя
             </div>
-            
+            <div style="cursor: pointer;" (click) =  "delUser()">- Убрать водителя  </div>
             <div class="drivers-data" *ngFor="let driver of drivers">
-                <div style="cursor: pointer;" (click) =  "delUser(driver.id)">- Убрать водителя {{driver.id}} </div>
+                
                 <div>Водитель {{driver.id}} </div>
                 <div class="driver-info" >
                     <label for="">Возраст</label>
@@ -101,9 +101,10 @@
             </div>
         </div>
         <div *ngIf="{value: formulaAnswer} as formulaAnswer" >
-            <div *ngIf="isClicked">
-               <div>Место использования  * Категория ТС * Мощность * </div> 
+            <div *ngIf="isClicked" class="policy-price-data">
+               <div>Формула расчета ОСАГО = Место использования  * Категория ТС * Мощность * </div> 
                <div>* Период использования * Коэффициент безаварийной езды </div>
+               <br>
               <div>Стоимость страховки: {{(formulaAnswer.value).toString()}} рублей</div>  
             </div>
         </div>
@@ -111,8 +112,104 @@
             <button>Рассчитать</button>
         </div>
         <div class="btn" *ngIf="isBuyBtnClicked">
-            <button>Купить</button>
+            <button (click)="clickedForm();">Купить полис</button>
         </div>
+      
+       
     </form>
-
+    <div class="btn" *ngIf="isFormBuyClicked" >
+        <button (click)="clickedForm()">Обратно к расчету</button>
+    </div>
+    <div *ngIf="isFormBuyClicked" class="policy-price-data">
+        Стоимость полиса: {{this.formulaAnswer}} рублей
+    </div>
+    <form action="" [formGroup]="formBuy"  *ngIf="isFormBuyClicked">
+      
+        <div class="buy-osago">
+          
+        <div class="policy-info osago-info">
+            <h1>Заполните данные</h1>
+            <div class="policy-data">
+                <div class=input-address>
+                    <label for="">
+                        Адрес регистрации собственника, как в паспорте
+                    </label>
+                    <input type="text" formControlName="addrRegistr">
+                </div>
+              
+              
+              
+            </div>
+            
+        
+    
+    
+        </div>
+        <div class="transport-info osago-info">
+        <div class="main-car-info">
+           
+            <h1>Транспортное средство</h1>
+            <div class="car-info">
+                <label>
+                    Марка автомобиля
+                </label>
+                <input type="text" formControlName="carMarka">
+                <label>
+                    Год выпуска
+                </label>
+                <input type="text" formControlName="dateCar">
+            </div>
+         
+     
+            <div class="car-info ">
+                <label>Модель и класс автомобиля</label>
+                <input type="text" formControlName="classModelCar">
+          
+                <label>
+                    Объем двигателя
+                </label>
+                <input type="text"formControlName="engine">
+            </div>
+        </div>
+      
+    
+    
+        <div class="bank-input">
+            <label for="">Стоимость автомобиля (руб)</label>
+        <input type="text"formControlName="costCar" >
+    </div>
+         
+        
+        </div>
+    
+        <div class="drivers osago-info">
+            <h1>Собственник и водители</h1>
+            <div class=input-address>
+                <label for="">
+                    Место использования автомобиля
+                </label>
+                <input type="text" formControlName="carPlace">
+            </div>
+          
+        </div>
+        <div class="transport-info osago-info">
+            <h1>Контактные данные</h1>
+            <label>Для продолжения укажите ваши контактные данные</label>
+            <div class="contact-data">
+                <div>
+                    <label for="">Имя</label>
+                    <input type="text" value="" formControlName="name">
+                </div>
+                <div><label for="">Номер телефона</label>
+                    <input type="text" value="" formControlName="phone"></div>
+            </div>
+            </div>
+          
+        <div class="btn">
+            <button>Отправить заявку</button>
+        </div>
+       </div>
+    </form>
+  
+  
 </div>
