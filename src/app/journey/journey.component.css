@@ -86,7 +86,9 @@ align-items: center;
     display: inline;
     flex-direction: row;
 }
-
+.alert-danger{
+    color: red;
+}
 .header-name {
     font-weight: 500;
 }

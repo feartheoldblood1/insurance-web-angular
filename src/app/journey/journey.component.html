@@ -5,69 +5,99 @@
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <h1>Онлайн страхование путешественников</h1>
         <div class="main-form">
-            
+
             <div class="block">
-                <label for="" class="header-name">Место путешествия</label>  
-               
-                <select name="" id="" class="journeyPlace">
-                    <option [ngValue]="null" disabled selected value="">Выберете страну которую хотите посетить</option>
-                    <option   >Германия</option>
-                  
-                    <option  >Англия</option>
-                    <option  >Франция</option>
-                    <option  >Португалия</option>
-                    <option  >Япония</option>
+                <label for="" class="header-name">Место путешествия</label>
+
+                <select name="" id="" class="journeyPlace" formControlName="journeyPlace">
+                    <option  disabled selected value="">Выберете страну которую хотите посетить</option>
+                    <option>Германия</option>
+
+                    <option>Англия</option>
+                    <option>Франция</option>
+                    <option>Португалия</option>
+                    <option>Япония</option>
 
                 </select>
+                <div class="alert alert-danger"
+                    *ngIf="form.controls['journeyPlace'].invalid && form.controls['journeyPlace'].touched">
+                    Не указана страна
+                </div>
             </div>
-           
-            <div class="block"> 
-                <div class="inner-block date-block" >
+
+            <div class="block">
+                <div class="inner-block date-block">
                     <div>
                         <label for="" class="header-name">Тип полиса </label>
                     </div>
-           
-                        <label >На одну поездку</label>
+
+                    <label>На одну поездку</label>
                     <div class="date-inputs">
-                        <span><label for="" class="date-info" >Начало:</label></span>
-                        <input type="date"  formControlName="startDate"> - 
+                        <span><label for="" class="date-info">Начало:</label></span>
+                        <input type="date" formControlName="startDate"> -
                         <label for="">Конец:</label>
-                        <input type="date"   formControlName="endDate">
+                        <input type="date" formControlName="endDate">
                     </div>
-                        
-               
-                    
+
+
+                    <div class="alert alert-danger"
+                        *ngIf="(form.controls['startDate'].invalid && form.controls['startDate'].touched) &&
+                         (form.controls['endDate'].invalid && form.controls['endDate'].touched)">
+                        Не указана дата
+                    </div>
                 </div>
-            
+
             </div>
             <div class="block">
                 <div class="inner-block">
                     <div>
                         <label for="" class="header-name">Турист</label>
                     </div>
-                <div class="tourist">
-                    <label for="">Возраст:</label>
-              
-                    <input type="radio" name="ageRange" class="radio-inp"  formControlName="ageRange" value="0 - 9"> 0 - 9
-                    <input type="radio" name="ageRange" class="radio-inp"   formControlName="ageRange" value="10 - 17"> 10 - 17
-                    <input type="radio" name="ageRange" class="radio-inp"   formControlName="ageRange" value="18 - 64"> 18 - 64
-                </div >
-                <div class=tourist>
-                        <label for="">Гражданство:</label>
-                   
-                        <input type="radio" name="citizenship" class="radio-inp"   formControlName="citizenship" value=" РФ"> РФ
-                        <input type="radio" name="citizenship" class="radio-inp" formControlName="citizenship" value="не РФ"> не РФ
+                    <div class="tourist">
+                        <label for="">Возраст:</label>
+
+                        <input type="radio" name="ageRange" class="radio-inp" formControlName="ageRange" value="0 - 9">
+                        0 - 9
+                        <input type="radio" name="ageRange" class="radio-inp" formControlName="ageRange"
+                            value="10 - 17"> 10 - 17
+                        <input type="radio" name="ageRange" class="radio-inp" formControlName="ageRange"
+                            value="18 - 64"> 18 - 64
+                            <div class="alert alert-danger"
+                            *ngIf="form.controls['ageRange'].invalid && form.controls['ageRange'].touched">
+                            Не указан возраст
+                        </div>
                     </div>
-               
+                    <div class=tourist>
+                        <label for="">Гражданство:</label>
+
+                        <input type="radio" name="citizenship" class="radio-inp" formControlName="citizenship"
+                            value=" РФ"> РФ
+                        <input type="radio" name="citizenship" class="radio-inp" formControlName="citizenship"
+                            value="не РФ"> не РФ
+                            <div class="alert alert-danger"
+                            *ngIf="form.controls['citizenship'].invalid && form.controls['citizenship'].touched">
+                            Не указан тип гражданства
+                        </div>
+                    </div>
+
                 </div>
-               
+                <div class=block>
+                    <label for="">Email</label>
+                    <input type="text" style="height: 18px;" formControlName="email" placeholder="Введите вашу почту">
+                    <div class="alert alert-danger"
+                            *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+                            Не указана электронная почта
+                        </div>
+                </div>
+
+
             </div>
-           
+
         </div>
-        <div class="btn">
+        <div class="btn"  *ngIf="form.controls['journeyPlace'].valid&&form.controls['ageRange'].valid&&form.controls['startDate'].valid&&form.controls['endDate'].valid">
             <button>Оформить полис</button>
         </div>
-        
+
     </form>
-    
+
 </div>

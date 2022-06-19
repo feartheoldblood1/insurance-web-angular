@@ -19,13 +19,13 @@ export class JourneyComponent implements OnInit {
  
   ngOnInit(): void {
     this.form = new FormGroup({
-      email: new FormControl(null),
-      journeyPlace: new FormControl(null),
-      startDate: new FormControl(null),
-      endDate: new FormControl(null),
-      
-      ageRange: new FormControl(null),
-      citizenship: new FormControl(null),
+      email: new FormControl(null, Validators.required),
+      journeyPlace: new FormControl(null, Validators.required),
+      startDate: new FormControl(null, Validators.required),
+      endDate: new FormControl(null ,Validators.required),
+       
+      ageRange: new FormControl(null, Validators.required),
+      citizenship: new FormControl(null, Validators.required),
       
    })
   }
