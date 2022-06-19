@@ -101,6 +101,15 @@ li {
     }
 
 }
+@media all and (max-width:900px) {
+    .image {
+        display: none;
+    }
+    .info {
+        margin-top: 10%;
+    }
+
+}
 
 @media all and (max-width:1100px) {
     .info {

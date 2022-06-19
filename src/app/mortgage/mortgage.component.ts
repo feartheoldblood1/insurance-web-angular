@@ -79,7 +79,7 @@ export class MortgageComponent implements OnInit {
       this.prObj = this.propertyObj[1]
     }
     else {
-      
+        
     }
     this.ipotekaService.sendMsgToMail({bank:this._bank,
       remains: this._remains,

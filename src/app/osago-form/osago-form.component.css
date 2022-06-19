@@ -145,12 +145,24 @@ input {
     align-items: center;
 	
 }
-@media all and (max-width:527px){
+@media all and (max-width:707px){
     .car-info, .policy-data {
         display: block;
         align-items: center;
     }
     .osago-info{
-        width: 60%;
+        width: 100%;
+    }
+}
+@media all and (max-width:527px){
+    app-header {
+        width: 100%;
+    }
+    .car-info, .policy-data {
+        display: block;
+        align-items: center;
+    }
+    .osago-info{
+        width: 100%;
     }
 }
