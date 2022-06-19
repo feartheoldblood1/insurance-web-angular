@@ -81,17 +81,6 @@ get _withoutAccident():string {
  
     } 
     this.iterator = 2;
-   
-
-    // this.drivers.splice(id, 1)
-    // this.drivers.forEach((elem, indx) =>{
-    //   indx = id;
-    //   let difference = Number(this.drivers[this.drivers.length]) - Number(this.drivers[indx]);
-    //   if (difference > 2) {
-    //     this.drivers.splice(indx, difference)
-    //     elem.id -= difference
-    //   }
-    // })
        
     
   }
@@ -125,7 +114,7 @@ get _withoutAccident():string {
       powerCar: 0
     }
   };
-
+  
   getSum(transportType: number, power: number, period: number, region:number, maxYearWithoutAccident:number):number {
     let mainPart:number = region*transportType*power*period;
     if (this.isDriverClicked) {
@@ -142,6 +131,7 @@ get _withoutAccident():string {
 
   onSubmit():number {
     let maxYearWithoutAccident = this.updateDrivers(this.drivers)
+    console.log(this._region)
     return this.getSum(Number(this._transportType), Number(this._power), Number(this._period), Number(this._region), maxYearWithoutAccident)
   }
   toggleDrivers(): void {

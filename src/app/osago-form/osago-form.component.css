@@ -10,7 +10,9 @@
     border: 1px solid #dcdcdc;
 }
 
-
+.driverDiv:hover {
+    color: #009e79;
+}
 label {
     margin-left: 5px;
 }

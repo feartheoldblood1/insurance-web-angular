@@ -10,7 +10,7 @@
                         Место использования транспорта
                     </label>
                     <select name="" id="" formControlName="region" >
-                        <option *ngFor="let place of places" value="place.koef">{{place.nameRegion}}</option>
+                        <option  *ngFor="let place of places" value="{{place.koef}}">{{place.nameRegion}}</option>
                         <!-- <option value="1.40">Тверская область</option>
                         <option value="1.56">Московская область</option>
                         <option value="1.64">Санкт-Петербург</option>
@@ -65,10 +65,10 @@
                 <input type="checkbox" name="" id="" (click) = toggleDrivers()><label for="">С ограничением водителей</label>
             </div>
             <div *ngIf="isDriverClicked">
-            <div (click)="addUser()" style="cursor: pointer;">
+            <div (click)="addUser()" style="cursor: pointer;" class="driverDiv">
                 + Добавить водителя
             </div>
-            <div style="cursor: pointer;" (click) =  "delUser()">- Убрать водителя  </div>
+            <div style="cursor: pointer;" (click) =  "delUser()" class="driverDiv">- Убрать водителя  </div>
             <div class="drivers-data" *ngFor="let driver of drivers">
                 
                 <div>Водитель {{driver.id}} </div>
@@ -186,8 +186,7 @@
                 <label for="">
                     Место использования автомобиля
                 </label>
-                <select *ngFor="let place of places" formControlName="carPlace">
-                     </select>
+                <div>{{this._region}}</div>
             </div>
           
         </div>
