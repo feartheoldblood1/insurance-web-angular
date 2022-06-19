@@ -108,3 +108,11 @@ p {
     }
  
 }
+@media all and (max-width:1350px){
+    .info {
+        margin-top: 10%;
+    }
+    .image {
+        display: none;
+    }
+}

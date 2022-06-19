@@ -20,12 +20,10 @@ form {
     padding-bottom: 25px;
 }
 
-.personal-data .block {
-
-}
+.personal-data .block {}
 
 .contact-data .block {
-  
+    width: 30%;
 }
 
 .company-data label,
@@ -41,46 +39,34 @@ input {
     width: 98%;
 }
 
-.personal-data input,label {
+.personal-data input,
+label {
 
     display: block;
 
     height: 25px;
-   
+
 }
-.personal-data input{
+
+.personal-data .block {
+    display: inline-block;
+
+}
+
+.personal-data .block input {
+    width: 90%;
     border: 1px solid #dcdcdc;
+}
 
-}
-input {
-  
-}
-.user-data .block {
-   
+.contact-data .block {
+    display: inline-block;
+    margin-right: 20%;
+ }
+
+.contact-data .block input {
+
+    width: 160px;
     
-}
-.personal-data .block input{
-    font-size: 16px;
-    width: 50%;
-}
-.personal-data .block{display: flex;
-flex-direction: column; }
-
-.contact-data input, label {
-    display: block;
-    height: 25px;
-}
-
-.user-data {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-data input {
-    display: flex;
-    flex-direction: row;
-   
-
     border: 1px solid #dcdcdc;
     height: 25px;
 }
@@ -100,4 +86,23 @@ button {
 .btn {
     margin-top: 2%;
     text-align: center;
+}
+@media all and (max-width: 768px) {
+    form {
+        width: 50%;
+
+    }
+ 
+}
+@media all and (max-width: 1528px) { 
+    .contact-data .block {
+       
+        margin-right: 40%;
+     }
+}
+
+@media all and (max-width: 408px) {
+    form {
+        width: 70%;
+    }
 }
