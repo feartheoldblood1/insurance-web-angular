@@ -86,7 +86,7 @@
                     <input type="text" style="height: 18px;" formControlName="email" placeholder="Введите вашу почту">
                     <div class="alert alert-danger"
                             *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
-                            Не указана электронная почта
+                            Неверно указана электронная почта
                         </div>
                 </div>
 
@@ -94,7 +94,7 @@
             </div>
 
         </div>
-        <div class="btn"  *ngIf="form.controls['journeyPlace'].valid&&form.controls['ageRange'].valid&&form.controls['startDate'].valid&&form.controls['endDate'].valid">
+        <div class="btn"  *ngIf="form.controls['journeyPlace'].valid&&form.controls['ageRange'].valid&&form.controls['startDate'].valid&&form.controls['endDate'].valid&&form.controls['email'].valid">
             <button>Оформить полис</button>
         </div>
 

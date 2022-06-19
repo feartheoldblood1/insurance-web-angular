@@ -18,17 +18,17 @@ export class MortgageComponent implements OnInit {
   
   ngOnInit(): void {
     this.form = new FormGroup({
-      bank: new FormControl(null),
-      remains: new FormControl(null),
-      objectInsurance: new FormControl(null),
+      bank: new FormControl(null,Validators.required),
+      remains: new FormControl(null,Validators.required),
+      objectInsurance: new FormControl(null,Validators.required),
 
-      propertyObject: new FormControl(null),
+      propertyObject: new FormControl(null,Validators.required),
      
       email: new FormControl(null, [Validators.required, Validators.email]),
-      phoneNumber: new FormControl(null, Validators.pattern("[0-9]{10}")),
-      name: new FormControl(null),
-      datebirth: new FormControl(null),
-      liveHealth: new FormControl(null),
+      phoneNumber: new FormControl(null, Validators.pattern("[0-9]{11}")),
+      name: new FormControl(null, Validators.required,),
+      datebirth: new FormControl(null, Validators.required),
+      liveHealth: new FormControl(null, Validators.required),
    })
   
   }

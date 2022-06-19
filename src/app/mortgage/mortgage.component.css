@@ -89,6 +89,12 @@ h2 {
     
     
 }
+div.alert-danger{
+    color: red;
+    width: 40%;
+    margin-left: 15px;
+    display: inline-block;
+}
 .btn-policy {
     margin-top: 20px;
     margin-bottom: 20px;

@@ -1,55 +1,94 @@
 <app-header></app-header>
 
 <div class="mortgage-form">
-    
+
     <h1>Оформить страховой полис на ипотеку</h1>
     <div class="main">
         <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="infoApartment infoObj">
                 <h2>Информация по ипотечному кредиту</h2>
-                <select placeholder="Банк-кредитор" formControlName="bank" >
+                <select placeholder="Банк-кредитор" formControlName="bank">
                     <option [ngValue]="null" value="" disabled selected>Банк-кредитор</option>
                     <option value="Сбербанк">Сбербанк</option>
                     <option value="Тинькофф">Тинькофф</option>
                     <option value="ВТБ">ВТБ</option>
                     <option value="АльфаБанк">АльфаБанк</option>
                 </select>
+
                 <input type="text" placeholder="Остаток долга, Р" formControlName="remains" class="dolg">
-                
-                <label for="">
-                <div class="title-apartment-obj">Что будет застраховано</div>
-                <div class="radio-object">
-                   
-                        <input type="checkbox" name="liveHealth" id="liveHealth" formControlName="liveHealth" value="Жизнь и здоровье"> <label>Жизнь и здоровье</label>
-                        <input type="checkbox" name="objectInsurance" id="" formControlName="objectInsurance" value="Недвижимость">  <label> Недвижимость</label>
-                   
+                <div class="alert alert-danger" *ngIf="form.controls['bank'].invalid && form.controls['bank'].touched">
+                    Не указан банк
                 </div>
-            </label>
-                <div class="selectInfo" >
+                <div class="alert alert-danger"
+                    *ngIf="form.controls['remains'].invalid && form.controls['remains'].touched">
+                    Не указан долг
+                </div>
+                <label for="">
+                    <div class="title-apartment-obj">Что будет застраховано</div>
+                    <div class="radio-object">
+
+                        <input type="checkbox" name="liveHealth" id="liveHealth" formControlName="liveHealth"
+                            value="Жизнь и здоровье"> <label>Жизнь и здоровье</label>
+                       
+                        <input type="checkbox" name="objectInsurance" id="" formControlName="objectInsurance"
+                            value="Недвижимость"> <label> Недвижимость</label>
+                            <div class="alert alert-danger"
+                            *ngIf="(form.controls['liveHealth'].invalid && form.controls['liveHealth'].touched )||(form.controls['objectInsurance'].invalid && form.controls['objectInsurance'].touched)">
+                            Не указано что будет застраховано
+                        </div>
+                    </div>
+                </label>
+                <div class="selectInfo">
                     <select name="" id="" formControlName="propertyObject">
-                    <option [ngValue]="null" disabled>Выберите недвижимость</option>
-                    <option  >Квартира/Апартаменты</option>
-                    <option  >Жилой дом</option>
+                        <option [ngValue]="null" disabled>Выберите недвижимость</option>
+                        <option>Квартира/Апартаменты</option>
+                        <option>Жилой дом</option>
                     </select>
+
+                </div>
+                <div class="alert alert-danger"
+                    *ngIf="form.controls['propertyObject'].invalid && form.controls['propertyObject'].touched">
+                    не указана недвижимость
                 </div>
             </div>
-            
+
             <div class="infoUser infoObj">
                 <h2>Данные заемщика</h2>
                 <div class="firstData">
                     <input type="text" name="" id="" placeholder="Имя" formControlName="name">
+
                     <input type="text" name="" id="" placeholder="Дата рождения" formControlName="datebirth" style="">
+
+                </div>
+                <div class="alert alert-danger" *ngIf="form.controls['name'].invalid && form.controls['name'].touched">
+                    не указано имя
+                </div>
+                <div class="alert alert-danger"
+                    *ngIf="form.controls['datebirth'].invalid && form.controls['datebirth'].touched">
+                    нет даты рождения
                 </div>
                 <div class="secondData">
                     <input type="text" placeholder="Номер телефона" formControlName="phoneNumber">
                     <input type="text" placeholder="E-mail" formControlName="email">
                 </div>
+                <div class="alert alert-danger"
+                    *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+                    не указана электронная почта
+                </div>
+                <div class="alert alert-danger"
+                    *ngIf="form.controls['phoneNumber'].invalid && form.controls['phoneNumber'].touched">
+                    не верно указан номер телефона
+                </div>
             </div>
             <div class="btn-policy">
-                <button>Оформить полис</button>
+                <button
+                    *ngIf="form.controls['phoneNumber'].valid &&form.controls['email'].valid &&form.controls['bank'].valid &&form.controls['propertyObject'].valid
+                     &&form.controls['name'].valid &&form.controls['datebirth'].valid 
+                      && (form.controls['liveHealth'].valid || form.controls['objectInsurance'].valid)&&form.controls['remains'].valid ">Оформить
+                    полис</button>
             </div>
-         
+
         </form>
-      
+
     </div>
 </div>
