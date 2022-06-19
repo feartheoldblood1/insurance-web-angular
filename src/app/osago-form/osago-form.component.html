@@ -114,7 +114,7 @@
                     <div>Формула расчета ОСАГО = Место использования * Категория ТС * Мощность * </div>
                     <div>* Период использования * Коэффициент безаварийной езды </div>
                     <br>
-                    <div >Стоимость страховки: {{(formulaAnswer.value).toFixed(0)}} рублей</div>
+                    <div >Стоимость страховки: {{(formulaAnswer.value).toFixed(2)}} рублей</div>
                 </div>
             </div>
             <div class="btn" (click)="toggleFormula(); onBuyBtn();getRegionName(this._region);getPowerEngine(this._power); ">
@@ -130,7 +130,7 @@
         <button (click)="clickedForm()">Обратно к расчету</button>
     </div>
     <div *ngIf="isFormBuyClicked" class="policy-price-data" style="width:29%; margin-bottom:5px; margin-left:15px;">
-        Стоимость полиса: {{((this.formulaAnswer)).toFixed(0)}} рублей
+        Стоимость полиса: {{((this.formulaAnswer)).toFixed(2)}} рублей
     </div>
     <form action="" [formGroup]="formBuy" *ngIf="isFormBuyClicked">
 
@@ -172,7 +172,7 @@
                         <label>
                             Объем двигателя
                         </label>
-                        <div style="border: 1px solid #dcdcdc; margin-left:5px; width:55%; font-size:15px; margin-top:5px; padding: 5px;">
+                        <div style="border: 1px solid #dcdcdc; margin-left:5px; width:75%; font-size:15px; margin-top:5px; padding: 5px;height: 25px;">
                             {{ this.powerName}}</div>
                     </div>
                 </div>

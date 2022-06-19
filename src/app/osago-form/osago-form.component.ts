@@ -103,7 +103,7 @@ export class OsagoFormComponent implements OnInit {
   }
   powerName: string = '';
   getPowerEngine(powerValue: any): string {
-    this.places.forEach(element => {
+    this.powers.forEach(element => {
       if(element.koef == Number(powerValue)){
         this.powerName = element.namePower;
 
