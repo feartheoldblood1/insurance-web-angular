@@ -14,10 +14,7 @@ export class MortgageComponent implements OnInit {
   constructor(private ipotekaService: IpotekaControllerService,
      private http:HttpClient,
      private fb: FormBuilder ) { }
-     items: any[] = [
-      { id: 1, name: 'Квартира / Апартаменты' },
-      { id: 2, name: 'asdf' },
-    ];
+   
   
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -28,7 +25,7 @@ export class MortgageComponent implements OnInit {
       propertyObject: new FormControl(null),
      
       email: new FormControl(null, [Validators.required, Validators.email]),
-      phoneNumber: new FormControl(null),
+      phoneNumber: new FormControl(null, Validators.pattern("[0-9]{10}")),
       name: new FormControl(null),
       datebirth: new FormControl(null),
       liveHealth: new FormControl(null),
@@ -99,6 +96,7 @@ export class MortgageComponent implements OnInit {
       this.prObj,
        this._remains);
    alert("Ваша заявка отправлена");
+   
   //   this.http.get("https://insurance-web-college.herokuapp.com/ipoteka",{observe: 'response'})
   //   .subscribe(response => {
   //     if(response.status == 200){

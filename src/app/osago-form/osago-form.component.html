@@ -1,7 +1,7 @@
 <app-header></app-header>
-<div class="back"><a routerLink="/osago-kasko" >Вернуться </a></div>
+<div class="back"><a routerLink="/osago-kasko">Вернуться </a></div>
 <div class="main">
-    <form action=""  [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!isFormBuyClicked" >
+    <form action="" [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!isFormBuyClicked">
         <div class="policy-info osago-info">
             <h1>Калькулятор ОСАГО</h1>
             <div class="policy-data" class=carInfo>
@@ -10,204 +10,209 @@
                         Место использования транспорта
                     </label>
                     <select name="" id="" formControlName="region" >
-                        <option  *ngFor="let place of places" value="{{place.koef}}">{{place.nameRegion}}</option>
-                        <!-- <option value="1.40">Тверская область</option>
-                        <option value="1.56">Московская область</option>
-                        <option value="1.64">Санкт-Петербург</option>
-                        <option value="1.32">Кировская область</option>
-                        <option value="1.64">Новгородская область</option> -->
+                        <option *ngFor="let place of places" value="{{place.koef}}">{{place.nameRegion}}</option>
                     </select>
+                    <div class="alert alert-danger"
+                    *ngIf="form.controls['region'].invalid && form.controls['region'].touched">
+                    Не указан регион
                 </div>
-        </div>
-        <div class=carInfo>
-            <label for="">Категория ТС</label>
-            <select name="" id=""formControlName="transportType">
-                <option value="438">Мотоциклы и мотороллеры</option>
-                <option value="1152" selected>Легковые автомобили</option>
-                <option value="2014">Легковые автомобили, используемые в качестве такси</option>
-                <option value="1572">Грузовые автомобили (не более 16 Т)</option>
-                <option value="1867"> Грузовые автомобили (Более 16 T) </option>
-                <option value="2367"> Автобусы (Не более 16 пассажиромест) </option>
-                <option value="2029">Троллейбусы </option>
-                <option value="1266"> Трамваи</option>
-                <option value="610"> Трактора, самоходные дорожно-строительные машины</option>
-            </select>
-        </div>
-        <div class=carInfo>
-            <label for=""> Мощность (л.с.)</label>
-            <select name="" id="" formControlName="power">
-                <option value="0.6">до 50 включительно</option>
-                <option value="1.0">свыше 50 до 70 включительно</option>
-                <option value="1.1">свыше 70 до 100 включительно</option>
-                <option value="1.2">свыше 100 до 120 включительно</option>
-                <option value="1.4">свыше 120 до 150 включительно</option>
-                <option value="1.6">свыше 150</option>
-            </select>
-        </div>
-        <div class=carInfo>
-            <label for="">Период использования</label>
-            <select name="" id="" formControlName="period">
-                <option value="0.5">3 месяца</option>
-                <option value="0.6">4 месяца</option>
-                <option value="0.65">5 месяцев</option>
-                <option value="0.7">6 месяцев</option>
-                <option value="0,8">7 месяцев</option>
-                <option value="0.9">8 месяцев</option>
-                <option value="0.95">9 месяцев</option>
-                <option value="1">10 месяцев и более</option>
-            </select>
-        </div>
+                </div>
+            </div>
+            <div class=carInfo>
+                <label for="">Категория ТС</label>
+                <select name="" id="" formControlName="transportType">
+                    <option value="438">Мотоциклы и мотороллеры</option>
+                    <option value="1152" selected>Легковые автомобили</option>
+                    <option value="2014">Легковые автомобили, используемые в качестве такси</option>
+                    <option value="1572">Грузовые автомобили (не более 16 Т)</option>
+                    <option value="1867"> Грузовые автомобили (Более 16 T) </option>
+                    <option value="2367"> Автобусы (Не более 16 пассажиромест) </option>
+                    <option value="2029">Троллейбусы </option>
+                    <option value="1266"> Трамваи</option>
+                    <option value="610"> Трактора, самоходные дорожно-строительные машины</option>
+                </select>
+                <div class="alert alert-danger"
+                *ngIf="form.controls['transportType'].invalid && form.controls['transportType'].touched">
+                Не указана категория транспортного средства
+            </div>
+            </div>
+            <div class=carInfo>
+                <label for=""> Мощность (л.с.)</label>
+                <select name="" id="" formControlName="power">
+                    <option value="0.6">до 50 включительно</option>
+                    <option value="1.0">свыше 50 до 70 включительно</option>
+                    <option value="1.1">свыше 70 до 100 включительно</option>
+                    <option value="1.2">свыше 100 до 120 включительно</option>
+                    <option value="1.4">свыше 120 до 150 включительно</option>
+                    <option value="1.6">свыше 150</option>
+                </select>
+                <div class="alert alert-danger"
+                *ngIf="form.controls['power'].invalid && form.controls['power'].touched">
+                Не указана мощность двигателя
+            </div>
+            </div>
+            <div class=carInfo>
+                <label for="">Период использования</label>
+                <select name="" id="" formControlName="period">
+                    <option value="0.5">3 месяца</option>
+                    <option value="0.6">4 месяца</option>
+                    <option value="0.65">5 месяцев</option>
+                    <option value="0.7">6 месяцев</option>
+                    <option value="0,8">7 месяцев</option>
+                    <option value="0.9">8 месяцев</option>
+                    <option value="0.95">9 месяцев</option>
+                    <option value="1">10 месяцев и более</option>
+                </select>
+                <div class="alert alert-danger"
+                *ngIf="form.controls['period'].invalid && form.controls['period'].touched">
+                Не указан период использования
+            </div>
+            </div>
         </div>
         <div class="drivers osago-info">
             <h1>Водители</h1>
-            <label for="">Количество</label>  
-            <div class="drivers-count">   
-                <input type="checkbox" name="" id="" (click) = toggleDrivers()><label for="">С ограничением водителей</label>
+            <label for="">Количество</label>
+            <div class="drivers-count">
+                <input type="checkbox" name="" id="" (click)=toggleDrivers()><label for="">С ограничением
+                    водителей</label>
             </div>
             <div *ngIf="isDriverClicked">
-            <div (click)="addUser()" style="cursor: pointer;" class="driverDiv">
-                + Добавить водителя
-            </div>
-            <div style="cursor: pointer;" (click) =  "delUser()" class="driverDiv">- Убрать водителя  </div>
-            <div class="drivers-data" *ngFor="let driver of drivers">
-                
-                <div>Водитель {{driver.id}} </div>
-                <div class="driver-info" >
-                    <label for="">Возраст</label>
-                    <input type="text" value="" formControlName="age">
+                <div (click)="addUser()" style="cursor: pointer;" class="driverDiv">
+                    + Добавить водителя
                 </div>
-                <div class="driver-info">
-                <label for="">Стаж</label>
-                <input type="text" value="" formControlName="experience">
+                <div style="cursor: pointer;" (click)="delUser()" class="driverDiv">- Убрать водителя </div>
+                <div class="drivers-data" *ngFor="let driver of drivers">
+
+                    <div>Водитель {{driver.id}} </div>
+                    <div class="driver-info">
+                        <label for="">Возраст</label>
+                        <input type="text" value="" formControlName="age">
+                    </div>
+                    <div class="driver-info">
+                        <label for="">Стаж</label>
+                        <input type="text" value="" formControlName="experience">
+                    </div>
+                    <div class="driver-info">
+                        <label for=""> Сколько лет ездите без ДТП по своей вине?</label>
+                        <select name="" id="" formControlName="withoutAccident">
+                            <option value="2.94">0</option>
+                            <option value="2.25">1</option>
+                            <option value="1.76">2</option>
+                            <option value="1.17">3</option>
+                            <option value="1.00">4</option>
+                            <option value="0.91">5</option>
+                            <option value="0.83">6</option>
+                            <option value="0.78">7</option>
+                            <option value="0.74">8</option>
+                            <option value="0.63">9</option>
+                            <option value="0.57">10</option>
+                            <option value="0.52">11</option>
+                            <option value="0.46">12</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <div class="driver-info">
-                <label for=""> Сколько лет ездите без ДТП по своей вине?</label>
-                <select name="" id="" formControlName="withoutAccident">
-                    <option value="2.94">0</option>
-                    <option value="2.25">1</option>
-                    <option value="1.76">2</option>
-                    <option value="1.17">3</option>
-                    <option value="1.00">4</option>
-                    <option value="0.91">5</option>
-                    <option value="0.83">6</option>
-                    <option value="0.78">7</option>
-                    <option value="0.74">8</option>
-                    <option value="0.63">9</option>
-                    <option value="0.57">10</option>
-                    <option value="0.52">11</option>
-                    <option value="0.46">12</option>
-                </select>
-            </div>       
-        </div> 
+        </div>
+        <div *ngIf="form.controls['region'].valid&&form.controls['transportType'].valid&&form.controls['power'].valid&&form.controls['period'].valid">
+            <div *ngIf="{value: formulaAnswer} as formulaAnswer"  >
+                <div *ngIf="isClicked" class="policy-price-data">
+                    <div>Формула расчета ОСАГО = Место использования * Категория ТС * Мощность * </div>
+                    <div>* Период использования * Коэффициент безаварийной езды </div>
+                    <br>
+                    <div >Стоимость страховки: {{(formulaAnswer.value).toFixed(0)}} рублей</div>
+                </div>
+            </div>
+            <div class="btn" (click)="toggleFormula(); onBuyBtn();getRegionName(this._region) ">
+                <button>Рассчитать</button>
+            </div>
+            <div class="btn" *ngIf="isBuyBtnClicked">
+                <button (click)="clickedForm();">Купить полис</button>
             </div>
         </div>
-        <div *ngIf="{value: formulaAnswer} as formulaAnswer" >
-            <div *ngIf="isClicked" class="policy-price-data">
-               <div>Формула расчета ОСАГО = Место использования  * Категория ТС * Мощность * </div> 
-               <div>* Период использования * Коэффициент безаварийной езды </div>
-               <br>
-              <div>Стоимость страховки: {{(formulaAnswer.value).toString()}} рублей</div>  
-            </div>
-        </div>
-        <div class="btn" (click) = "toggleFormula(); onBuyBtn();" >
-            <button>Рассчитать</button>
-        </div>
-        <div class="btn" *ngIf="isBuyBtnClicked">
-            <button (click)="clickedForm();">Купить полис</button>
-        </div>
-      
-       
+
     </form>
-    <div class="btn" *ngIf="isFormBuyClicked" >
+    <div class="btn" *ngIf="isFormBuyClicked">
         <button (click)="clickedForm()">Обратно к расчету</button>
     </div>
-    <div *ngIf="isFormBuyClicked" class="policy-price-data">
-        Стоимость полиса: {{this.formulaAnswer}} рублей
+    <div *ngIf="isFormBuyClicked" class="policy-price-data" style="width:29%; margin-bottom:5px; margin-left:15px;">
+        Стоимость полиса: {{((this.formulaAnswer)).toFixed(0)}} рублей
     </div>
-    <form action="" [formGroup]="formBuy"  *ngIf="isFormBuyClicked">
-      
+    <form action="" [formGroup]="formBuy" *ngIf="isFormBuyClicked">
+
         <div class="buy-osago">
-          
-        <div class="policy-info osago-info">
-            <h1>Заполните данные</h1>
-            <div class="policy-data">
+
+            <div class="policy-info osago-info">
+                <h1>Заполните данные</h1>
+                <div class="policy-data">
+                    <div class=input-address>
+                        <label for="">
+                            Адрес регистрации собственника, как в паспорте
+                        </label>
+                        <input type="text" formControlName="addrRegistr">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="transport-info osago-info">
+                <div class="main-car-info">
+
+                    <h1>Транспортное средство</h1>
+                    <div class="car-info">
+                        <label>
+                            Марка автомобиля
+                        </label>
+                        <input type="text" formControlName="carMarka">
+                        <label>
+                            Год выпуска
+                        </label>
+                        <input type="text" formControlName="dateCar">
+                    </div>
+
+
+                    <div class="car-info ">
+                        <label>Модель и класс автомобиля</label>
+                        <input type="text" formControlName="classModelCar">
+
+                        <label>
+                            Объем двигателя
+                        </label>
+                        <input type="text" formControlName="engine">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="drivers osago-info">
+                <h1>Собственник </h1>
                 <div class=input-address>
                     <label for="">
-                        Адрес регистрации собственника, как в паспорте
+                        Место использования автомобиля
                     </label>
-                    <input type="text" formControlName="addrRegistr">
+                    <div style="border: 1px solid #dcdcdc; margin-left:5px; width:55%; font-size:15px; margin-top:5px; padding: 5px;">
+                        {{ this.regionName}}</div>
                 </div>
-              
-              
-              
+
             </div>
-            
-        
-    
-    
-        </div>
-        <div class="transport-info osago-info">
-        <div class="main-car-info">
-           
-            <h1>Транспортное средство</h1>
-            <div class="car-info">
-                <label>
-                    Марка автомобиля
-                </label>
-                <input type="text" formControlName="carMarka">
-                <label>
-                    Год выпуска
-                </label>
-                <input type="text" formControlName="dateCar">
-            </div>
-         
-     
-            <div class="car-info ">
-                <label>Модель и класс автомобиля</label>
-                <input type="text" formControlName="classModelCar">
-          
-                <label>
-                    Объем двигателя
-                </label>
-                <input type="text"formControlName="engine">
-            </div>
-        </div>
-      
-    
-    
-      
-         
-        
-        </div>
-    
-        <div class="drivers osago-info">
-            <h1>Собственник </h1>
-            <div class=input-address>
-                <label for="">
-                    Место использования автомобиля
-                </label>
-                <div>{{this._region}}</div>
-            </div>
-          
-        </div>
-        <div class="transport-info osago-info">
-            <h1>Контактные данные</h1>
-            <label>Для продолжения укажите ваши контактные данные</label>
-            <div class="contact-data">
-                <div>
-                    <label for="">Имя</label>
-                    <input type="text" value="" formControlName="name">
+            <div class="transport-info osago-info">
+                <h1>Контактные данные</h1>
+                <label style="margin-bottom:5px;">Для продолжения укажите ваши контактные данные</label>
+                <div class="contact-data">
+                    <div>
+                        <label for="">Имя</label>
+                        <input type="text" value="" formControlName="name">
+                    </div>
+                    <div><label for="">Номер телефона</label>
+                        <input type="text" value="" formControlName="phone">
+                    </div>
                 </div>
-                <div><label for="">Номер телефона</label>
-                    <input type="text" value="" formControlName="phone"></div>
             </div>
+
+            <div class="btn">
+                <button>Отправить заявку</button>
             </div>
-          
-        <div class="btn">
-            <button>Отправить заявку</button>
         </div>
-       </div>
     </form>
-  
-  
+
+
 </div>

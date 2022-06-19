@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, MaxLengthValidator } from '@angular/forms';
-export type driver  = {
-  id:number,
+import { FormControl, FormGroup, MaxLengthValidator, Validators } from '@angular/forms';
+import { elementAt } from 'rxjs';
+export type driver = {
+  id: number,
   age: number
   experience: number,
-  withoutAccident:number
+  withoutAccident: number
 }
 export type Car = {
-    typeCar: string,
-    powerCar: number
+  typeCar: string,
+  powerCar: number
 }
-export type policy  = {
+export type policy = {
   type: number,
   startDate: Date,
   endDate: Date,
@@ -25,7 +26,7 @@ export type policy  = {
 
 
 export class OsagoFormComponent implements OnInit {
-  form:any;
+  form: any;
   formBuy: any;
   isFormBuyClicked = false;
   constructor() { }
@@ -33,80 +34,108 @@ export class OsagoFormComponent implements OnInit {
   accounts: Array<String> | undefined;
   isClicked: boolean = false;
   isDriverClicked: boolean = false;
-   iterator:number = 2;
-   places: any []  = [
-    {nameRegion: "Тверская область", koef: 1.40},
-    {nameRegion: "Московская область", koef: 1.56},
-    {nameRegion: "Санкт-Петербург", koef: 1.64},
-    {nameRegion: "Кировская область", koef: 1.32},
-    {nameRegion: "Новгородская область", koef: 1.64},
+  iterator: number = 2;
+  places: any[] = [
+    { nameRegion: "Тверская область", koef: 1.40 },
+    { nameRegion: "Московская область", koef: 1.56 },
+    { nameRegion: "Санкт-Петербург", koef: 1.64 },
+    { nameRegion: "Кировская область", koef: 1.32 },
+    { nameRegion: "Новгородская область", koef: 1.64 },
 
-   ]
-  drivers: {id:number, age:number, experience: number, withoutAccident:number}[] = [
-    { id: 1, age:18, experience: 1, withoutAccident:1}
-    
+  ]
+  drivers: { id: number, age: number, experience: number, withoutAccident: number }[] = [
+    { id: 1, age: 18, experience: 1, withoutAccident: 1 }
+
   ];
- 
-  isBuyBtnClicked:boolean =false;
-  formulaAnswer:number = 0;
+
+  isBuyBtnClicked: boolean = false;
+  formulaAnswer: number = 0;
   ngOnInit(): void {
     this.form = new FormGroup({
-      transportType: new FormControl(null),
-      power: new FormControl(null),
-      period: new FormControl(null),
-      region: new FormControl(null),
-      age: new FormControl(null),
-      experience: new FormControl(null),
-      withoutAccident: new FormControl(null),
-  } )
+      transportType: new FormControl(null, Validators.required),
+      power: new FormControl(null, Validators.required),
+      period: new FormControl(null, Validators.required),
+      region: new FormControl(null, Validators.required),
+      age: new FormControl(null, Validators.required),
+      experience: new FormControl(null, Validators.required),
+      withoutAccident: new FormControl(null, Validators.required),
+    })
+    this.formBuy = new FormGroup({
+
+
+      addrRegistr: new FormControl(null) ,
+      carMarka: new FormControl(null),
+      classModelCar: new FormControl(null),
+      dateCar: new FormControl(null),
+      engine: new FormControl(null),
+      bank: new FormControl(null),
+      costCar: new FormControl(null),
+      carPlace: new FormControl(null),
+      amountUsers: new FormControl(null),
+      name: new FormControl(null),
+      phone: new FormControl(null, Validators.pattern("[0-9]{10}"))
+
+
+    })
   }
 
 
-  get _age():string {
-      return this.form.get('age')?.value
+  get _age(): string {
+    return this.form.get('age')?.value
   }
-  get _experience():string {
+  regionName: string = ''; 
+  getRegionName(regionValue: any): string {
+    this.places.forEach(element => {
+      if(element.koef == Number(regionValue)){
+        this.regionName = element.nameRegion;
+
+      }
+     
+    });
+    return this.regionName;
+  }
+  get _experience(): string {
     return this.form.get('experience')?.value
-}
-get _withoutAccident():string {
+  }
+  get _withoutAccident(): string {
     return this.form.get('withoutAccident')?.value
-}
-  
-  addUser():void {
-    this.drivers.push({ id: this.iterator++, age:18, experience: 1, withoutAccident:1})
+  }
+  get _region(): string {
+    return this.form.get('region')?.value;
+  }
+  get _transportType(): string {
+    return this.form.get('transportType')?.value;
+  }
+  get _power(): string {
+    return this.form.get('power')?.value;
+  }
+  get _period(): string {
+    return this.form.get('period')?.value;
+  }
+  addUser(): void {
+    this.drivers.push({ id: this.iterator++, age: 18, experience: 1, withoutAccident: 1 })
   }
   delUser(): void {
     if (this.iterator >= 2) {
       this.drivers.pop()
- 
-    } 
+
+    }
     this.iterator = 2;
-       
-    
+
+
   }
-  findMax(drivers: driver []): number {
-    return  drivers.reduce((acc, curr) => acc.withoutAccident > curr.withoutAccident ? acc : curr).withoutAccident;
+  findMax(drivers: driver[]): number {
+    return drivers.reduce((acc, curr) => acc.withoutAccident > curr.withoutAccident ? acc : curr).withoutAccident;
   }
-  updateDrivers(drivers: driver[]):number {
-    let maxFirstWA:number = this.findMax(this.drivers);
-    if(maxFirstWA >= Number(this._withoutAccident))
+  updateDrivers(drivers: driver[]): number {
+    let maxFirstWA: number = this.findMax(this.drivers);
+    if (maxFirstWA >= Number(this._withoutAccident))
       return maxFirstWA;
     else {
       return Number(this._withoutAccident);
     }
   }
-  get _region():string {
-    return this.form.get('region')?.value;
-  }
-  get _transportType():string {
-    return this.form.get('transportType')?.value;
-  }
-  get _power():string {
-    return this.form.get('power')?.value;
-  }
-  get _period():string {
-    return this.form.get('period')?.value;
-  }
+
   osagoPolicy: policy = {
     type: 1, startDate: new Date('1970-01-01'), endDate: new Date('1970-01-08'),
     object: {
@@ -114,37 +143,37 @@ get _withoutAccident():string {
       powerCar: 0
     }
   };
-  
-  getSum(transportType: number, power: number, period: number, region:number, maxYearWithoutAccident:number):number {
-    let mainPart:number = region*transportType*power*period;
+
+  getSum(transportType: number, power: number, period: number, region: number, maxYearWithoutAccident: number): number {
+    let mainPart: number = region * transportType * power * period;
     if (this.isDriverClicked) {
-      this.formulaAnswer = mainPart*maxYearWithoutAccident;
+      this.formulaAnswer = mainPart * maxYearWithoutAccident;
     } else {
       this.formulaAnswer = mainPart;
     }
     return Math.round(this.formulaAnswer);
-  
-  }
-  onBuyBtn():void { 
-    this.isBuyBtnClicked = true;
-   }
 
-  onSubmit():number {
+  }
+  onBuyBtn(): void {
+    this.isBuyBtnClicked = true;
+  }
+
+  onSubmit(): number {
     let maxYearWithoutAccident = this.updateDrivers(this.drivers)
-    console.log(this._region)
-    return this.getSum(Number(this._transportType), Number(this._power), Number(this._period), Number(this._region), maxYearWithoutAccident)
+    
+    return  Math.round(this.getSum(Number(this._transportType), Number(this._power), Number(this._period), Number(this._region), maxYearWithoutAccident))
   }
   toggleDrivers(): void {
     this.isDriverClicked = !this.isDriverClicked;
- 
+
   }
-  toggleFormula():void {
+  toggleFormula(): void {
     this.isClicked = true;
   }
-  clickedForm():void{
+  clickedForm(): void {
     this.isFormBuyClicked = !this.isFormBuyClicked;
   }
-  onSubmitFormBuy():void {
+  onSubmitFormBuy(): void {
 
   }
 }

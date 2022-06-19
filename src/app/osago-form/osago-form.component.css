@@ -9,7 +9,10 @@
     padding: 10px;
     border: 1px solid #dcdcdc;
 }
-
+.alert-danger {
+    color:red;
+    margin-left: 5px;
+}
 .driverDiv:hover {
     color: #009e79;
 }
@@ -21,6 +24,8 @@ label {
     width: 100%;
     line-height: 1.5;
     text-align: center;
+    border:1px solid #dcdcdc;
+    padding: 10px;
 }
 .second-main-car-info{
     width: 100%;
