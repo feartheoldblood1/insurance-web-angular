@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { KaskoControllerService } from '../api/services';
 
 @Component({
@@ -15,7 +16,8 @@ export class KaskoFormComponent implements OnInit {
   constructor(private kaskoService: KaskoControllerService,
     private router: Router,
     private http:HttpClient) { }
- 
+    bank: string = "нет банка-кредитора"
+
   ngOnInit(): void {
     this.form = new FormGroup({
 
@@ -81,15 +83,18 @@ export class KaskoFormComponent implements OnInit {
     //   this.http.get("https://shielded-depths-97782.herokuapp.com/kasko",{observe: 'response'})
     //   .subscribe(response => {
     //     if(response.status == 200){
-
+          if(!this.isClicked) {
+            this.bank = this._banke;
+       
+          }
           this.kaskoService.sendMsgToMail({registrAddress:this._addrRegistr,
              markaCar:this._carMarka,
             markaModelClass:this._classModelCar,
              dateCar:this._dateCar,
              engineCapacity:this._engine,
-            bank:this._banke, carCost:this._costCar,
+            bank:this.bank,
+             carCost: this._costCar ,
              carPlace:this._carPlace,
-              userData:this._amountUsers,
             name:this._name, phone:this._phone
           }).subscribe()
         }   

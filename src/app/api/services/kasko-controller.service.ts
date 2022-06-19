@@ -25,7 +25,7 @@ export class KaskoControllerService extends BaseService {
   /**
    * Path part for operation kaskoControllerSendMsgToMail
    */
-  static readonly KaskoControllerSendMsgToMailPath = '/kasko/{registrAddress}/{markaCar}/{markaModelClass}/{dateCar}/{engineCapacity}/{bank}/{carCost}/{carPlace}/{userData}/{name}/{phone}';
+  static readonly KaskoControllerSendMsgToMailPath = '/kasko/{registrAddress}/{markaCar}/{markaModelClass}/{dateCar}/{engineCapacity}/{bank}/{carCost}/{carPlace}/{name}/{phone}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -42,7 +42,6 @@ export class KaskoControllerService extends BaseService {
     bank: string;
     carCost: string;
     carPlace: string;
-    userData: string;
     name: string;
     phone: string;
   }): Observable<StrictHttpResponse<Ipoteka>> {
@@ -57,7 +56,6 @@ export class KaskoControllerService extends BaseService {
       rb.path('bank', params.bank, {});
       rb.path('carCost', params.carCost, {});
       rb.path('carPlace', params.carPlace, {});
-      rb.path('userData', params.userData, {});
       rb.path('name', params.name, {});
       rb.path('phone', params.phone, {});
     }
@@ -88,7 +86,6 @@ export class KaskoControllerService extends BaseService {
     bank: string;
     carCost: string;
     carPlace: string;
-    userData: string;
     name: string;
     phone: string;
   }): Observable<Ipoteka> {

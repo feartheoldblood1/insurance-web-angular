@@ -77,16 +77,16 @@ export class OsagoFormComponent implements OnInit {
     this.formBuy = new FormGroup({
 
 
-      addrRegistr: new FormControl(null) ,
-      carMarka: new FormControl(null),
-      classModelCar: new FormControl(null),
-      dateCar: new FormControl(null),
+      addrRegistr: new FormControl(null, Validators.required) ,
+      carMarka: new FormControl(null, Validators.required),
+      classModelCar: new FormControl(null, Validators.required),
+      dateCar: new FormControl(null, Validators.required),
 
  
       carPlace: new FormControl(null),
      
-      name: new FormControl(null),
-      phone: new FormControl(null, Validators.pattern("[0-9]{10}"))
+      name: new FormControl(null, Validators.required),
+      phone: new FormControl(null, [Validators.pattern("[0-9]{10}"),Validators.required])
 
 
     })
