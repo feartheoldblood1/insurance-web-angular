@@ -19,3 +19,9 @@ li {
     list-style-type: none;
     margin-top: 5px;
 }
+@media all and (max-width:405px) {
+    app-social-network {
+        float: left;
+        margin-left: 10%;
+    }
+}
