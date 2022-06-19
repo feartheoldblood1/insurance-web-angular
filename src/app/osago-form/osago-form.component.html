@@ -39,12 +39,7 @@
             <div class=carInfo>
                 <label for=""> Мощность (л.с.)</label>
                 <select name="" id="" formControlName="power">
-                    <option value="0.6">до 50 включительно</option>
-                    <option value="1.0">свыше 50 до 70 включительно</option>
-                    <option value="1.1">свыше 70 до 100 включительно</option>
-                    <option value="1.2">свыше 100 до 120 включительно</option>
-                    <option value="1.4">свыше 120 до 150 включительно</option>
-                    <option value="1.6">свыше 150</option>
+                    <option *ngFor="let power of powers" value="{{power.koef}}">{{power.namePower}}</option>
                 </select>
                 <div class="alert alert-danger"
                 *ngIf="form.controls['power'].invalid && form.controls['power'].touched">
@@ -122,7 +117,7 @@
                     <div >Стоимость страховки: {{(formulaAnswer.value).toFixed(0)}} рублей</div>
                 </div>
             </div>
-            <div class="btn" (click)="toggleFormula(); onBuyBtn();getRegionName(this._region) ">
+            <div class="btn" (click)="toggleFormula(); onBuyBtn();getRegionName(this._region);getPowerEngine(this._power); ">
                 <button>Рассчитать</button>
             </div>
             <div class="btn" *ngIf="isBuyBtnClicked">
@@ -177,7 +172,8 @@
                         <label>
                             Объем двигателя
                         </label>
-                        <input type="text" formControlName="engine">
+                        <div style="border: 1px solid #dcdcdc; margin-left:5px; width:55%; font-size:15px; margin-top:5px; padding: 5px;">
+                            {{ this.powerName}}</div>
                     </div>
                 </div>
 

@@ -43,6 +43,18 @@ export class OsagoFormComponent implements OnInit {
     { nameRegion: "Новгородская область", koef: 1.64 },
 
   ]
+  powers: any [] = [
+    {namePower:"до 50 включительно", koef: 0.6},
+    {namePower:"свыше 50 до 70 включительно", koef: 1.0},
+    {namePower:"свыше 70 до 100 включительно", koef: 1.1},
+    {namePower:"свыше 100 до 120 включительно", koef: 1.2},
+    {namePower:"свыше 120 до 150 включительно", koef: 1.4},
+    {namePower:"свыше 150", koef: 1.6},
+ 
+
+  
+  
+  ]
   drivers: { id: number, age: number, experience: number, withoutAccident: number }[] = [
     { id: 1, age: 18, experience: 1, withoutAccident: 1 }
 
@@ -68,10 +80,9 @@ export class OsagoFormComponent implements OnInit {
       classModelCar: new FormControl(null),
       dateCar: new FormControl(null),
       engine: new FormControl(null),
-      bank: new FormControl(null),
-      costCar: new FormControl(null),
+ 
       carPlace: new FormControl(null),
-      amountUsers: new FormControl(null),
+     
       name: new FormControl(null),
       phone: new FormControl(null, Validators.pattern("[0-9]{10}"))
 
@@ -79,10 +90,6 @@ export class OsagoFormComponent implements OnInit {
     })
   }
 
-
-  get _age(): string {
-    return this.form.get('age')?.value
-  }
   regionName: string = ''; 
   getRegionName(regionValue: any): string {
     this.places.forEach(element => {
@@ -94,6 +101,21 @@ export class OsagoFormComponent implements OnInit {
     });
     return this.regionName;
   }
+  powerName: string = '';
+  getPowerEngine(powerValue: any): string {
+    this.places.forEach(element => {
+      if(element.koef == Number(powerValue)){
+        this.powerName = element.namePower;
+
+      }
+     
+    });
+    return this.powerName;
+  }
+  get _age(): string {
+    return this.form.get('age')?.value
+  }
+
   get _experience(): string {
     return this.form.get('experience')?.value
   }
