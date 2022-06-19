@@ -5,7 +5,7 @@
    
     margin: 0 auto;
     position: sticky;
-    top:1100;
+
 
     padding-bottom: 5%;
     background-color: white;
@@ -13,7 +13,7 @@
 
 app-header {
     position: fixed;
-   top:10;
+    height: 1%;
   
     z-index: 99;
     width: 100%;
@@ -36,12 +36,12 @@ app-footer {
 
     width: 40%;
     text-align: justify;
-    margin-left: 30%;
+    margin: 0 auto;
 
 }
 
 .text-cheating-image {
-    margin-top: 400px;
+
 
     color: white;
 
@@ -101,12 +101,20 @@ li {
     }
 
 }
+@media all and (max-width:750px) {
+    app-header {
+        width: 100%;
+    }
+.main {
+    width: 100%;
+padding: 0px;}}
+
 @media all and (max-width:900px) {
     .image {
         display: none;
     }
     .info {
-        margin-top: 10%;
+        margin-top: 150px;
     }
 
 }

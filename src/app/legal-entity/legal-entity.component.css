@@ -19,12 +19,13 @@ h1 {
 
 .property-insurance {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../../assets/insurance-property.png);
-    height: 200px;
+    height: 50%;
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     text-align: center;
     padding-top: 150px;
+    padding-bottom: 150px;
     color: white;
     font-size: 26px;
     line-height: 1.5;
@@ -133,10 +134,13 @@ button {
 
 @media all and (max-width: 1400px) {
     .property-insurance {
-        width: 100%;
-        height: 150px;
+      
         font-size: 16px;
         padding-top: 100px;
+        padding-bottom: 100px;
+       
+
+        
     }
 
     
@@ -146,30 +150,33 @@ button {
     
         color: #fff;
         width: 100%;
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .property-insurance .head-text {
-        font-size: 15px;
+       
+        font-size: 18px;
         padding: 0;
         margin: 0;
     }
     .main-text {
-        font-size: 10px;
+        font-size: 16px;
+    }
+    .main a {
+        width: 25%;
     }
 }
 
 @media all and (max-width: 1000px) {
     .property-insurance {
-        width: 100%;
-        height: 100px;
-        font-size: 16px;
-        padding-top: 50px;
+   
+  
+  
 
     }
 
     .property-insurance .head-text {
-        font-size: 11px;
+        font-size: 22px;
         padding: 0;
         margin: 0;
     }
@@ -179,27 +186,46 @@ button {
         padding: 10px;
         color: #fff;
         width: 100%;
-        font-size: 10px;
+        font-size: 18px;
     }
 
    
 
 }
-
-@media all and (max-width: 500px) {
+@media all and (max-width: 768px) { 
     .property-insurance {
 
-        height: 50px;
+
+
+       
+
+    }
+    .main a {
+        width: 40%;
+    }
+}
+@media all and (max-width: 500px) {
+    .property-insurance {
+        
+        background-size: 100% 100%;
+        padding-left: 0;
     }
 
     .property-insurance .head-text {
-        font-size: 11px;
+        font-size: 18px;
         padding: 0;
         margin: 0;
     }
 
     .main-text {
-        font-size: 5px;
+        font-size: 18px;
     }
-
+    .main a {
+        width: 60%;
+    }
+}
+@media all and (max-width: 320px) {
+    .main a {
+        width: 90%;
+    }
 }
