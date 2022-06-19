@@ -42,7 +42,7 @@ app-footer {
 
 .text-cheating-image {
 
-
+    padding: 400px;
     color: white;
 
 }
@@ -85,7 +85,7 @@ li {
 @media all and (min-width:1400px) {
     .text-cheating-image {
         font-size: 10px;
-        padding: 0;
+     
 
     }
 }
@@ -115,6 +115,10 @@ padding: 0px;}}
     }
     .info {
         margin-top: 150px;
+        
+    }
+    .text-cheating-image {
+        padding-top: 100px;
     }
 
 }

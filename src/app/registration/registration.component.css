@@ -19,20 +19,27 @@ header{
 	margin-right: 20px;
 	text-decoration: none;
 }
+.btn {
+	width: 100%;
+}
 .btn input[type=button]{
     background: #85838b;
     color: #fff;
     border: 1px solid #85838b;
 
+	margin-left: 30%;
+	margin-right: 30%;
     font-size:20px;
-	padding-bottom: 20px;
+	margin-top: 30px;
+
 	padding-bottom: 30px;
-	align-items: center;	
+
 }
 
 .btn  input[type=button]:hover{
     background: #fff;
     color: #85838b;
+	
 }
 main {
 	margin-top: 5%;
@@ -124,13 +131,19 @@ label {
 	margin-left: 30px;
 	margin-right: 30px;
 }
-@media all and (max-width:823px){
-		.inputs button{
-			left:25%;
-		}
+@media all and (max-width:768px){
+	.btn input[type=button]
+	 {
+		margin: 0;
+		margin-top: 5%;
+		margin-bottom: 5%;
+	 }	
 } 
-@media all and (max-width:603px){
-	.inputs button{
-		left:20%;
-	}
+@media all and (max-width:760px){
+	.btn input[type=button]
+	 {
+		margin-top: 5%;
+		margin-bottom: 5%;
+		margin-left: 20%;
+	 }
 } 

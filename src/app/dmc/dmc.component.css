@@ -4,14 +4,17 @@
     flex-direction: column;
   
     margin: 0 auto;
-
+    position: sticky;
     
     padding-bottom: 5%;
     background-color: white;
 }
 app-header{
     text-align: center;
-    width: 80%;
+    width: 100%;
+    position: fixed;
+    height: 1%;
+    z-index: 99;
 }
 app-footer{
     display: flex;
@@ -41,7 +44,7 @@ app-footer{
     align-items: center;
     justify-self: center;
     height: 850px;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ), url(../../assets/about-insurance.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ), url(../../assets/dmc.jpeg);
     background-size: cover;
     margin-bottom: 5%;
 }
