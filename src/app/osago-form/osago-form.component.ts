@@ -52,11 +52,42 @@ export class OsagoFormComponent implements OnInit {
     {namePower:"свыше 100 до 120 включительно", koef: 1.2},
     {namePower:"свыше 120 до 150 включительно", koef: 1.4},
     {namePower:"свыше 150", koef: 1.6},
- 
-
-  
-  
   ]
+  experiences: any [] = [
+    {column: 0, columnName:"0"},
+    {column: 1, columnName:"1"},
+    {column: 2, columnName:"2"},
+    {column: 3, columnName:"3-4"},
+    {column: 4, columnName:"5-6"},
+    {column: 5, columnName:"7-9"},
+    {column: 6, columnName:"10-14"},
+    {column: 7, columnName:"Больше 14"},
+  ]
+  ages: any [] = [
+    {column: 0, columnName:"16-21"},
+    {column: 1, columnName:"22-24"},
+    {column: 2, columnName:"25-29"},
+    {column: 3, columnName:"30-34"},
+    {column: 4, columnName:"35-39"},
+    {column: 5, columnName:"40-49"},
+    {column: 6, columnName:"50-59"},
+    {column: 7, columnName:"Больше 59"},
+  ]
+  koefsAgeExperience: number = 0;
+  koefsAgeExperienceArr: any [][] = [
+    [1.93,1.9, 1.87, 1.66, 1.64, 0, 0, 0],
+    [1.79,1.77, 1.76, 1.08, 1.06, 1.06, 0],
+    [1.77,1.68, 1.61, 1.06, 1.05, 1.05, 1.01, 0],
+    [1.62,	1.61,	1.59,	1.04,	1.04,	1.01,	0.96,	0.95],
+    [1.61,	1.59,	1.58,	0.99,	0.96,	0.95,	0.95,	0.94],
+    [1.59,	1.58,	1.57,	0.95,	0.95,	0.94,	0.94,	0.94],
+    [1.58,	1.57,	1.56,	0.94,	0.94,	0.94,	0.94,	0.93],
+    [1.55,	1.54,	1.53,	0.92,	0.91,	0.91,	0.91,	0.90]
+]
+findKoefAgeExperience (ageIndx: number, expIndx:number): number {
+  this.koefsAgeExperience = this.koefsAgeExperienceArr[ageIndx][expIndx];
+  return this.koefsAgeExperience;
+}
   drivers: { id: number, age: number, experience: number, withoutAccident: number }[] = [
     { id: 1, age: 18, experience: 1, withoutAccident: 1 }
 
@@ -70,8 +101,8 @@ export class OsagoFormComponent implements OnInit {
       power: new FormControl(null, Validators.required),
       period: new FormControl(null, Validators.required),
       region: new FormControl(null, Validators.required),
-      age: new FormControl(null, Validators.required),
-      experience: new FormControl(null, Validators.required),
+      age: new FormControl(null, [Validators.required, Validators.pattern("[0-9]{2}")]),
+      experience: new FormControl(null, [Validators.required, Validators.pattern("[0-9]{2}")]),
       withoutAccident: new FormControl(null, Validators.required),
     })
     this.formBuy = new FormGroup({
@@ -119,6 +150,9 @@ export class OsagoFormComponent implements OnInit {
 
   get _experience(): string {
     return this.form.get('experience')?.value
+  }
+  get _age(): string {
+    return this.form.get('age')?.value
   }
   get _withoutAccident(): string {
     return this.form.get('withoutAccident')?.value
@@ -194,10 +228,10 @@ export class OsagoFormComponent implements OnInit {
     }
   };
 
-  getSum(transportType: number, power: number, period: number, region: number, maxYearWithoutAccident: number): number {
+  getSum(transportType: number, power: number, period: number, region: number, maxYearWithoutAccident: number, koefAgeExp: number): number {
     let mainPart: number = region * transportType * power * period;
     if (this.isDriverClicked) {
-      this.formulaAnswer = mainPart * maxYearWithoutAccident;
+      this.formulaAnswer = mainPart * koefAgeExp * maxYearWithoutAccident;
     } else {
       this.formulaAnswer = mainPart;
     }
@@ -210,8 +244,8 @@ export class OsagoFormComponent implements OnInit {
 
   onSubmit(): number {
     let maxYearWithoutAccident = this.updateDrivers(this.drivers)
-    
-    return  Math.round(this.getSum(Number(this._transportType), Number(this._power), Number(this._period), Number(this._region), maxYearWithoutAccident))
+    let ageExp = this.findKoefAgeExperience(Number(this._age), Number(this._experience))
+    return  Math.round(this.getSum(Number(this._transportType), Number(this._power), Number(this._period), Number(this._region), maxYearWithoutAccident, ageExp))
   }
   toggleDrivers(): void {
     this.isDriverClicked = !this.isDriverClicked;

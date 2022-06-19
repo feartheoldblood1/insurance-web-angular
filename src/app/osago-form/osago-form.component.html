@@ -53,7 +53,7 @@
                     <option value="0.6">4 месяца</option>
                     <option value="0.65">5 месяцев</option>
                     <option value="0.7">6 месяцев</option>
-                    <option value="0,8">7 месяцев</option>
+                    <option value="0.8">7 месяцев</option>
                     <option value="0.9">8 месяцев</option>
                     <option value="0.95">9 месяцев</option>
                     <option value="1">10 месяцев и более</option>
@@ -81,11 +81,18 @@
                     <div>Водитель {{driver.id}} </div>
                     <div class="driver-info">
                         <label for="">Возраст</label>
-                        <input type="text" value="" formControlName="age">
+                     
+                        <select name="" id="" formControlName="age">
+                            <option value="{{age.column}}" *ngFor="let age of ages">{{age.columnName}}</option>    
+                        </select>
                     </div>
                     <div class="driver-info">
                         <label for="">Стаж</label>
-                        <input type="text" value="" formControlName="experience">
+                        <!-- <input type="text" value="" formControlName="experience"> -->
+                        <select name="" id="" formControlName="experience">
+                            <option  *ngFor="let experience of experiences" value="{{experience.column}}">{{experience.columnName}}</option>    
+                        </select>
+
                     </div>
                     <div class="driver-info">
                         <label for=""> Сколько лет ездите без ДТП по своей вине?</label>
@@ -112,7 +119,7 @@
             <div *ngIf="{value: formulaAnswer} as formulaAnswer"  >
                 <div *ngIf="isClicked" class="policy-price-data">
                     <div>Формула расчета ОСАГО = Место использования * Категория ТС * Мощность * </div>
-                    <div>* Период использования * Коэффициент безаварийной езды </div>
+                    <div>* Период использования * Коэффициент безаварийной езды * Коэффициент Возраст-Стаж</div>
                     <br>
                     <div >Стоимость страховки: {{(formulaAnswer.value).toFixed(2)}} рублей</div>
                 </div>
@@ -129,7 +136,7 @@
     <div class="btn" *ngIf="isFormBuyClicked">
         <button (click)="clickedForm()">Обратно к расчету</button>
     </div>
-    <div *ngIf="isFormBuyClicked" class="policy-price-data" style="width:29%; margin-bottom:5px; margin-left:15px;">
+    <div *ngIf="isFormBuyClicked" class="policy-price-data" style="width:22%; margin-bottom:5px; margin-left:15px;">
         Стоимость полиса: {{((this.formulaAnswer)).toFixed(2)}} рублей
     </div>
     <form action="" [formGroup]="formBuy" *ngIf="isFormBuyClicked" (ngSubmit)="onSubmitFormBuy()">
@@ -172,7 +179,7 @@
                         <label>
                             Объем двигателя
                         </label>
-                        <div  style="border: 1px solid #dcdcdc; margin-left:5px; width:75%; font-size:15px; margin-top:5px; padding: 5px;height: 25px;">
+                        <div  style="border: 1px solid #dcdcdc; margin-left:5px; width:75%; font-size:15px; margin-top:5px; padding: 5px;height: 35px;">
                             {{ this.powerName}}</div>
                     </div>
                 </div>
