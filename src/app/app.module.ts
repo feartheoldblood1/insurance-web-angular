@@ -38,6 +38,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { VirusFormComponent } from './virus-form/virus-form.component';
 import { PolicyOsagoComponent } from './policy-osago/policy-osago.component';
 import { DmcComponent } from './dmc/dmc.component';
+import { PensionComponent } from './pension/pension.component';
 
 
 const appRoutes: Routes = [
@@ -61,6 +62,7 @@ const appRoutes: Routes = [
   {path: 'registration', component: RegistrationComponent},
   {path: 'virus', component: VirusFormComponent},
   {path: 'dmc', component: DmcComponent},
+  {path: 'pension', component: PensionComponent},
 
 ];
 
@@ -96,7 +98,8 @@ const appRoutes: Routes = [
     AboutInsuranceComponent,
     VirusFormComponent,
     PolicyOsagoComponent,
-    DmcComponent
+    DmcComponent,
+    PensionComponent
   ],
   imports: [
     BrowserModule,
