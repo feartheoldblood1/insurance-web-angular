@@ -9,12 +9,13 @@
                     <label for="">
                         Место использования транспорта
                     </label>
-                    <select name="" id="" formControlName="region">
-                        <option value="1.40">Тверская область</option>
+                    <select name="" id="" formControlName="region" >
+                        <option *ngFor="let place of places" value="place.koef">{{place.nameRegion}}</option>
+                        <!-- <option value="1.40">Тверская область</option>
                         <option value="1.56">Московская область</option>
                         <option value="1.64">Санкт-Петербург</option>
                         <option value="1.32">Кировская область</option>
-                        <option value="1.64">Новгородская область</option>
+                        <option value="1.64">Новгородская область</option> -->
                     </select>
                 </div>
         </div>
@@ -174,21 +175,19 @@
       
     
     
-        <div class="bank-input">
-            <label for="">Стоимость автомобиля (руб)</label>
-        <input type="text"formControlName="costCar" >
-    </div>
+      
          
         
         </div>
     
         <div class="drivers osago-info">
-            <h1>Собственник и водители</h1>
+            <h1>Собственник </h1>
             <div class=input-address>
                 <label for="">
                     Место использования автомобиля
                 </label>
-                <input type="text" formControlName="carPlace">
+                <select *ngFor="let place of places" formControlName="carPlace">
+                     </select>
             </div>
           
         </div>

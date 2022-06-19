@@ -34,6 +34,14 @@ export class OsagoFormComponent implements OnInit {
   isClicked: boolean = false;
   isDriverClicked: boolean = false;
    iterator:number = 2;
+   places: any []  = [
+    {nameRegion: "Тверская область", koef: 1.40},
+    {nameRegion: "Московская область", koef: 1.56},
+    {nameRegion: "Санкт-Петербург", koef: 1.64},
+    {nameRegion: "Кировская область", koef: 1.32},
+    {nameRegion: "Новгородская область", koef: 1.64},
+
+   ]
   drivers: {id:number, age:number, experience: number, withoutAccident:number}[] = [
     { id: 1, age:18, experience: 1, withoutAccident:1}
     
@@ -125,7 +133,7 @@ get _withoutAccident():string {
     } else {
       this.formulaAnswer = mainPart;
     }
-    return Math.ceil(this.formulaAnswer);
+    return Math.round(this.formulaAnswer);
   
   }
   onBuyBtn():void { 
