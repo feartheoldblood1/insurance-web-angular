@@ -24,14 +24,14 @@ export class RegistrationComponent implements OnInit {
       phoneNumber: new FormControl(null),
       password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
       passwordValidation: new FormControl(null, [Validators.required, Validators.minLength(8)]),
-      surname: new FormControl(null),
-      name: new FormControl(null),
-      otchestvo: new FormControl(null),
-      datebirth: new FormControl(null),
-      foreigner: new FormControl(null),
-      document: new FormControl(null),
-      documentNumber: new FormControl(null),
-      documentSerie: new FormControl(null),
+      surname: new FormControl(null,Validators.required),
+      name: new FormControl(null, Validators.required),
+      otchestvo: new FormControl(null, Validators.required),
+      datebirth: new FormControl(null, Validators.required),
+      foreigner: new FormControl(null, ),
+      document: new FormControl(null, Validators.required),
+      documentNumber: new FormControl(null, Validators.required),
+      documentSerie: new FormControl(null, Validators.required),
    })
   }
 
@@ -71,6 +71,7 @@ export class RegistrationComponent implements OnInit {
   get _documentSerie():string {
     return this.form.get('documentSerie')?.value;
   }
+  foreingerStr: string  = 'not foreigner'
   onSubmit(): void{
     // try {
       
@@ -79,7 +80,7 @@ export class RegistrationComponent implements OnInit {
       //   if(response.status == 200){
           this.userService.create({mail:this._email, phone_number: this._phone, password:this._password,
             surname:this._surname, name:this._name, otchestvo:this._otchestvo, datebirth:this._datebirth,
-            foreigner:this._foreigner,document:this._document, document_number:this._documentNumber,
+            foreigner:this.foreingerStr,document:this._document, document_number:this._documentNumber,
             document_series:this._documentSerie}).subscribe()
         //   alert("Вы успешно зарегистрировались");
         //   this.router.navigate(['/autorization'])

@@ -4,29 +4,46 @@
     <h1 id="title-registration">
         Регистрация
     </h1>
-    
-        <form name="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-            <div id=registration>
+
+    <form name="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div id=registration>
             <div id="info">
                 <div class="info-blocks">
                     <div class="inputs" id="login-block">
                         <label for="Email">Почта</label>
                         <input type="text" name="Email" placeholder="p_lobachev@inbox.ru" formControlName="email">
+                        <div class="alert alert-danger"
+                            *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+                            Не введена почта
+                        </div>
                     </div>
                     <div class="inputs">
                         <label for="Phone">Телефон</label>
                         <input type="tel" name="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required
                             placeholder="+7(___)-___-__-__" formControlName="phoneNumber">
+                        <div class="alert alert-danger"
+                            *ngIf="form.controls['phoneNumber'].invalid && form.controls['phoneNumber'].touched">
+                            Не введен телефон
+                        </div>
                     </div>
                 </div>
-                <div class="info-blocks" id="password-block" >
+                <div class="info-blocks" id="password-block">
                     <div class="inputs">
                         <label for="Password">Пароль</label>
                         <input type="text" name="Password" formControlName="password">
+                        <div class="alert alert-danger"
+                            *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
+                            Не введен пароль
+                        </div>
                     </div>
                     <div class="inputs">
                         <label for="Password-Validation">Подтверждение пароля</label>
                         <input type="text" name="Password-Validation" formControlName="passwordValidation">
+                        <div class="alert alert-danger"
+                            *ngIf="form.controls['passwordValidation'].invalid && form.controls['passwordValidation'].touched">
+                            Не введен пароль второй раз
+                        </div>
+
                     </div>
                 </div>
                 <div id="personal-data" class="info-blocks">
@@ -34,58 +51,90 @@
                         <label for="Surname">Фамилия</label>
                         <input type="text" name="Surname" placeholder="Лобачев" formControlName="surname">
                     </div>
+                    <div class="alert alert-danger"
+                        *ngIf="form.controls['surname'].invalid && form.controls['surname'].touched">
+                        Не введена фамилия
+                    </div>
                     <div class="inputs" id="name-block">
                         <label for="Name">Имя</label>
                         <input type="text" name="Name" placeholder="Петр" formControlName="name">
+                        <div class="alert alert-danger"
+                            *ngIf="form.controls['name'].invalid && form.controls['name'].touched">
+                            Не введено имя
+                        </div>
                     </div>
-                    <div class="inputs" id="otchestvo-block" >
+                    <div class="inputs" id="otchestvo-block">
                         <label for="Otchestvo">Отчество</label>
                         <input type="text" name="Otchestvo" placeholder="Александрович" formControlName="otchestvo">
+                    </div>
+                    <div class="alert alert-danger"
+                        *ngIf="form.controls['otchestvo'].invalid && form.controls['otchestvo'].touched">
+                        Не введено отчество
                     </div>
                 </div>
                 <div class="info-blocks">
                     <div id=datebirth class="inputs">
                         <label for="Date-Birth">Дата рождения</label>
                         <input type="date" name="DateBirth" formControlName="datebirth">
-                        
+                        <div class="alert alert-danger"
+                            *ngIf="form.controls['datebirth'].invalid && form.controls['datebirth'].touched">
+                            Не введена дата рождения
+                        </div>
                     </div>
                     <div class="inputs" id="checkbox-foreign">
                         <label>
                             <input type="checkbox" formControlName="foreigner">
                             <span>Иностранный гражданин</span>
+
                         </label>
                     </div>
                 </div>
-            <div class="info-blocks">
-                <div class="inputs">
-                    <label for="Type-Document">Тип документа</label>
-                    <!-- <input type="text" name="Type-Document"> -->
-                    <select type="text" name="Type-Document" formControlName="document">
-                        <option disabled>Выберете</option>
-                        <option value="RussianPassport">Гражданский паспорт РФ</option>
-                        <option value="OfficerIDcard">Удостоверение личности офицера</option>
-                        <option value="SoldierIDcard">Военный билет солдата</option>
-                        <option value="ReserveOfficerIDcard">Военный билет офицера запаса</option>
-                        <option value="RussianTemporaryIdentityCard">Временное удостоверение личности гражданина РФ</option>
-                        <option value="OtherDocuments">Другие документы</option>
-                     </select>
+                <div class="info-blocks">
+                    <div class="inputs">
+                        <label for="Type-Document">Тип документа</label>
+                        <!-- <input type="text" name="Type-Document"> -->
+                        <select type="text" name="Type-Document" formControlName="document">
+                            <option disabled>Выберете</option>
+                            <option value="RussianPassport">Гражданский паспорт РФ</option>
+                            <option value="OfficerIDcard">Удостоверение личности офицера</option>
+                            <option value="SoldierIDcard">Военный билет солдата</option>
+                            <option value="ReserveOfficerIDcard">Военный билет офицера запаса</option>
+                            <option value="RussianTemporaryIdentityCard">Временное удостоверение личности гражданина РФ
+                            </option>
+                            <option value="OtherDocuments">Другие документы</option>
+                        </select>
+                     
+                    <div class="alert alert-danger"
+                        *ngIf="form.controls['document'].invalid && form.controls['document'].touched">
+                        Не введен тип документа
+                    </div>
+                  
+                    </div>
+                    <div class="inputs" id="numer">
+                        <label for="Numeration">Номер</label>
+                        <input type="text" name="Numeration" formControlName="documentNumber">
+                        <div class="alert alert-danger"
+                        *ngIf="form.controls['documentNumber'].invalid && form.controls['documentNumber'].touched">
+                        Не введен номер документа
+                    </div>
+                        <div class="inputs" id="serie">
+                            <label for="Serie">Серия</label>
+                            <input type="text" name="Serie" formControlName="documentSerie">
+                            <div class="alert alert-danger"
+                            *ngIf="form.controls['documentSerie'].invalid && form.controls['documentSerie'].touched">
+                            Не введена серия документа
+                        </div>        
+                      </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="inputs" id="numer">
-                    <label for="Numeration">Номер</label>
-                    <input type="text" name="Numeration" formControlName="documentNumber">
-                </div>
-                <div class="inputs" id="serie">
-                    <label for="Serie">Серия</label>
-                    <input type="text" name="Serie" formControlName="documentSerie">
-                </div>
+
             </div>
-        </div>
-       
-        </div>
-       
-            <div class=" btn" >
-                <input  type="button"(click)="onSubmit()" value="Зарегистрироваться">
-        
-        </div>
+
+            <div class=" btn" *ngIf="form.controls['documentSerie'].valid&&form.controls['documentNumber'].valid&&form.controls['document'].valid&&
+            form.controls['datebirth'].valid&&form.controls['otchestvo'].valid&&form.controls['name'].valid&&form.controls['passwordValidation'].valid&&
+            form.controls['surname'].valid&&form.controls['password'].valid&&form.controls['email'].valid&&form.controls['phoneNumber'].valid">
+                <input type="button" (click)="onSubmit()" value="Зарегистрироваться">
+            </div>
     </form>
 </main>
