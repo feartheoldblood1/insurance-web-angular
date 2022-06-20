@@ -101,8 +101,8 @@ findKoefAgeExperience (ageIndx: number, expIndx:number): number {
       power: new FormControl(null, Validators.required),
       period: new FormControl(null, Validators.required),
       region: new FormControl(null, Validators.required),
-      age: new FormControl(null, [Validators.required, Validators.pattern("[0-9]{2}")]),
-      experience: new FormControl(null, [Validators.required, Validators.pattern("[0-9]{2}")]),
+      age: new FormControl(null, [Validators.required, Validators.pattern("[0-9]{2}"),Validators.maxLength(2)]),
+      experience: new FormControl(null, [Validators.required, Validators.pattern("[0-9]{2}"), Validators.maxLength(2)] ),
       withoutAccident: new FormControl(null, Validators.required),
     })
     this.formBuy = new FormGroup({

@@ -38,13 +38,14 @@ export class AuthorizationComponent implements OnInit {
     try {
       this.userService.findByNamePass({email: this._email.value,
         password:this._password.value}).subscribe((Users:UserWithRelations[])=>{
-          this.router.navigate(['/profile'])
-           
+          this.router.navigate(['/osago-form'])
+          alert("Вы успешно авторизировались, страница скоро загрузиться")
           this.usr = Users.toString()
+
         });
     }catch(err:any){
       
-      console.log(err)
+      alert(err)
     }
 
   } 
