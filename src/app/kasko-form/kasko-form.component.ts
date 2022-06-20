@@ -78,7 +78,7 @@ export class KaskoFormComponent implements OnInit {
   }
 
   onSubmit(): void{
-    // try {
+    try {
       
     //   this.http.get("https://shielded-depths-97782.herokuapp.com/kasko",{observe: 'response'})
     //   .subscribe(response => {
@@ -97,7 +97,12 @@ export class KaskoFormComponent implements OnInit {
              carPlace:this._carPlace,
             name:this._name, phone:this._phone
           }).subscribe()
-        }   
+           alert("Вы успешно оформили заявку на полис КАСКО")
+      } catch (err: any) {
+        console.log(err)
+      }
+
+        }
     //   }, error=>{
     //     alert("Ошибка сервера");
     //     console.log(error);

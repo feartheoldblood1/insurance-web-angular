@@ -58,10 +58,16 @@ get _phone():string {
 }
 
 onSubmit(): void{
-  console.log(this.legalEntity.sendMsgToMail({companyName: this._companyName,
-    addres: this._companyAddress, INN: this._INN, region:this._region,
-    surname: this._surname,name: this._name,otchestvo: this._otchestvo,
-    email: this._email, phone: this._phone
-       }).subscribe())
+  try {
+    console.log(this.legalEntity.sendMsgToMail({companyName: this._companyName,
+      addres: this._companyAddress, INN: this._INN, region:this._region,
+      surname: this._surname,name: this._name,otchestvo: this._otchestvo,
+      email: this._email, phone: this._phone
+         }).subscribe())
+         alert("Мы рассмотрим вашу заявку и моментально свяжемся с вами")
+  } catch(err: any) {
+    console.log(err)
+  }
+
 }
 }

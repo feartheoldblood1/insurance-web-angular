@@ -95,7 +95,7 @@ export class MortgageComponent implements OnInit {
       this._phone,
       this.prObj,
        this._remains);
-   alert("Ваша заявка отправлена");
+   alert("Ваша заявка на страхование ипотеки отправлена");
    
   //   this.http.get("https://insurance-web-college.herokuapp.com/ipoteka",{observe: 'response'})
   //   .subscribe(response => {

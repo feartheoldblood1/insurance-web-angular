@@ -52,11 +52,18 @@ export class JourneyComponent implements OnInit {
     return this.form.get('citizenship')?.value;
   }
   onSubmit(): void{
-    console.log(this.journeyService.sendMsgToMail({countries: this._journeyPlace,
-      dateStart: this._startDate, dateEnd: this._endDate,
-      ageRange: this._ageRange,citezenship: this._citizenship,
-      email: this._email
-         }).subscribe())
+    try {
+      console.log(this.journeyService.sendMsgToMail({countries: this._journeyPlace,
+        dateStart: this._startDate, dateEnd: this._endDate,
+        ageRange: this._ageRange,citezenship: this._citizenship,
+        email: this._email
+           }).subscribe())
+           alert("Вы успешно оформили заявку страховой полис путешественника")
+          }
+    catch (err :any) {
+      console.log(err)
+    }
+
     // try {
       
      

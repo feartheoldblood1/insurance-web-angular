@@ -39,6 +39,7 @@ import { VirusFormComponent } from './virus-form/virus-form.component';
 import { PolicyOsagoComponent } from './policy-osago/policy-osago.component';
 import { DmcComponent } from './dmc/dmc.component';
 import { PensionComponent } from './pension/pension.component';
+import { VirusInputsComponent } from './virus-inputs/virus-inputs.component';
 
 
 const appRoutes: Routes = [
@@ -99,7 +100,8 @@ const appRoutes: Routes = [
     VirusFormComponent,
     PolicyOsagoComponent,
     DmcComponent,
-    PensionComponent
+    PensionComponent,
+    VirusInputsComponent
   ],
   imports: [
     BrowserModule,
