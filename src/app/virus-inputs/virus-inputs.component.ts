@@ -11,5 +11,7 @@ export class VirusInputsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onSubmit():void{
+    alert("Приносим свои извинения, услуга обязательно заработает в скором времени. ")
+  }
 }

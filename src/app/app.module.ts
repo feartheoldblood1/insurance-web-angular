@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppComponent } from './app.component';
 import { InsurancePolicyListComponent } from './insurance-policy-list/insurance-policy-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,12 +35,13 @@ import { LegalEntityComponent } from './legal-entity/legal-entity.component';
 import { AccidentComponent } from './accident/accident.component';
 import { LegalPropertyComponent } from './legal-property/legal-property.component';
 import { AboutInsuranceComponent } from './about-insurance/about-insurance.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { VirusFormComponent } from './virus-form/virus-form.component';
+
 import { PolicyOsagoComponent } from './policy-osago/policy-osago.component';
 import { DmcComponent } from './dmc/dmc.component';
 import { PensionComponent } from './pension/pension.component';
 import { VirusInputsComponent } from './virus-inputs/virus-inputs.component';
+
+
 
 
 const appRoutes: Routes = [
@@ -58,12 +60,14 @@ const appRoutes: Routes = [
   {path: 'kasko', component: KaskoFormComponent},
   {path: 'osago-form', component: OsagoFormComponent},
   {path: 'legal-property', component: LegalPropertyComponent},
-  {path: 'accident', component: AccidentComponent},
+  {path: 'accident', component: AccidentComponent },
+  {path: 'virus-inputs', component:VirusInputsComponent},
   {path: 'autorization', component: AuthorizationComponent},
   {path: 'registration', component: RegistrationComponent},
-  {path: 'virus', component: VirusFormComponent},
+
   {path: 'dmc', component: DmcComponent},
   {path: 'pension', component: PensionComponent},
+ 
 
 ];
 
@@ -80,7 +84,7 @@ const appRoutes: Routes = [
     RegistrationComponent,
     OsagoKaskoComponent,
     SocialNetworkComponent,
-
+    VirusInputsComponent,
     FaqComponent,
     MainImagePolicyComponent,
     HeaderInfoComponent,
@@ -97,11 +101,10 @@ const appRoutes: Routes = [
     AccidentComponent,
     LegalPropertyComponent,
     AboutInsuranceComponent,
-    VirusFormComponent,
+
     PolicyOsagoComponent,
     DmcComponent,
-    PensionComponent,
-    VirusInputsComponent
+    PensionComponent
   ],
   imports: [
     BrowserModule,

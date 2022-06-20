@@ -1,1 +1,19 @@
-<p>virus-inputs works!</p>
+<app-header></app-header>
+<div class="main">
+    <form action=" " (ngSubmit) =  "onSubmit()">
+        <h2 style="text-align: center;">Отправьте заявку на покупку страхового полиса от несчастного случая</h2>
+        <select name="" id="">
+            <option value="Короновирус">Короновирус</option>
+            <option value="ОРВИ">ОРВИ</option>
+        </select>
+        <label for="">Имя </label>
+        <input type="text">
+        <label for="">Номер телефона</label>
+        <input type="text">
+        <div class="btn">
+          
+            <input type="button" value="Отправить" (click)="onSubmit()">  
+        </div>
+        
+</form>
+</div>
