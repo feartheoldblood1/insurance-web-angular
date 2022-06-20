@@ -94,6 +94,7 @@
                         </select>
 
                     </div>
+                    
                     <div class="driver-info">
                         <label for=""> Сколько лет ездите без ДТП по своей вине?</label>
                         <select name="" id="" formControlName="withoutAccident">
@@ -113,6 +114,12 @@
                         </select>
                     </div>
                 </div>
+                <div class="alert alert-danger"
+                *ngIf="form.controls['age'].invalid && form.controls['age'].touched&&form.controls['experience'].invalid && form.controls['experience'].touched&&
+                form.controls['withoutAccident'].invalid && form.controls['withoutAccident'].touched"
+                >
+                Не указаны данные о водителе
+            </div>
             </div>
         </div>
         <div *ngIf="form.controls['region'].valid&&form.controls['transportType'].valid&&form.controls['power'].valid&&form.controls['period'].valid">
@@ -152,7 +159,11 @@
                         </label>
                         <input type="text" formControlName="addrRegistr">
                     </div>
-
+                    <div class="alert alert-danger"
+                    *ngIf="form.controls['addrRegistr'].invalid && form.controls['addrRegistr'].touched"
+                    >
+                    Не указан адрес собственника
+                </div>
                 </div>
 
             </div>
@@ -165,17 +176,31 @@
                             Марка автомобиля
                         </label>
                         <input type="text" formControlName="carMarka">
+                        <div class="alert alert-danger"
+                    *ngIf="form.controls['carMarka'].invalid && form.controls['carMarka'].touched"
+                    >
+                    Не указана марка автомобиля
+                </div>
                         <label>
                             Год выпуска
                         </label>
                         <input type="text" formControlName="dateCar">
+                        <div class="alert alert-danger"
+                    *ngIf="form.controls['dateCar'].invalid && form.controls['dateCar'].touched"
+                    >
+                    Не указан год выпуска 
+                </div>
                     </div>
 
 
                     <div class="car-info ">
                         <label>Модель и класс автомобиля</label>
                         <input type="text" formControlName="classModelCar">
-
+                        <div class="alert alert-danger"
+                        *ngIf="form.controls['classModelCar'].invalid && form.controls['classModelCar'].touched"
+                        >
+                        Не указана модель и класс автомобиля 
+                    </div>
                         <label>
                             Объем двигателя
                         </label>
@@ -204,14 +229,25 @@
                     <div>
                         <label for="">Имя</label>
                         <input type="text" value="" formControlName="name">
+                        <div class="alert alert-danger"
+                        *ngIf="form.controls['name'].invalid && form.controls['name'].touched"
+                        >
+                        Не указано имя страхователя
+                    </div>
                     </div>
                     <div><label for="">Номер телефона</label>
                         <input type="text" value="" formControlName="phone">
+                        <div class="alert alert-danger"
+                        *ngIf="form.controls['phone'].invalid && form.controls['phone'].touched"
+                        >
+                        Неверно написан номер телефона
                     </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="btn">
+            <div class="btn" *ngIf="form.controls['phone'].valid&&form.controls['name'].valid&&form.controls['classModelCar'].valid&&form.controls['dateCar'].valid&&form.controls['carMarka'].valid&&form.controls['addrRegistr'].valid">
                 <button>Отправить заявку</button>
             </div>
         </div>

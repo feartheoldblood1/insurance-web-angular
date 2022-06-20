@@ -258,17 +258,23 @@ findKoefAgeExperience (ageIndx: number, expIndx:number): number {
     this.isFormBuyClicked = !this.isFormBuyClicked;
   }
   onSubmitFormBuy(): void {
-    this.osagoService.sendMsgToMail({
-      registrAddress:this._addrRegistr,
-      markaCar:this._carMarka,
-     markaModelClass:this._classModelCar,
-      dateCar:this._dateCar,
-      engineCapacity:this.powerName.toString(),
-      carPlace:this.regionName.toString(),
-     
-     name:this._name,
-      phone:this._phone
-   }).subscribe()
+    try{
+      this.osagoService.sendMsgToMail({
+        registrAddress:this._addrRegistr,
+        markaCar:this._carMarka,
+       markaModelClass:this._classModelCar,
+        dateCar:this._dateCar,
+        engineCapacity:this.powerName.toString(),
+        carPlace:this.regionName.toString(),
+       
+       name:this._name,
+        phone:this._phone
+     }).subscribe()
+     alert("Ваша заявка на оформление е-ОСАГО была отправлена")
+    }
+    catch (err: any) {
+      console.log(err);
+    }
  }   
   
 }

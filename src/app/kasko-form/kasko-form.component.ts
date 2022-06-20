@@ -22,17 +22,17 @@ export class KaskoFormComponent implements OnInit {
     this.form = new FormGroup({
 
      
-       addrRegistr: new FormControl(null),
-       carMarka: new FormControl(null),
-       classModelCar: new FormControl(null),
-       dateCar: new FormControl(null),
-       engine: new FormControl(null),
-       bank: new FormControl(null),
-       costCar: new FormControl(null),
-       carPlace: new FormControl(null),
-       amountUsers: new FormControl(null),
-       name: new FormControl(null),
-       phone: new FormControl(null)
+       addrRegistr: new FormControl(null, Validators.required),
+       carMarka: new FormControl(null, Validators.required),
+       classModelCar: new FormControl(null, Validators.required),
+       dateCar: new FormControl(null, Validators.required),
+       engine: new FormControl(null ,Validators.required),
+       bank: new FormControl(null ,Validators.required),
+       costCar: new FormControl(null, Validators.required),
+       carPlace: new FormControl(null, Validators.required),
+       amountUsers: new FormControl(null, Validators.required),
+       name: new FormControl(null, Validators.required),
+       phone: new FormControl(null, [Validators.required, Validators.pattern("[0-9]{10}")])
       
        
     })
