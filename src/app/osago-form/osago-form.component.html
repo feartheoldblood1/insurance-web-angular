@@ -160,7 +160,7 @@
                         <input type="text" formControlName="addrRegistr">
                     </div>
                     <div class="alert alert-danger"
-                    *ngIf="form.controls['addrRegistr'].invalid && form.controls['addrRegistr'].touched"
+                    *ngIf="formBuy.controls['addrRegistr'].invalid && formBuy.controls['addrRegistr'].touched"
                     >
                     Не указан адрес собственника
                 </div>
@@ -177,7 +177,7 @@
                         </label>
                         <input type="text" formControlName="carMarka">
                         <div class="alert alert-danger"
-                    *ngIf="form.controls['carMarka'].invalid && form.controls['carMarka'].touched"
+                    *ngIf="formBuy.controls['carMarka'].invalid && formBuy.controls['carMarka'].touched"
                     >
                     Не указана марка автомобиля
                 </div>
@@ -186,7 +186,7 @@
                         </label>
                         <input type="text" formControlName="dateCar">
                         <div class="alert alert-danger"
-                    *ngIf="form.controls['dateCar'].invalid && form.controls['dateCar'].touched"
+                    *ngIf="formBuy.controls['dateCar'].invalid && formBuy.controls['dateCar'].touched"
                     >
                     Не указан год выпуска 
                 </div>
@@ -197,7 +197,7 @@
                         <label>Модель и класс автомобиля</label>
                         <input type="text" formControlName="classModelCar">
                         <div class="alert alert-danger"
-                        *ngIf="form.controls['classModelCar'].invalid && form.controls['classModelCar'].touched"
+                        *ngIf="formBuy.controls['classModelCar'].invalid && formBuy.controls['classModelCar'].touched"
                         >
                         Не указана модель и класс автомобиля 
                     </div>
@@ -230,7 +230,7 @@
                         <label for="">Имя</label>
                         <input type="text" value="" formControlName="name">
                         <div class="alert alert-danger"
-                        *ngIf="form.controls['name'].invalid && form.controls['name'].touched"
+                        *ngIf="formBuy.controls['name'].invalid && formBuy.controls['name'].touched"
                         >
                         Не указано имя страхователя
                     </div>
@@ -238,16 +238,17 @@
                     <div><label for="">Номер телефона</label>
                         <input type="text" value="" formControlName="phone">
                         <div class="alert alert-danger"
-                        *ngIf="form.controls['phone'].invalid && form.controls['phone'].touched"
+                        *ngIf="formBuy.controls['phone'].invalid && formBuy.controls['phone'].touched"
                         >
-                        Неверно написан номер телефона
+                        Неверно номер телефона страхователя
                     </div>
                     </div>
 
                 </div>
             </div>
 
-            <div class="btn" *ngIf="form.controls['phone'].valid&&form.controls['name'].valid&&form.controls['classModelCar'].valid&&form.controls['dateCar'].valid&&form.controls['carMarka'].valid&&form.controls['addrRegistr'].valid">
+            <div class="btn" *ngIf="formBuy.controls['name'].valid&&formBuy.controls['phone'].valid&&formBuy.controls['classModelCar'].valid&&formBuy.controls['dateCar'].valid
+            &&formBuy.controls['carMarka'].valid&&formBuy.controls['validaddrRegistr'].valid">
                 <button>Отправить заявку</button>
             </div>
         </div>

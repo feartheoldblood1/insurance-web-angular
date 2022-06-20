@@ -114,7 +114,7 @@ findKoefAgeExperience (ageIndx: number, expIndx:number): number {
       dateCar: new FormControl(null, Validators.required),
 
  
-      carPlace: new FormControl(null),
+     
      
       name: new FormControl(null, Validators.required),
       phone: new FormControl(null, [Validators.pattern("[0-9]{10}"),Validators.required])
